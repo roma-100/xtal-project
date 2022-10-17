@@ -1,0 +1,148 @@
+<!-- page4.nunjucks -->
+
+{% extends "_layout.nunjucks" %}
+
+{% block content %}
+
+{% include "_partials/_menu.nunjucks" %}
+
+<div class="hero-step2">
+  <h1 class="hello-name">Extraordinary OCXO solutions</h1>
+  <div class="hero-step2__circle-wrap">
+    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type1_200px.png" alt="xtall"></div>
+    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type2_200px.png" alt="xtall"></div>
+    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type3_200px.png" alt="xtall"></div>
+
+    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type4_200px.png" alt="xtall"></div>
+    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type5_200px.png" alt="xtall"></div>
+  </div>
+</div>
+
+
+
+
+<div class="gen-models-filter__wrap">
+  <h2>Aassistant</h2>
+  <div class="gen-models-filter">
+    <div class="gen-models-filter__title"><span>Frequency Type</span></div>
+    <div class="gen-models-filter__source">
+      <div class="gen-models-filter__source-value">
+         <div class="gen-models-filter__source--color">rrr</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="gen-models__wrap">
+  <h2>Generator Types</h2>
+<div class="gen-models">
+  
+  <div class="gen-model">
+    <div class="gen-model__title"><h4>XBO37/8</h4></div>
+    <div class="gen-model__info">Steel case 20x20x12.6 mm</div>
+    <div class="gen-model__tempr-add-info">
+      <div class="gen-model__tempr-range">Δt= -40...50C</div>
+      <div class="gen-model__tempr-stability">≥ 0.2 ppb</div>
+    </div>
+    <div class="gen-model__picture"><img class="gen-model__picture--decor" src="img/type4_200px.png" alt="xtal XBO37/8"></div> 
+    
+    <div class="gen-model__btn"><a href="#">Specification</a></div>
+    
+  </div>
+
+    <div class="gen-model">
+      <div class="gen-model__title"><h4>XBO37/8</h4></div>
+      <div class="gen-model__info">8-150 MHz Fundamental</div>
+          <div class="gen-model__tempr-add-info">
+            <div class="gen-model__tempr-stability">to 0.2 ppb</div>
+          </div>
+      <div class="gen-model__picture"><img class="gen-model__picture--decor" src="img/type4_200px.png" alt="xtal XBO37/8"></div> 
+      <div class="gen-model__info">Steel case 20x20x12.6 mm</div>
+      <div class="gen-model__btn">Specification</div>
+    </div>
+
+
+  <div class="gen-model gen-model--disabled">
+    <div class="gen-model__title"><h4>XBO37/8</h4></div>
+    <div class="gen-model__info">Steel case 20x20x12.6 mm</div>
+    <div class="gen-model__picture"><img class="gen-model__picture--decor" src="img/type4_200px.png" alt="xtal XBO37/8"></div> 
+    
+    <div class="gen-model__btn--disabled">Specification</div>
+  </div>
+
+    <div class="gen-model">
+      <div class="gen-model__title"><h4>XBO37/8</h4></div>
+      <div class="gen-model__info">Steel case 20x20x12.6 mm</div>
+      <div class="gen-model__picture"><img class="gen-model__picture--decor" src="img/type4_200px.png" alt="xtal XBO37/8"></div> 
+      <div class="gen-model__info">Steel case 20x20x12.6 mm</div>
+      <div class="gen-model__btn">Specification</div>
+    </div>
+
+    <div class="gen-model">
+    <div class="gen-model__title"><h4>XBO37/8</h4></div>
+    <div class="gen-model__info">Steel case 20x20x12.6 mm</div>
+    <div class="gen-model__picture"><img class="gen-model__picture--decor" src="img/type4_200px.png" alt="xtal XBO37/8"></div> 
+    
+    <div class="gen-model__btn">Specification</div>
+  </div>
+
+    <div class="gen-model">
+    <div class="gen-model__title"><h4>XBO37/8</h4></div>
+    <div class="gen-model__info">Steel case 20x20x12.6 mm</div>
+    <div class="gen-model__picture"><img class="gen-model__picture--decor" src="img/type4_200px.png" alt="xtal XBO37/8"></div> 
+    
+    <div class="gen-model__btn">Specification</div>
+  </div>
+
+    <div class="gen-model">
+    <div class="gen-model__title"><h4>XBO37/8</h4></div>
+    <div class="gen-model__info">Steel case 20x20x12.6 mm</div>
+    <div class="gen-model__picture"><img class="gen-model__picture--decor" src="img/type4_200px.png" alt="xtal XBO37/8"></div> 
+    
+    <div class="gen-model__btn">Specification</div>
+  </div>
+
+</div>
+</div>
+{# © 2022 Magic Xtal #}
+<div class="footer-page">
+  <div class="footer-wrap">
+
+            <div class="footer-title">
+        <span>Products</span>
+        <ul>
+          <li><a href="#">OCXO models</a></li>
+        </ul>
+      </div>
+      <div class="footer-title">
+        <span class="footer-lable">Applications</span>
+            <ul>
+          <li><a href="#">Low Power Oven Control Crystal Oscillators (LP OCXOs)</a></li>
+          <li><a href="#">High Precision Low Power Clocks.</a></li>
+          <li><a href="#">GPS Disciplined Low Power Frequency Reference.</a></li>
+        </ul>
+      </div>
+
+          <div class="footer-title">
+            <span>About</span>
+            <ul>
+              <li><a href="#">About us.</a></li>
+              <li><a href="#">News</a></li>
+            </ul>
+          </div>
+          <div class="footer-title">
+            <span>Contact</span>
+            <ul>
+              <li><a href="#">Contact Us.</a></li>
+              <li><a href="#">News</a></li>
+            </ul>
+          </div>
+
+
+  <div class="footer-rights"></div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+<!-- _home_tbl_attractive.nunjucks -->
+{#      <div class="short-data">
+        <ul>
+            <li>Extremely low power consumption:</li>
+            <ul>
+                <li>60 mW at (0-50)ºC,  120 mW at (-40 +85)º C </li>    
+            </ul> 
+            <li>Very high frequency vs. temperature stability:</li>
+            <ul>
+                <li>to 0.5 ppb in (-40 +85)ºC range </li>    
+            </ul> 
+            <li>Very low “atomic rank” aging rate:</li>
+            <ul>
+                <li>to 0.03 ppb/day</li>    
+            </ul> 
+            <li>Very low phase noise level:</li>
+            <ul>
+                <li>-115 dBc/Hz@1Hz</li>    
+                <li>-173 dBc/Hz floor</li>  
+            </ul> 
+            <li>Very low acceleration sensitivity:</li>
+            <ul>
+                <li>to 0.2 ppb/g  </li>    
+            </ul> 
+            <li>Fast warming-up: </li>
+            <ul>
+                <li>45 s (to 0.1 ppm accuracy) </li>    
+            </ul> 
+            <li>Miniature sizes:</li>
+            <ul>
+                <li>compatible with DIP8, DIP14 or 20x20x12.6 mm</li>    
+            </ul> 
+        </ul>
+
+    </div> #}
+
+<div class="short-data2">
+    <div class="short-data__block1">
+      <p class="shord-data__title">Extremely low power consumption:</p>
+            <p class="shord-data__value">60 mW at (0-50)ºC, 120 mW at (-40 +85)º C</p>
+        <p class="shord-data__title">Very high frequency vs. temperature stability:</p>
+            <p class="shord-data__value">to 0.5 ppb in (-40 +85)ºC range</p>
+              <p class="shord-data__title">Very low phase noise level:</p>
+          <p class="shord-data__value">-115 dBc/Hz@1Hz</p>
+          <p class="shord-data__value">-173 dBc/Hz floor</p>
+
+    </div>
+    <div class="short-data__block0"></div>
+    <div class="short-data__block2">
+        <p class="shord-data__title">Very low “atomic rank” aging rate:</p>
+            <p class="shord-data__value">to 0.03 ppb/day</p>
+      <p class="shord-data__title">Very low acceleration sensitivity:</p>
+          <p class="shord-data__value">to 0.2 ppb/g</p>
+      <p class="shord-data__title">Fast warming-up:</p>
+          <p class="shord-data__value">45 s (to 0.1 ppm accuracy)</p>
+      <p class="shord-data__title">Miniature sizes:</p>
+          <p class="shord-data__value">compatible with DIP8, DIP14 or 20x20x12.6 mm</p>
+    </div>
+
+</div>

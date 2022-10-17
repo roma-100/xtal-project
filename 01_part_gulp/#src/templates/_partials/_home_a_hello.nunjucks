@@ -1,0 +1,42 @@
+<!-- _home_a_hello.nunjucks -->
+{# Hello Transparant #}
+
+    <div class="hero">
+        <div class="hero-container">
+        <!-- <div class="master"></div> -->
+
+{#                 <div class="service-name">THE BEST OCXOs IN THE WORLD </div>
+            <div class="service-name-mhz">(8-300 MHz)</div> #}
+            {# <img src="img/bc-earth.jpg" alt="" class="hello-img"> #}
+            <h1 class="hello-name">Extraordinary OCXO solutions</h1>
+            <div class="hello__circle-container">
+{#                 <a href="#" class="circle1 animate__animated animate__bounceInRight"><img class="circle-img" src="img/06.png" alt="xtall"></a>
+                <a href="#" class="circle2 animate__animated animate__bounceInRight"><img class="circle-img" src="img/06.png" alt="xtall"></a>
+                <a href="#" class="circle3 animate__animated animate__bounceInRight"><img class="circle-img" src="img/06.png" alt="xtall"></a>
+
+                <a href="#" class="circle4 animate__animated animate__bounceInRight animate__delay-1s"><img class="circle-img" src="img/06.png" alt="xtall"></a>
+                <a href="#" class="circle5 animate__animated animate__bounceInRight animate__delay-1s"><img class="circle-img" src="img/06.png" alt="xtall"></a>
+                <a href="#" class="circle6 animate__animated animate__bounceInRight animate__delay-1s"><img class="circle-img" src="img/06.png" alt="xtall"></a>
+ #}
+                <div class="circle1"><img class="circle-img" src="img/type1_200px.png" alt="xtall"></div>
+                <div class="circle2"><img class="circle-img" src="img/type2_200px.png" alt="xtall"></div>
+                <div class="circle3"><img class="circle-img" src="img/type3_200px.png" alt="xtall"></div>
+
+                <div class="circle4"><img class="circle-img" src="img/type4_200px.png" alt="xtall"></div>
+                <div class="circle5"><img class="circle-img" src="img/type5_200px.png" alt="xtall"></div>
+                <div class="circle6"><img class="circle-img" src="img/06.png" alt="xtall"></div>
+                
+                <h3 class="hello-mhz">(8-300 MHz)</h3>
+                {# <h3 class="hello-mhz animate__animated animate__fadeInUp">(8-300 MHz)</h3> #} 
+            </div>
+
+            
+        </div>
+
+    </div>
+{# fadeIn #}
+{# bounce, flash, pulse, rubberBand, shake, headShake, swing, tada, wobble, jello, heartBeat #}
+{# <h1 class="animate__animated animate__bounceInRight animate__delay-1s">An animated element</h1>   #}  
+
+
+

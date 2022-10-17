@@ -1,0 +1,17 @@
+<!-- _menu.nunjucks -->
+    <section class="top-nav">
+      <div class="top-nav-logo-name">
+        <img src="./img/nav-logo.png" alt="" class="top-nav-logo">
+        <div class="top-nav-name">Xtal Ball Enterprise</div>
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+      <ul class="menu">
+        <li>Homepage</li>
+        <li>Create your generator</li>
+        <li>About Us</li>
+        <li><a href="#">Hello!1</a></li>
+      </ul>
+    </section>

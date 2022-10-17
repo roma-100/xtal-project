@@ -1,0 +1,78 @@
+@import '_init';
+
+.impression {
+    border: 1px solid $color-secondary-2-3;
+    margin: 1rem;
+    border-radius: 5px;
+    .impression-title {
+        text-align: center;
+        padding: 1rem;
+        /* color: $color-primary-4; */
+        color: $color-primary-2;
+        background-color: $color-secondary-2-2;
+        /* text-shadow: 0 0 3px $color-primary-1; */
+    }
+    .impression-container-img {
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+        .impression__visual {
+            max-width: 60%;
+            height: auto;
+            border-radius: 5px;
+/*             width: 50%;
+            height: 100px;
+            background: url('../img/t01_seismic.jpg') 0 0/contain no-repeat; */
+        }
+        .impression__generator-img {
+            width: 100px;
+            height: auto;
+
+            /* width: 20%;
+            height: 60px;
+            background: url('../img/06.png') 0 0/contain no-repeat; */
+        }
+    }
+    .impression__article {
+        &>* {
+            padding: .5rem;
+        }
+        &>h4 {
+            color: $color-secondary-2-0;
+        }
+        &>p {
+            text-indent: 1rem;
+        }
+        &>ul {
+            margin-left: 1rem;
+        }
+        &>ul>li {
+            line-height: 2rem;
+        }
+    }
+    .impression__find-out {
+        display: flex;
+        justify-content: center;
+        /* margin-right: 2rem; */
+        margin-bottom: 1rem;
+        
+        &>a {
+            display:inline-block; 
+            color: $color-secondary-1-2;
+            /* background-color: $color-secondary-1-2; */
+            /* border: 1px solid $color-secondary-1-3; */
+            padding: .5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            /* opacity: .8; */
+            font-family: 'Mina-Bold';
+            &:hover {
+                /* background-color: $color-primary-0; */
+                color: $color-secondary-1-3;
+                cursor: pointer;
+            }
+        }
+    }
+
+}

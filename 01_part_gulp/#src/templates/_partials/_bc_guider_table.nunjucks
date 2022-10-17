@@ -1,0 +1,50 @@
+<!-- _bc_guider_table.nunjucks -->
+<div class="table-guide">
+  <h2>Table Guide</h2>
+<table>
+<thead> <tr>
+<th>Model</th>
+<th><font color="#313030">Frequency range</font><br>
+</th>
+<th>Temperature stability in (-40+85)℃</th>
+<th>Packaging</th>
+</tr>
+</thead> <tbody>
+<tr>
+<td><a href='#' class='table-link'>XBO37/8</a></td>
+<td colspan="1" rowspan="5" rawspan="5">8-150 MHz
+fundamental</td>
+<td colspan="1" rowspan="2">To 3 ppb&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;DIP8 15x15x9.5 mm</td>
+</tr>
+<tr>
+<td><a href='#' class='table-link'>XBO37/8S</a></td>
+<td>DIP8 SMD&nbsp;</td>
+</tr>
+<tr>
+<td><a href='#' class='table-link'>XBO37/14</a></td>
+<td colspan="1" rowspan="2">To 2 ppb</td>
+<td>DIP14 15x21x9.5 mm</td>
+</tr>
+<tr>
+<td><a href='#' class='table-link'>XBO37/14S</a></td>
+<td>DIP14 SMD</td>
+</tr>
+<tr>
+<td><a href='#' class='table-link'>XBO37/R</a></td>
+<td>To 0.5 ppb</td>
+<td>&nbsp;Steel case 20x20x12.6 mm</td>
+</tr>
+<tr>
+<td><a href='#' class='table-link'>XBO37H/14</a></a></td>
+<td colspan="1" rowspan="2">24-300 MHz with multiplication&nbsp;&nbsp;</td>
+<td colspan="1" rowspan="2">&nbsp;To 2 ppb&nbsp;</td>
+<td>&nbsp;DIP14 15x21x9.5 mm</td>
+</tr>
+<tr>
+<td><a href='#' class='table-link'>XBO37H/14S</a></td>
+<td>DIP14 SMD&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>

@@ -1,0 +1,70 @@
+{   "homePage":
+  {"impressionArticles": [{
+    "title": "Clocks for under-water seismic geological exploration equipment",
+    "description": "Major requirements for these clocks are utmost frequency stability and lowest power consumption providing high accuracy of the geological data and long service-free employment of the battery fed equipment.",
+    "visualImg": "img/t01_seismic.jpg",
+    "visualTypeImg": "img/06.png",
+    "keySpecifications": ["Operation frequency: 8.192 or 16.384 MHz",
+                    "Operation frequency: 8.192 or 16.384 MHz",
+                    "Temperature stability: 5-0.5 ppb  in  (-10 +60) C",
+                    "Aging: 0.3-0.1 ppb/day",
+                    "Power consumption at 0 C: <90 mW",
+                    "Package type: 20x20x12.6 mm or DIP14"
+                  ]
+  },
+  {
+    "title": "High-end portable radio and GPS.",
+    "description": "These devices usually use battery supply and operate in wide ambient temperature range. They should provide high technical performances at minimal sizes, weight and power consumption. That requires usage of the reference oscillator possessing combination of the contradicting properties.",
+    "visualImg": "img/t11_radio.jpg",
+    "visualTypeImg": "img/06.png",
+    "keySpecifications": ["Operation frequency: 10-100 MHz",
+      "Temperature stability: 5-2 ppb in (-40 +85)℃   ",
+      "Aging: 0.5-0.3 ppb/day",
+      "Phase-noise: -100 dBc/Hz@1Hz  -170 dBc/Hz floor",
+      "Power consumption at 25 C: <150 mW ",
+      "Package type: DIP8 or DIP14, weight <5 g "
+                  ]
+  },
+  {
+    "title": "Mobile radars.",
+    "description": "The OCXOs used in this equipment operate at 100-150 MHz range on the fundamental mode, providing very low phase-noise level and acceleration sensitivity (that reduces influence of vibration), have small sizes and low power consumption.",
+    "visualImg": "img/t20_radar.jpg",
+    "visualTypeImg": "img/06.png",
+    "keySpecifications": ["Operation frequency: 100 MHz",
+      "Frequency stability: 50 ppb, (-40 +85)ºC   ",
+      "Phase-noise: -107 dBc/Hz@10 Hz; -175 dbc/Hz floor",
+      "Acceleration sensitivity : 0.3 ppb/g",
+      "Aging rate: 2 ppb/day ",
+      "Consumption: <170 mW",
+      "Package type: DIP14 compatible 15x21x9.5 mm"
+                  ]
+  },
+  {
+    "title": "High-end portable instrumentations.",
+    "description": "The reference oscillators embedded in this instrumentation to great extend determine its measurement capability and should therefore exhibit utmost frequency stability, very low phase-noise level, small sizes and low power consumption.",
+    "visualImg": "img/t30_measure.png",
+    "visualTypeImg": "img/06.png",
+    "keySpecifications": ["Frequency nominal: 10 MHz",
+      "Temperature stability: 0.5 ppb, (-40 +85)ºC ",
+      "Aging rate: 0.05 ppb/day",
+      "Allan deviation,1s: to 5E-13",
+      "Phase-noise level (dB/Hz): -115 @ 1 Hz, -170 floor ",
+      "Consumption: <160 mW ",
+      "Package type: 20x20x12.6 mm"
+                  ]
+  },
+  {
+    "title": "Portable atomic clocks.",
+    "description": "Each atomic clock requires embedded governed OCXO to provide necessary output power and low phase-noise level. The portable atomic clocks like CSAC have neither space nor power for usage of the conventional OCXOs. Therefore, usage of the miniature low power low phase-noise XBO oscillators are obviously most appropriate solution.",
+    "visualImg": "img/t40_atomic.jpg",
+    "visualTypeImg": "img/06.png",
+    "keySpecifications": ["Frequency nominal: 10 MHz",
+      "Temperature stability: 50 ppb, (-20 +70)ºC ",
+      "Aging rate: 0.5 ppb/day",
+      "Phase-noise level, dBc/Hz: -110 @ 1Hz, -170 @ 10 kHz",
+      "Consumption at 25 ºC: <130 mW ",
+      "Package type: DIP8 compatible 15x15x9.5 mm"
+                  ]
+  }
+]}
+}

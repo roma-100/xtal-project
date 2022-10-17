@@ -1,0 +1,16 @@
+<!-- index.nunjucks -->
+
+{% extends "_layout.nunjucks" %}
+
+{% block content %}
+
+{% include "_partials/_menu.nunjucks" %}
+
+{% include "_partials/_ba_guider_head.nunjucks" %}
+
+{% include "_partials/_bb_guider_tree.nunjucks" %}
+
+{% include "_partials/_bc_guider_table.nunjucks" %}
+
+
+{% endblock %}

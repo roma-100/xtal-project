@@ -1,0 +1,26 @@
+<!-- _bl_impression.nunjucks -->
+
+  <!-- Loops through "impressionArticles" array -->
+
+  {% for article in homePage.impressionArticles %}
+  <div class="impression">
+      <h4 class="impression-title">{{article.title}}</h4>
+    <div class="impression-container-img">
+            <img class="impression__visual" src='{{article.visualImg}}' alt='img_visual'>
+            <img class="impression__generator-img" src='{{article.visualTypeImg}}' alt='type-xtal'>
+    </div>	
+    <div class="impression__article">
+        <p>{{article.description}}</p>
+        <h4>Typical characteristics:</h4>
+        <ul>
+            {% for keySpec in article.keySpecifications %}
+            <li> {{keySpec}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="impression__find-out ">
+        <a href="#">Load spec example to edit and order</a>
+        {# <span>Find out more ></span> </div> #}
+    </div>
+  </div>   
+  {% endfor %}

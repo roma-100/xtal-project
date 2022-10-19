@@ -6,20 +6,7 @@
 
 {% include "_partials/_menu.nunjucks" %}
 
-<div class="hero-step2">
-  <h1 class="hello-name">Extraordinary OCXO solutions</h1>
-  <div class="hero-step2__circle-wrap">
-    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type1_200px.png" alt="xtall"></div>
-    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type2_200px.png" alt="xtall"></div>
-    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type3_200px.png" alt="xtall"></div>
-
-    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type4_200px.png" alt="xtall"></div>
-    <div class="hero-step2__circle"><img class="hero-step2__circle-img" src="img/type5_200px.png" alt="xtall"></div>
-  </div>
-</div>
-
-
-
+{% include "_partials/_home_b_hello.nunjucks" %}
 
 <div class="gen-models-filter__wrap">
   <h2>Aassistant</h2>

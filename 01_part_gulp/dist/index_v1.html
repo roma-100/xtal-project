@@ -1,0 +1,341 @@
+<!-- _layout.nunjucks -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="lib/animate.min.css" />
+</head>
+<body>
+    <!-- You write code for this content block in another file -->
+    
+   
+<!-- _menu.nunjucks -->
+    <section class="top-nav">
+      <div class="top-nav-logo-name">
+        <img src="./img/nav-logo.png" alt="" class="top-nav-logo">
+        <div class="top-nav-name">Xtal Ball Enterprise</div>
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+      <ul class="menu">
+        <li>Homepage</li>
+        <li>Create your generator</li>
+        <li>About Us</li>
+        <li><a href="#">Hello!1</a></li>
+      </ul>
+    </section>
+
+<!-- _home_a_hello.nunjucks -->
+
+
+    <div class="hero">
+        <div class="hero-container">
+        <!-- <div class="master"></div> -->
+
+
+            
+            <h1 class="hello-name">Extraordinary OCXO solutions</h1>
+            <div class="hello__circle-container">
+
+                <div class="circle1"><img class="circle-img" src="img/type1_200px.png" alt="xtall"></div>
+                <div class="circle2"><img class="circle-img" src="img/type2_200px.png" alt="xtall"></div>
+                <div class="circle3"><img class="circle-img" src="img/type3_200px.png" alt="xtall"></div>
+
+                <div class="circle4"><img class="circle-img" src="img/type4_200px.png" alt="xtall"></div>
+                <div class="circle5"><img class="circle-img" src="img/type5_200px.png" alt="xtall"></div>
+                <div class="circle6"><img class="circle-img" src="img/06.png" alt="xtall"></div>
+                
+                <h3 class="hello-mhz">(8-300 MHz)</h3>
+                 
+            </div>
+
+            
+        </div>
+
+    </div>
+
+
+  
+
+
+
+
+
+
+<p class='home-intro'>Xtal Ball Enterprise has created a new generation of advanced oven control crystal oscillators (OCXO) possessing extraordinary combination of utmost frequency stability, low phase-noise level miniature sizes and extremely low power consumption.</p>
+<!-- _home_tbl_attractive.nunjucks -->
+
+
+<div class="short-data2">
+    <div class="short-data__block1">
+      <p class="shord-data__title">Extremely low power consumption:</p>
+            <p class="shord-data__value">60 mW at (0-50)ºC, 120 mW at (-40 +85)º C</p>
+        <p class="shord-data__title">Very high frequency vs. temperature stability:</p>
+            <p class="shord-data__value">to 0.5 ppb in (-40 +85)ºC range</p>
+              <p class="shord-data__title">Very low phase noise level:</p>
+          <p class="shord-data__value">-115 dBc/Hz@1Hz</p>
+          <p class="shord-data__value">-173 dBc/Hz floor</p>
+
+    </div>
+    <div class="short-data__block0"></div>
+    <div class="short-data__block2">
+        <p class="shord-data__title">Very low “atomic rank” aging rate:</p>
+            <p class="shord-data__value">to 0.03 ppb/day</p>
+      <p class="shord-data__title">Very low acceleration sensitivity:</p>
+          <p class="shord-data__value">to 0.2 ppb/g</p>
+      <p class="shord-data__title">Fast warming-up:</p>
+          <p class="shord-data__value">45 s (to 0.1 ppm accuracy)</p>
+      <p class="shord-data__title">Miniature sizes:</p>
+          <p class="shord-data__value">compatible with DIP8, DIP14 or 20x20x12.6 mm</p>
+    </div>
+
+</div>
+
+<p class='home-intro'>Owing to the extraordinary performance the Xtal Ball OCXOs are today unreplaceable part of a variety of modern high-end equipment.</p>
+
+<!-- _bl_impression.nunjucks -->
+
+  <!-- Loops through "impressionArticles" array -->
+
+  
+  <div class="impression">
+      <h4 class="impression-title">Clocks for under-water seismic geological exploration equipment</h4>
+    <div class="impression-container-img">
+            <img class="impression__visual" src='img/t01_seismic.jpg' alt='img_visual'>
+            <img class="impression__generator-img" src='img/06.png' alt='type-xtal'>
+    </div>	
+    <div class="impression__article">
+        <p>Major requirements for these clocks are utmost frequency stability and lowest power consumption providing high accuracy of the geological data and long service-free employment of the battery fed equipment.</p>
+        <h4>Typical characteristics:</h4>
+        <ul>
+            
+            <li> Operation frequency: 8.192 or 16.384 MHz</li>
+            
+            <li> Operation frequency: 8.192 or 16.384 MHz</li>
+            
+            <li> Temperature stability: 5-0.5 ppb  in  (-10 +60) C</li>
+            
+            <li> Aging: 0.3-0.1 ppb/day</li>
+            
+            <li> Power consumption at 0 C: &lt;90 mW</li>
+            
+            <li> Package type: 20x20x12.6 mm or DIP14</li>
+            
+        </ul>
+    </div>
+    <div class="impression__find-out ">
+        <a href="#">Load spec example to edit and order</a>
+        
+    </div>
+  </div>   
+  
+  <div class="impression">
+      <h4 class="impression-title">High-end portable radio and GPS.</h4>
+    <div class="impression-container-img">
+            <img class="impression__visual" src='img/t11_radio.jpg' alt='img_visual'>
+            <img class="impression__generator-img" src='img/06.png' alt='type-xtal'>
+    </div>	
+    <div class="impression__article">
+        <p>These devices usually use battery supply and operate in wide ambient temperature range. They should provide high technical performances at minimal sizes, weight and power consumption. That requires usage of the reference oscillator possessing combination of the contradicting properties.</p>
+        <h4>Typical characteristics:</h4>
+        <ul>
+            
+            <li> Operation frequency: 10-100 MHz</li>
+            
+            <li> Temperature stability: 5-2 ppb in (-40 +85)℃   </li>
+            
+            <li> Aging: 0.5-0.3 ppb/day</li>
+            
+            <li> Phase-noise: -100 dBc/Hz@1Hz  -170 dBc/Hz floor</li>
+            
+            <li> Power consumption at 25 C: &lt;150 mW </li>
+            
+            <li> Package type: DIP8 or DIP14, weight &lt;5 g </li>
+            
+        </ul>
+    </div>
+    <div class="impression__find-out ">
+        <a href="#">Load spec example to edit and order</a>
+        
+    </div>
+  </div>   
+  
+  <div class="impression">
+      <h4 class="impression-title">Mobile radars.</h4>
+    <div class="impression-container-img">
+            <img class="impression__visual" src='img/t20_radar.jpg' alt='img_visual'>
+            <img class="impression__generator-img" src='img/06.png' alt='type-xtal'>
+    </div>	
+    <div class="impression__article">
+        <p>The OCXOs used in this equipment operate at 100-150 MHz range on the fundamental mode, providing very low phase-noise level and acceleration sensitivity (that reduces influence of vibration), have small sizes and low power consumption.</p>
+        <h4>Typical characteristics:</h4>
+        <ul>
+            
+            <li> Operation frequency: 100 MHz</li>
+            
+            <li> Frequency stability: 50 ppb, (-40 +85)ºC   </li>
+            
+            <li> Phase-noise: -107 dBc/Hz@10 Hz; -175 dbc/Hz floor</li>
+            
+            <li> Acceleration sensitivity : 0.3 ppb/g</li>
+            
+            <li> Aging rate: 2 ppb/day </li>
+            
+            <li> Consumption: &lt;170 mW</li>
+            
+            <li> Package type: DIP14 compatible 15x21x9.5 mm</li>
+            
+        </ul>
+    </div>
+    <div class="impression__find-out ">
+        <a href="#">Load spec example to edit and order</a>
+        
+    </div>
+  </div>   
+  
+  <div class="impression">
+      <h4 class="impression-title">High-end portable instrumentations.</h4>
+    <div class="impression-container-img">
+            <img class="impression__visual" src='img/t30_measure.png' alt='img_visual'>
+            <img class="impression__generator-img" src='img/06.png' alt='type-xtal'>
+    </div>	
+    <div class="impression__article">
+        <p>The reference oscillators embedded in this instrumentation to great extend determine its measurement capability and should therefore exhibit utmost frequency stability, very low phase-noise level, small sizes and low power consumption.</p>
+        <h4>Typical characteristics:</h4>
+        <ul>
+            
+            <li> Frequency nominal: 10 MHz</li>
+            
+            <li> Temperature stability: 0.5 ppb, (-40 +85)ºC </li>
+            
+            <li> Aging rate: 0.05 ppb/day</li>
+            
+            <li> Allan deviation,1s: to 5E-13</li>
+            
+            <li> Phase-noise level (dB/Hz): -115 @ 1 Hz, -170 floor </li>
+            
+            <li> Consumption: &lt;160 mW </li>
+            
+            <li> Package type: 20x20x12.6 mm</li>
+            
+        </ul>
+    </div>
+    <div class="impression__find-out ">
+        <a href="#">Load spec example to edit and order</a>
+        
+    </div>
+  </div>   
+  
+  <div class="impression">
+      <h4 class="impression-title">Portable atomic clocks.</h4>
+    <div class="impression-container-img">
+            <img class="impression__visual" src='img/t40_atomic.jpg' alt='img_visual'>
+            <img class="impression__generator-img" src='img/06.png' alt='type-xtal'>
+    </div>	
+    <div class="impression__article">
+        <p>Each atomic clock requires embedded governed OCXO to provide necessary output power and low phase-noise level. The portable atomic clocks like CSAC have neither space nor power for usage of the conventional OCXOs. Therefore, usage of the miniature low power low phase-noise XBO oscillators are obviously most appropriate solution.</p>
+        <h4>Typical characteristics:</h4>
+        <ul>
+            
+            <li> Frequency nominal: 10 MHz</li>
+            
+            <li> Temperature stability: 50 ppb, (-20 +70)ºC </li>
+            
+            <li> Aging rate: 0.5 ppb/day</li>
+            
+            <li> Phase-noise level, dBc/Hz: -110 @ 1Hz, -170 @ 10 kHz</li>
+            
+            <li> Consumption at 25 ºC: &lt;130 mW </li>
+            
+            <li> Package type: DIP8 compatible 15x15x9.5 mm</li>
+            
+        </ul>
+    </div>
+    <div class="impression__find-out ">
+        <a href="#">Load spec example to edit and order</a>
+        
+    </div>
+  </div>   
+  
+<hr>
+<br>
+<h2>Frequently Asked Questions</h2>
+<ul>
+  <li>What's the difference between...</li>
+  <li>What are key applications of ...</li>
+
+</ul>
+<hr>
+<br>
+<div class="footer">
+
+      <div class="footer-pruducts">
+    <h3>Products</h3>
+    <ul>
+      <li>OCXO and OCSO</li>
+      <li>TCXO</li>
+      <li>Crystal Resonators</li>
+      <li>System Solutions</li>
+      <li>5</li>
+    </ul>
+  </div>
+
+  <div class="footer-applications">
+    <h3>Applications</h3>
+    <ul>
+      <li>Telecommunications</li>
+      <li>Positioning</li>
+      <li>Automotive</li>
+      <li>Space</li>
+      <li>Defence</li>
+    </ul>
+  </div>
+
+  <div class="footer-resources">
+    <h3>Resources</h3>
+    <ul>
+      <li>Telecommunications</li>
+      <li>Parametric Search</li>
+      <li>Learning Hub</li>
+      <li>Reference Designs</li>
+      <li>Technical Documents</li>
+       <li>Glossary</li>
+    </ul>
+  </div>
+
+  <div class="footer-about">
+    <h3>About</h3>
+    <ul>
+      <li>About Us</li>
+      <li>Parametric Search</li>
+      <li>News</li>
+      <li>Innovation</li>
+      <li>Policies & Certifications</li>
+       <li>Careers</li>
+       <li>Partners</li>
+    </ul>
+  </div>
+
+  <div class="footer-contact">
+    <h3>Contact</h3>
+    <ul>
+      <li>About Us</li>
+      <li>Contact Us</li>
+      <li>Sign up to receive our product and technology updates</li>
+    </ul>
+  </div>
+
+</div>
+
+
+  
+ </body>
+
+<script src="js/script.js"></script>
+</html>

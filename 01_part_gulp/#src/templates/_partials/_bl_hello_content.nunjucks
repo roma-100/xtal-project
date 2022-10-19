@@ -1,0 +1,43 @@
+<!-- _bl_hello_content.nunjucks -->
+
+
+<div class="hello-article">
+    <h4 class="hello-article__title">Low Power High Stability Oven Control Crystal Oscillators (LP OCXOs)</h4>
+    <div class="hello-article__collage">
+        <div class="collage__circle"> <img  src="img/ocxos/type1_200px.png" alt="OCXOS pict"></div>
+        <div class="collage__circle"> <img  src="img/ocxos/type2_200px.png" alt="OCXOS pict"></div>
+        <div class="collage__circle"> <img  src="img/ocxos/type3_200px.png" alt="OCXOS pict"></div>
+        <div class="collage__circle"> <img  src="img/ocxos/type4_200px.png" alt="OCXOS pict"></div>
+    </div>
+    <p class="hello-article__content">Basing on unique Internally Heated Resonator Technology (IHRT) providing arrangement of the oven system inside the resonator vacuum holder Xtal Ball’s oscillators exhibit very high frequency stability and low phase-noise level at DIP8 or DIP14 compatible sizes and very low power consumption - about one order less than at the conventional OCXO designs.  Owing to the extraordinary performances the LP OCXOs have become unreplaceable solutions for a variety of portable or/and battery fed equipment such as high-end mobile radio, mobile radars, synthesizers, precision clocks, GPS navigation, portable instrumentation and others.</p>
+
+    <div class="hello-article__more">
+        <a href="#">Load spec example to edit and order</a>
+        {# <span>Find out more ></span> </div> #}
+    </div>
+
+</div>   
+
+<div class="hello-article">
+    <h4 class="hello-article__title">High Precision Low Power Real-Time Clock/Calendar</h4>
+    <div class="hello-article__collage">
+        <div class="collage__circle--large"> <img  src="img/ocxos/type5_200px.png" alt="Real-Time Clock/Calendar"></div>
+    </div>
+    <p class="hello-article__content">Basing on the LP OCXOs operating at 8.192 MHz or 16.384 MHz frequency these clocks ensure very high precision of 1 s time intervals at very low power consumption and small sizes. Owing to the very attractive combination of properties these clocks are now very demanded part of different modern equipment with battery supply, for instance, of  the underwater geological exploration equipment providing its long service-free period at high precision of the geological data.</p>
+    <div class="hello-article__more">
+        <a href="#">Load spec example to edit and order</a>
+        {# <span>Find out more ></span> </div> #}
+    </div>
+</div>  
+
+<div class="hello-article">
+    <h4 class="hello-article__title">Ultra stable Low Noise Low Power Frequency Reference </h4>
+    <div class="hello-article__collage">
+        <div class="collage__circle--large"> <img  src="img/ocxos/type5_200px.png" alt="Real-Time Clock/Calendar"></div>
+    </div>
+    <p class="hello-article__content">These miniature frequency standards using high stability LP OCXO together with PLL discipline option from external GPS or PSS signals provide very high short-term and long-term stability reaching the “atomic” rank of 0.03 ppb/day during long hold-over period. Owing to these excellent performances the references can be successfully used at high-end portable instrumentation and other modern high precision battery supply equipment.</p>
+    <div class="hello-article__more">
+        <a href="#">Load spec example to edit and order</a>
+        {# <span>Find out more ></span> </div> #}
+    </div>
+</div>  

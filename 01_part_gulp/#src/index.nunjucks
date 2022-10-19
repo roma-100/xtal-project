@@ -6,83 +6,14 @@
    
 {% include "_partials/_menu.nunjucks" %}
 
-{% include "_partials/_home_a_hello.nunjucks" %}
+{% include "_partials/_home_b_hello.nunjucks" %}
 
 
 <p class='home-intro'>Xtal Ball Enterprise has created a new generation of advanced oven control crystal oscillators (OCXO) possessing extraordinary combination of utmost frequency stability, low phase-noise level miniature sizes and extremely low power consumption.</p>
 {% include "_partials/_home_tbl_attractive.nunjucks" %}
 
 <p class='home-intro'>Owing to the extraordinary performance the Xtal Ball OCXOs are today unreplaceable part of a variety of modern high-end equipment.</p>
-
-{% include "_partials/_bl_impression.nunjucks" %}
-<hr>
-<br>
-<h2>Frequently Asked Questions</h2>
-<ul>
-  <li>What's the difference between...</li>
-  <li>What are key applications of ...</li>
-
-</ul>
-<hr>
-<br>
-<div class="footer">
-
-      <div class="footer-pruducts">
-    <h3>Products</h3>
-    <ul>
-      <li>OCXO and OCSO</li>
-      <li>TCXO</li>
-      <li>Crystal Resonators</li>
-      <li>System Solutions</li>
-      <li>5</li>
-    </ul>
-  </div>
-
-  <div class="footer-applications">
-    <h3>Applications</h3>
-    <ul>
-      <li>Telecommunications</li>
-      <li>Positioning</li>
-      <li>Automotive</li>
-      <li>Space</li>
-      <li>Defence</li>
-    </ul>
-  </div>
-
-  <div class="footer-resources">
-    <h3>Resources</h3>
-    <ul>
-      <li>Telecommunications</li>
-      <li>Parametric Search</li>
-      <li>Learning Hub</li>
-      <li>Reference Designs</li>
-      <li>Technical Documents</li>
-       <li>Glossary</li>
-    </ul>
-  </div>
-
-  <div class="footer-about">
-    <h3>About</h3>
-    <ul>
-      <li>About Us</li>
-      <li>Parametric Search</li>
-      <li>News</li>
-      <li>Innovation</li>
-      <li>Policies & Certifications</li>
-       <li>Careers</li>
-       <li>Partners</li>
-    </ul>
-  </div>
-
-  <div class="footer-contact">
-    <h3>Contact</h3>
-    <ul>
-      <li>About Us</li>
-      <li>Contact Us</li>
-      <li>Sign up to receive our product and technology updates</li>
-    </ul>
-  </div>
-
-</div>
+{% include "_partials/_bl_hello_content.nunjucks" %}
+{# {% include "_partials/_bl_impression.nunjucks" %} #}
 
 {% endblock %}

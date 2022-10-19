@@ -6,7 +6,7 @@
 
 {% include "_partials/_menu.nunjucks" %}
 
-{% include "_partials/_ba_guider_head.nunjucks" %}
+{% include "_partials/_home_b_hello.nunjucks" %}
 
 {% include "_partials/_bb_guider_tree.nunjucks" %}
 

@@ -9,10 +9,8 @@
 {% include "_partials/_home_b_hello.nunjucks" %}
 
 
-<p class='home-intro'>Xtal Ball Enterprise has created a new generation of advanced oven control crystal oscillators (OCXO) possessing extraordinary combination of utmost frequency stability, low phase-noise level miniature sizes and extremely low power consumption.</p>
-{% include "_partials/_home_tbl_attractive.nunjucks" %}
+<p class='home-intro'>Xtal Ball presents a new generation of the frequency control and timing products possessing extraordinary combination of high precision performances with small sizes and extremely low power consumption.</p>
 
-<p class='home-intro'>Owing to the extraordinary performance the Xtal Ball OCXOs are today unreplaceable part of a variety of modern high-end equipment.</p>
 {% include "_partials/_bl_hello_content.nunjucks" %}
 {# {% include "_partials/_bl_impression.nunjucks" %} #}
 

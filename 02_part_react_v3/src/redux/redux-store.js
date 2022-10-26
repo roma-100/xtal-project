@@ -4,10 +4,11 @@ import { legacy_createStore as createStore } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from "redux-form";
 import gen_modelsReducer from "./reducer-gen_models";
+import specFormReducer from "./reducer-spec-form";
 
 const reducers = combineReducers({
-  form: formReducer,
   gen_modelsReducer,
+  specFormReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

@@ -32,6 +32,9 @@ const HeaderMenu = (props) => {
           <NavLink to="./gen_models_hello">Model Types</NavLink>
         </li>
         <li>
+          <NavLink to="./specification">Specification Form</NavLink>
+        </li>        
+        <li>
           <NavLink to="./xtest">Test Page</NavLink>
         </li>
       </ul>

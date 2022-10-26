@@ -21,6 +21,7 @@ const GenModel = (props) => {
 }
 
 const modelActive =(props, filterInfo) => {
+  //props.genModelId
   return (
       <div className="gen-model">
       <div className="gen-model__title"><h4>{props.genModelTitle}</h4></div>
@@ -30,7 +31,7 @@ const modelActive =(props, filterInfo) => {
       src={props.genModelPicture} alt="xtal XBO37/8" /></div> 
       <div className="gen-model__info">{props.genModelPackaging}</div>
       <div className="gen-model__btn">
-      <Link to="/specification">Specification</Link>
+      <Link to={`/specification/${props.genModelId}`}>Specification</Link>
       </div>
   </div>
 )

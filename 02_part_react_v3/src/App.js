@@ -3,7 +3,8 @@ import "./App.scss";
 import "./assets/css/index.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer"
-import Xtest from "./components/Xtest/Xtest2";
+import Xtest from "./components/Xtest/Xtest5_form";
+import SpecificationContainer from "./components/Specification/SpecificationContainer"
 import {
   BrowserRouter,
   Switch,
@@ -19,7 +20,7 @@ function App(props) {
   return (
     <BrowserRouter basename="/" >
       <div className="app-wrapper">
-        <Header />
+        {/* <Header /> */}
 
         <main className="maincontent">
           <Routes>
@@ -34,13 +35,14 @@ function App(props) {
               element={<GenModelsHelloContainer />}
             />
             <Route path="/xtest" element={<Xtest />} />
+            <Route path="/specification/:generatorId" element={<SpecificationContainer />} />
             <Route
               path="/*"
               element={<GenModelsHelloContainer />}
             />
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

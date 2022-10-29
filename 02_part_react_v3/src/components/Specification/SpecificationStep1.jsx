@@ -4,8 +4,11 @@ import { useForm, Controller  } from "react-hook-form";
 import {TextField, Radio, FormLabel, RadioGroup, InputAdornment,OutlinedInput, 
   FormControl, FormControlLabel, FormHelperText
 } from '@mui/material/';
+import SpecificationBanerStep1 from "./SpecificationBannerStep1"
+
 
 const SpecificationStep1 = (props) => {
+    //console.log (props)
     const { control, handleSubmit, formState: { errors }  } = useForm({
       defaultValues: {
         nominalFrequency: '',
@@ -15,12 +18,24 @@ const SpecificationStep1 = (props) => {
     });
 
     const onSubmit = data => {
-      console.log(data)
+      props.specFormInputStep2(
+        {inputValueStep2: {
+        "nominalFrequency": data.nominalFrequency,
+        "stabilityVsTemperature": data.stabilityVsTemperature,
+        "voltage": data.voltage,
+          }
+        })
+     // console.log(data)
     
     };
     const look = errors => console.log(errors.firstName?.message)
   
     return (
+      <>
+      <SpecificationBanerStep1 
+      picturePath = {props.picturePath}
+      selectedModel = {props.selectedModel}
+      />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Controller
@@ -28,7 +43,7 @@ const SpecificationStep1 = (props) => {
             control={control}
             rules={{ required: "This is required", 
             maxLength: {
-              value: 8,
+              value: 10,
               message: "Value is too long"
             },
             minLength: {
@@ -38,15 +53,15 @@ const SpecificationStep1 = (props) => {
           }}
             render={({ field }) => {
               return (
-                <TextField sx={{ m: 1, width: '25ch' }} 
+                <TextField sx={{ m: 1, width: '90%' }} 
                 {...field} 
                 label='Nominal Frequency'
-                id="standard-size-small"
+                /* id="standard-size-small" */
                 /* sx={{ m: 1, width: '25ch' }} */
                 margin='dense'
                 variant="outlined"
                 error={errors.nominalFrequency ? true: false}
-                placeholder = {errors.nominalFrequency ? errors.nominalFrequency.message : '10'}
+                placeholder = {errors.nominalFrequency ? errors.nominalFrequency.message : '8...150'}
                 InputProps={{
                   startAdornment: <InputAdornment position="start">MHz</InputAdornment>
                 }}
@@ -72,10 +87,10 @@ const SpecificationStep1 = (props) => {
           }}
           render={({ field }) => {
             return (
-              <TextField sx={{ m: 1, width: '25ch' }} 
+              <TextField sx={{ m: 1, width: '90%' }} 
               {...field} 
               label='Stability vs. Temperature'
-              id="standard-size-small"
+              /* id="standard-size-small" */
               /* sx={{ m: 1, width: '25ch' }} */
               margin='dense'
               variant="outlined"
@@ -102,7 +117,7 @@ const SpecificationStep1 = (props) => {
               ({ field }) => {
               return (
                 <FormControl sx={{ m: 1, width: '25ch' }} >
-                <FormLabel id="demo-radio-buttons-group-label">Voltage</FormLabel>
+                <FormLabel id="demo-radio-buttons-group-label">Supply Voltage</FormLabel>
                     <RadioGroup 
                     {...field} 
                     aria-labelledby="demo-radio-buttons-group-label"
@@ -126,7 +141,7 @@ const SpecificationStep1 = (props) => {
         <input type="submit" />
         {/* <div><pre>{JSON.stringify(data, null, 2) }</pre></div>; */}
       </form>
-      
+      </>
     );
 
   }

@@ -20,7 +20,7 @@ function App(props) {
   return (
     <BrowserRouter basename="/" >
       <div className="app-wrapper">
-        {/* <Header /> */}
+        <Header />
 
         <main className="maincontent">
           <Routes>
@@ -42,7 +42,7 @@ function App(props) {
             />
           </Routes>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </BrowserRouter>
   );

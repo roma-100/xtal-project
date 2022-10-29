@@ -1,0 +1,46 @@
+<!-- pageStep1.nunjucks -->
+
+{% extends "_layout.nunjucks" %}
+
+{% block content %}
+
+{# {% include "_partials/_menu.nunjucks" %}
+
+{% include "_partials/_home_b_hello.nunjucks" %} #}
+
+<div class="speciication__wrap">
+  <div class="speciication-model__name"><h1>Model: XBO20</h1></div>
+  <div class="speciication-model__info-wrap">
+    <div class="speciication-model__left-side">
+      <div class="speciication-model__picture">
+        <img src="img/type1_200px.png" alt="OCXO pict">
+      </div>
+      <div class="speciication-model__package">
+        <span>Packaging</span>
+        <p>20х20х14 mm</p> 
+      </div>
+    </div>
+    <div class="speciication-model__right-side">
+      <h5>Fundamental 8...150MHz</h5>
+      <p>description</p>
+      <h5>Fundamental 8...150MHz</h5>
+      <p>description</p>
+      <h5>Fundamental 8...150MHz</h5>
+      <p>description</p>
+    </div>
+  </div>
+</div>
+
+<div class="speciication__wrap">
+      <h5>Fundamental 8...150MHz</h5>
+      <p>description</p>
+      <h5>Fundamental 8...150MHz</h5>
+      <p>description</p>
+      <h5>Fundamental 8...150MHz</h5>
+      <p>description</p>
+</div
+{#   <div class="footer-rights"></div> #}
+
+</div>
+
+{% endblock %}

@@ -17,7 +17,7 @@ const CREATE_TEMP_RANGE_STABILITY_ARRAY = "CREATE_TEMP_RANGE_STABILITY_ARRAY"
 const initialState = {
   models: [
     {
-      "id": 1,
+      "id": "1",
       "name": "XBO8",
       "frequencyRange": "8-150 MHz Fundamental",
       "frequencyType": "fundamental",
@@ -25,12 +25,13 @@ const initialState = {
       "temperatureStability": "To 3 ppb",
       "packaging": "DIP8 15x15x9.5 mm",
       "pictureName": "./pimages/type1_200px.png",
+      "pictureTag": "type1",
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "XBO8S",
       "frequencyRange": "8-150 Fundamental",
       "frequencyType": "fundamental",
@@ -38,12 +39,13 @@ const initialState = {
       "temperatureStability": "To 3 ppb",
       "packaging": "DIP8 SMD",
       "pictureName": "./pimages/type2_200px.png",
+      "pictureTag": "type2",
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "XBO14",
       "frequencyRange": "8-150 MHz Fundamental",
       "frequencyType": "fundamental",
@@ -51,12 +53,13 @@ const initialState = {
       "temperatureStability": "To 2 ppb",
       "packaging": "DIP14 15x21x9.5 mm",
       "pictureName": "./pimages/type3_200px.png",
+      "pictureTag": "type1",
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "XBO14S",
       "frequencyRange": "8-150 MHz Fundamental",
       "frequencyType": "fundamental",
@@ -64,12 +67,13 @@ const initialState = {
       "temperatureStability": "To 2 ppb",
       "packaging": "DIP14 SMD",
       "pictureName": "./pimages/type4_200px.png",
+      "pictureTag": "type3",
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "XBO20",
       "frequencyRange": "8-150 MHz Fundamental",
       "frequencyType": "fundamental",
@@ -77,12 +81,13 @@ const initialState = {
       "temperatureStability": "To 0.5 ppb",
       "packaging": "Steel case 20x20x12.6 mm",
       "pictureName": "./pimages/type5_200px.png",
+      "pictureTag": "type5",
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "XBOH20",
       "frequencyRange": "24-300 MHz Multiplication",
       "frequencyType": "with multiplication",
@@ -90,12 +95,13 @@ const initialState = {
       "temperatureStability": "To 0.5 ppb",
       "packaging": "Steel case 20x20x12.6 mm",
       "pictureName": "./pimages/type6_200px.png",
+      "pictureTag": "type5",
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "XBOH14",
       "frequencyRange": "24-300 MHz Multiplication",
       "frequencyType": "with multiplication",
@@ -103,12 +109,13 @@ const initialState = {
       "temperatureStability": "To 2 ppb ",
       "packaging": "DIP14 15x21x9.5 mm",
       "pictureName": "./pimages/type7_200px.png",
+      "pictureTag": "type4",
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "XBOH14S",
       "frequencyRange": "24-300 MHz Multiplication",
       "frequencyType": "with multiplication",
@@ -116,6 +123,7 @@ const initialState = {
       "temperatureStability": "To 2 ppb ",
       "packaging": "DIP14 SMD ",
       "pictureName": "./pimages/type8_200px.png",
+      "pictureTag": "type3",
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""

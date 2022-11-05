@@ -1,9 +1,15 @@
 import React from "react";
 import "./App.scss";
-import "./assets/css/index.css";
+//import "./assets/css/index.css";
+import "./assets/scss/_init.scss";
+import "./assets/scss/_fonts.scss";
+import "./assets/scss/_bl_hello_content.scss";
+import "./assets/scss/home_b_hello.scss";
+import "./assets/scss/menu.scss";
+import "./assets/scss/style.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer"
-import Xtest from "./components/Xtest/Xtest5_form";
+import Xtest from "./components/Xtest/Xtest6_form";
 import SpecificationContainer from "./components/Specification/SpecificationContainer"
 import {
   BrowserRouter,

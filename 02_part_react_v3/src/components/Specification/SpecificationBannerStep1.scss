@@ -1,0 +1,88 @@
+@import "../../assets/scss/init.scss";
+@import "../../assets/scss/fonts";
+
+$speciication__wrap--max-width: 400px;
+$speciication__circle--size: $speciication__wrap--max-width*0.38;
+
+.speciication__wrap--position {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .speciication-selected-banner_wrap--decor {
+    max-width: $speciication__wrap--max-width;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid $color-secondary-2-2;
+    border-radius: 1rem;
+
+    .speciication-model__title-name {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      margin: 0 auto;
+      border-bottom: 1px solid $color-secondary-2-2;
+      color: $color-secondary-2-0;
+      /* background-color: rgb(231, 195, 195); */
+    }
+
+    .speciication-model__title-frequency {
+      /* font-family: "Lobster-Regular"; */
+      color: $color-secondary-2-0;
+      text-align: center;
+    }
+
+    .speciication-model__info-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .speciication-model__picture {
+        margin: 1rem;
+        width: $speciication__circle--size;
+        height: $speciication__circle--size;
+        /* border: 1px solid $color-secondary-2-3; */
+        box-shadow: 0px 1px 10px $color-secondary-2-3;
+
+        /*       background-image: url('../../assets/img/type2_200px.png');
+      background-position: 8px 0;
+      background-repeat: no-repeat;
+      background-size: $speciication__wrap--max-width*.45 $speciication__wrap--max-width*.45; */
+
+        border-radius: 50%;
+        /*       padding: 3rem; */
+        border: 1 solid red;
+
+        &>img {
+          padding: 1rem;
+          width: $speciication__circle--size;
+          height: $speciication__circle--size;
+        }
+      }
+
+      .speciication-model__package {
+        font-size: .9rem;
+        color: $color-secondary-2-0;
+
+        &>span {
+          font-family: "Raleway-SemiBold";
+          font-size: .75rem;
+        }
+      }
+
+      .speciication-model__features {
+        margin-top: 1rem;
+        color:$color-secondary-1-4;
+      }
+    }
+
+  }
+}
+
+.button-specification_wrap {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}

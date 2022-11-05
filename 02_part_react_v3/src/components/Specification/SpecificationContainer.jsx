@@ -4,8 +4,13 @@ import React from "react";
 
 import { connect } from 'react-redux'
 import {compose} from 'redux'
-import {specFormInputStep1,
-  specFormInputStep2} from '../../redux/reducer-spec-form'
+import {
+  specFormInputStep2,
+  setStabilituVsTemperature,
+  initFrequencyBlurAC,
+  specFormInitStep2TC,
+  initSelectedModel
+  } from '../../redux/reducer-spec-form'
 
 //import SpecificationBannerStep1 from "./SpecificationBannerStep1"
 import SpecificationStep1 from './SpecificationStep1';
@@ -18,45 +23,37 @@ import {
   } from "react-router-dom";
 
 class SpecificationContainer extends React.Component {
-  state = {
-    //modelId: this.props.router.params.generatorId,
-    //temperatureRangeSelected: this.props.stGenModels.filterTemperatureRange,
-    //stepsLevel: this.props.stepsLevel
-
-  }
 
   componentDidMount() {
-    //Getting selected model
+
+    //Getting selected model from reducer-gen_models  -> to step2 (reducer-spec-form)
     const selectedModel = this.props.stGenModels.models
     .filter((value, index) => {
       //console.log(JSON.stringify(value.id, null, 2))
       return value.id === this.props.router.params.generatorId
-      //return value.id === 5
+      //return value.id === "5"
     })[0];
+/* Object { id: "2", name: "XBO8S", frequencyRange: "8-150 Fundamental", frequencyMin: "8", frequencyMax:  */
 
-    //test previous step and change state Step = 0
-    if (this.props.stGenModels.filterTemperatureRange) {
-      this.props.specFormInputStep1 (
-        {inputValueStep1: {
-          "id": this.props.router.params.generatorId,
-          "temperatureRangeSelected": this.props.stGenModels.filterTemperatureRange
-        }},
-        selectedModel
-      )
-    // step 2 start
+    // Get array StabilityVsTemperature from reducer-gen_models  -> to step2 (reducer-spec-form)
+    const selectedModelStabilityVsTemperature = this.props.stGenModels.temperatureRange
+    .filter((value, index) => {
+      //console.log(JSON.stringify(value.id, null, 2))
+      return value.range === this.props.stGenModels.filterTemperatureRange
+    })[0] .modelsStability
+    .filter((value, index)=> {
+      return value.modelId === this.props.router.params.generatorId
+    })[0].stabilityVsTemperature
+/*         stabilityVsTemperature:
+        {
+         frequency:[24, 100, 295],
+         stability:[5, 10, 20],
+        } */
 
-    }
-    
+this.props.specFormInitStep2TC(selectedModel, selectedModelStabilityVsTemperature)
 
-    //console.log(selectedModel)
-/*     function filterByID(item) {
-      if (Number.isFinite(item.id) && item.id !== 0) {
-        return true;
-      }
-      invalidEntries++;
-      return false;
-    } */
-    console.log ('SpecificationContainer did mount')
+
+    //console.log ('SpecificationContainer did mount')
 
 /*     console.log ('filterFrequencyType: ' + this.props.stGenModels.filterFrequencyType)
     console.log ('filterTemperatureRange: ' + this.props.stGenModels.filterTemperatureRange)
@@ -72,16 +69,14 @@ class SpecificationContainer extends React.Component {
   }
 
   render() {
-    console.log('hello1: ' 
+/*     console.log('hello1: ' 
     + "../../assets/img/types200/"+
     this.props.stSpecForm.selectedModel.pictureTag +
-    "_200px.png")
-    //window.bb = this.props.stSpecForm.selectedModel.pictureTag
+    "_200px.png") */
+    //window.bb = `${this.props.stSpecForm.selectedModel.frequencyMin}...${this.props.stSpecForm.selectedModel.frequencyMax}`
     //debugger
     return (
       <div>
-        
-      {/* <Banner /> */}
 
         <SpecificationStep1
         specFormInputStep2 = {this.props.specFormInputStep2}
@@ -89,12 +84,18 @@ class SpecificationContainer extends React.Component {
         this.props.stSpecForm.selectedModel.pictureTag +
         "_200px.png"}
         selectedModel = {this.props.stSpecForm.selectedModel}
-
+        stabilityVsTemperature = {this.props.stSpecForm.stabilityVsTemperature}
+        setStabilituVsTemperature = {this.props.setStabilituVsTemperature}
+        stabilityFromFrequencyBlur = {this.props.stSpecForm.stabilityFromFrequencyBlur}
+        frequencyRange={`"${this.props.stSpecForm.selectedModel.frequencyMin}...${this.props.stSpecForm.selectedModel.frequencyMax}"`}
             />
-        <StateSpecFormShow 
+
+
+{/*         <StateSpecFormShow 
         stSpecForm = {this.props.stSpecForm}
-        />    
-    </div>      
+        />   */}
+
+      </div>
     );
   }
 }
@@ -107,8 +108,11 @@ const mapStateToProps = (state) => {
   };
   
   const mapDispatchToProps = { 
-    specFormInputStep1,
-    specFormInputStep2
+    specFormInputStep2,
+    setStabilituVsTemperature,
+    initFrequencyBlurAC,
+    specFormInitStep2TC,
+    initSelectedModel
 /*     filterFrequencyTypeTC,
     filterInitTC,
     filterTemperatureRangeTC */

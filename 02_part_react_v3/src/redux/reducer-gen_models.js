@@ -20,12 +20,21 @@ const initialState = {
       "id": "1",
       "name": "XBO8",
       "frequencyRange": "8-150 MHz Fundamental",
+      "frequencyMin": "8",
+      "frequencyMax": "150",
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 3 ppb",
       "packaging": "DIP8 15x15x9.5 mm",
-      "pictureName": "./pimages/type1_200px.png",
       "pictureTag": "type1",
+      "features": [
+        "3 ppb in -40 +85ºC range",
+        "to 0.1 ppb/day, 15 ppb/year",
+        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to 0.3 ppb/G sensitivity",
+        "to 75 mW consumption",
+        "to 45s frequency warm-up"
+      ],
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
@@ -34,12 +43,21 @@ const initialState = {
       "id": "2",
       "name": "XBO8S",
       "frequencyRange": "8-150 Fundamental",
+      "frequencyMin": "8",
+      "frequencyMax": "150",
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 3 ppb",
       "packaging": "DIP8 SMD",
-      "pictureName": "./pimages/type2_200px.png",
       "pictureTag": "type2",
+      "features": [
+        "3 ppb in -40 +85ºC range",
+        "to 0.1 ppb/day, 15 ppb/year",
+        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to 0.3 ppb/G sensitivity",
+        "to 75 mW consumption",
+        "to 45s frequency warm-up"
+      ],
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
@@ -48,12 +66,21 @@ const initialState = {
       "id": "3",
       "name": "XBO14",
       "frequencyRange": "8-150 MHz Fundamental",
+      "frequencyMin": "8",
+      "frequencyMax": "150",
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 2 ppb",
       "packaging": "DIP14 15x21x9.5 mm",
-      "pictureName": "./pimages/type3_200px.png",
-      "pictureTag": "type1",
+      "pictureTag": "type4",
+      "features": [
+        "3 ppb in -40 +85ºC range",
+        "to 0.1 ppb/day, 15 ppb/year",
+        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to 0.3 ppb/G sensitivity",
+        "to 75 mW consumption",
+        "to 45s frequency warm-up"
+      ],
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
@@ -62,12 +89,21 @@ const initialState = {
       "id": "4",
       "name": "XBO14S",
       "frequencyRange": "8-150 MHz Fundamental",
+      "frequencyMin": "8",
+      "frequencyMax": "150",
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 2 ppb",
       "packaging": "DIP14 SMD",
-      "pictureName": "./pimages/type4_200px.png",
       "pictureTag": "type3",
+      "features": [
+        "3 ppb in -40 +85ºC range",
+        "to 0.1 ppb/day, 15 ppb/year",
+        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to 0.3 ppb/G sensitivity",
+        "to 75 mW consumption",
+        "to 45s frequency warm-up"
+      ],
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
@@ -76,12 +112,21 @@ const initialState = {
       "id": "5",
       "name": "XBO20",
       "frequencyRange": "8-150 MHz Fundamental",
+      "frequencyMin": "8",
+      "frequencyMax": "150",
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 0.5 ppb",
       "packaging": "Steel case 20x20x12.6 mm",
-      "pictureName": "./pimages/type5_200px.png",
       "pictureTag": "type5",
+      "features": [
+        "3 ppb in -40 +85ºC range",
+        "to 0.1 ppb/day, 15 ppb/year",
+        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to 0.3 ppb/G sensitivity",
+        "to 75 mW consumption",
+        "to 45s frequency warm-up"
+      ],
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
@@ -90,12 +135,21 @@ const initialState = {
       "id": "6",
       "name": "XBOH20",
       "frequencyRange": "24-300 MHz Multiplication",
+      "frequencyMin": "24",
+      "frequencyMax": "300",
       "frequencyType": "with multiplication",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 0.5 ppb",
       "packaging": "Steel case 20x20x12.6 mm",
-      "pictureName": "./pimages/type6_200px.png",
       "pictureTag": "type5",
+      "features": [
+        "3 ppb in -40 +85ºC range",
+        "to 0.1 ppb/day, 15 ppb/year",
+        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to 0.3 ppb/G sensitivity",
+        "to 75 mW consumption",
+        "to 45s frequency warm-up"
+      ],
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
@@ -104,12 +158,21 @@ const initialState = {
       "id": "7",
       "name": "XBOH14",
       "frequencyRange": "24-300 MHz Multiplication",
+      "frequencyMin": "24",
+      "frequencyMax": "300",
       "frequencyType": "with multiplication",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 2 ppb ",
       "packaging": "DIP14 15x21x9.5 mm",
-      "pictureName": "./pimages/type7_200px.png",
       "pictureTag": "type4",
+      "features": [
+        "3 ppb in -40 +85ºC range",
+        "to 0.1 ppb/day, 15 ppb/year",
+        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to 0.3 ppb/G sensitivity",
+        "to 75 mW consumption",
+        "to 45s frequency warm-up"
+      ],
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
@@ -118,12 +181,21 @@ const initialState = {
       "id": "8",
       "name": "XBOH14S",
       "frequencyRange": "24-300 MHz Multiplication",
+      "frequencyMin": "24",
+      "frequencyMax": "300",
       "frequencyType": "with multiplication",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 2 ppb ",
       "packaging": "DIP14 SMD ",
-      "pictureName": "./pimages/type8_200px.png",
       "pictureTag": "type3",
+      "features": [
+        "3 ppb in -40 +85ºC range",
+        "to 0.1 ppb/day, 15 ppb/year",
+        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to 0.3 ppb/G sensitivity",
+        "to 75 mW consumption",
+        "to 45s frequency warm-up"
+      ],
       "isActive": true,
       "temperatureRangeSelected": "",
       "stabilityLimit": ""
@@ -131,78 +203,360 @@ const initialState = {
   ],
   temperatureRange: [
     {
-      "id": 1,
+      "id": "1",
       "name": 'A',
       "range": '0ºC..50ºC',
       "modelsStability": [
-        { model: 'XBO8' , stability: 200, stabilityLimit: 2 },
-        { model: 'XBO8S' , stability: 200, stabilityLimit: 2 },
-        { model: 'XBO14' , stability: 200, stabilityLimit: 1 },
-        { model: 'XBO14S' , stability: 200, stabilityLimit: 1 },
-        { model: 'XBO20' , stability: 200, stabilityLimit: 0.3 },
-        { model: 'XBOH20' , stability: 200, stabilityLimit: 0.3 },
-        { model: 'XBOH14' , stability: 200, stabilityLimit: 5 },
-        { model: 'XBOH14S' , stability: 200, stabilityLimit: 5 }
+        { modelId: "1" ,
+          model: 'XBO8' ,
+         stabilityLimit: 1,
+         stabilityVsTemperature:
+         {
+          formula: 2,
+          frequency:[10, 100, 150],
+          stability:[2, 5, 10],
+         }
+         },
+        { modelId: "2" ,
+          model: 'XBO8S' , stabilityLimit: 2,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[2, 5, 10],
+        }
+        },
+        { modelId: "3" ,
+          model: 'XBO14' , stabilityLimit: 1,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 5, 10],
+        }
+        },
+        { modelId: "4" ,
+          model: 'XBO14S' , stabilityLimit: 1,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 5, 10],
+        }
+        },
+        { modelId: "5" ,
+          model: 'XBO20' , stabilityLimit: 0.3,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[0.3, 3, 6],
+        }
+        },
+        { modelId: "6" ,
+          model: 'XBOH20' , stabilityLimit: 0.3,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[0.3, 3, 6],
+        }
+        },
+        { modelId: "7" ,
+          model: 'XBOH14' , stabilityLimit: 5,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[5, 20, 10],
+        }
+        },
+        { modelId: "8" ,
+          model: 'XBOH14S' , stabilityLimit: 5,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[5, 20, 10],
+        }
+        },
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": 'B',
       "range": '-10ºC..60ºC',
       "modelsStability": [
-        { model: 'XBO8' , stability: 200, stabilityLimit: 2 },
-        { model: 'XBO8S' , stability: 200, stabilityLimit: 2 },
-        { model: 'XBO14' , stability: 200, stabilityLimit: 1 },
-        { model: 'XBO14S' , stability: 200, stabilityLimit: 1 },
-        { model: 'XBO20' , stability: 200, stabilityLimit: 0.3 },
-        { model: 'XBOH20' , stability: 200, stabilityLimit: 0.3 },
-        { model: 'XBOH14' , stability: 200, stabilityLimit: 5 },
-        { model: 'XBOH14S' , stability: 200, stabilityLimit: 5 }
+        { modelId: "1" ,
+          model: 'XBO8' , stabilityLimit: 2,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[2, 5, 10],
+        }
+        },
+        { modelId: "2" ,
+          model: 'XBO8S' , stabilityLimit: 2,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[2, 5, 10],
+        }
+        },
+        { modelId: "3" ,
+          model: 'XBO14' , stabilityLimit: 1,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 5, 10],
+        }
+        },
+        { modelId: "4" ,
+          model: 'XBO14S' , stabilityLimit: 1,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 5, 10],
+        }
+        },
+        { modelId: "5" ,
+          model: 'XBO20' , stabilityLimit: 0.3,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[0.3, 3, 6],
+        }
+        },
+        { modelId: "6" ,
+          model: 'XBOH20' , stabilityLimit: 0.3,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[0.3, 3, 6],
+        }
+        },
+        { modelId: "7",
+          model: 'XBOH14' , stabilityLimit: 5,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[5, 20, 10],
+        }
+        },
+        { modelId: "8",
+          model: 'XBOH14S' , stabilityLimit: 5,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[5, 20, 10],
+        }
+        },
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": 'C',
       "range": '-30ºC..70ºC',
       "modelsStability": [
-        { model: 'XBO8' , stability: 200, stabilityLimit: 2 },
-        { model: 'XBO8S' , stability: 200, stabilityLimit: 2 },
-        { model: 'XBO14' , stability: 200, stabilityLimit: 1 },
-        { model: 'XBO14S' , stability: 200, stabilityLimit: 1 },
-        { model: 'XBO20' , stability: 200, stabilityLimit: 0.5 },
-        { model: 'XBOH20' , stability: 200, stabilityLimit: 0.5 },
-        { model: 'XBOH14' , stability: 200, stabilityLimit: 10 },
-        { model: 'XBOH14S' , stability: 200, stabilityLimit: 10 }
+        { modelId: "1",
+          model: 'XBO8' , stabilityLimit: 2,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[2, 10, 20],
+        }
+        },
+        { modelId: "2",
+          model: 'XBO8S' , stabilityLimit: 2,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[2, 10, 20],
+        }
+        },
+        { modelId: "3",
+          model: 'XBO14' , stabilityLimit: 1,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 10, 20],
+        }
+        },
+        { modelId: "4",
+          model: 'XBO14S' , stabilityLimit: 1,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 10, 20],
+        }
+        },
+        { modelId: "5",
+          model: 'XBO20' , stabilityLimit: 0.5,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[0.5, 5, 10],
+        }
+        },
+        { modelId: "6",
+          model: 'XBOH20' , stabilityLimit: 0.5,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[0.3, 5, 10],
+        }
+        },
+        { modelId: "7",
+          model: 'XBOH14' , stabilityLimit: 10,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[10, 50, 100],
+        }
+        },
+        { modelId: "8",
+          model: 'XBOH14S' , stabilityLimit: 10,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[10, 50, 100],
+        }
+        },
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": 'D',
       "range": '-40ºC..85ºC',
       "modelsStability": [
-        { model: 'XBO8' , stability: 200, stabilityLimit: 3 },
-        { model: 'XBO8S' , stability: 200, stabilityLimit: 3 },
-        { model: 'XBO14' , stability: 200, stabilityLimit: 2 },
-        { model: 'XBO14S' , stability: 200, stabilityLimit: 2 },
-        { model: 'XBO20' , stability: 200, stabilityLimit: 0.5 },
-        { model: 'XBOH20' , stability: 200, stabilityLimit: 0.5 },
-        { model: 'XBOH14' , stability: 200, stabilityLimit: 10 },
-        { model: 'XBOH14S' , stability: 200, stabilityLimit: 10 }
+        { modelId: "1",
+          model: 'XBO8' , stabilityLimit: 3,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[3, 15, 30],
+        }
+        },
+        { modelId: "2",
+          model: 'XBO8S' , stabilityLimit: 3,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[3, 15, 30],
+        }
+        },
+        { modelId: "3",
+          model: 'XBO14' , stabilityLimit: 2,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 10, 20],
+        }
+        },
+        { modelId: "4",
+          model: 'XBO14S' , stabilityLimit: 2,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 10, 20],
+        }
+        },
+        { modelId: "5",
+          model: 'XBO20' , stabilityLimit: 0.5,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[0.5, 5, 10],
+        }
+        },
+        { modelId: "6",
+          model: 'XBOH20' , stabilityLimit: 0.5,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[0.3, 3, 6],
+        }
+        },
+        { modelId: "7",
+          model: 'XBOH14' , stabilityLimit: 10,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[10, 50, 100],
+        }
+        },
+        { modelId: "8",
+          model: 'XBOH14S' , stabilityLimit: 10,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[10, 50, 100],
+        }
+        },
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": 'E',
       "range": '-60ºC..85ºC',
       "modelsStability": [
-        { model: 'XBO8' , stability: 200, stabilityLimit: 10 },
-        { model: 'XBO8S' , stability: 200, stabilityLimit: 10 },
-        { model: 'XBO14' , stability: 200, stabilityLimit: 5 },
-        { model: 'XBO14S' , stability: 200, stabilityLimit: 5 },
-        { model: 'XBO20' , stability: 200, stabilityLimit: 5 },
-        { model: 'XBOH20' , stability: 200, stabilityLimit: 5 },
-        { model: 'XBOH14' , stability: 200, stabilityLimit: 20 },
-        { model: 'XBOH14S' , stability: 200, stabilityLimit: 20 }
+        { modelId: "1",
+          model: 'XBO8' , stabilityLimit: 10,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[10, 30, 60],
+        }
+        },
+        { modelId: "2",
+          model: 'XBO8S' , stabilityLimit: 10,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[10, 30, 60],
+        }
+        },
+        { modelId: "3",
+          model: 'XBO14' , stabilityLimit: 5,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 30, 60],
+        }
+        },
+        { modelId: "4",
+          model: 'XBO14S' , stabilityLimit: 5,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 30, 60],
+        }
+        },
+        { modelId: "5",
+          model: 'XBO20' , stabilityLimit: 5,
+        stabilityVsTemperature:
+        {
+          frequency:[10, 100, 150],
+         stability:[1, 10, 20],
+        }
+        },
+        { modelId: "6",
+          model: 'XBOH20' , stabilityLimit: 5,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[5, 10, 20],
+        }
+        },
+        { modelId: "7",
+          model: 'XBOH14' , stabilityLimit: 30,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[30, 100, 200],
+        }
+        },
+        { modelId: "8",
+          model: 'XBOH14S' , stabilityLimit: 20,
+        stabilityVsTemperature:
+        {
+          frequency:[30, 300, 450],
+         stability:[30, 100, 200],
+        }
+        },
       ]
     }
   ],

@@ -3,10 +3,12 @@ import React from "react";
 import "./SpecificationBannerStep1.scss"
 
 const SpecificationBannerStep1 = (props) => {
-  //window.bb = props
-    const picturePath = "../../pimages/types200/"+
+  
+  const {picturePath} = props
+  
+/*     const picturePath = "../../pimages/types200/"+
           props.selectedModel.pictureTag +
-          "_200px.png"
+          "_200px.png" */
           //console.log (picturePath)
 /*     const extractFeatures = props.selectedModel.features.map((feature,index) =>{
       <p>hello</p>

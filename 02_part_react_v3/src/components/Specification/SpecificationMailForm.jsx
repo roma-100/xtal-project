@@ -1,9 +1,10 @@
+/* SpecificationMailForm.jsx */
 import * as React from "react";
 import { useForm, Controller } from "react-hook-form";
-import Box from "@mui/material/Box";
-import { TextField, FormControl, FormHelperText, Button } from "@mui/material";
+import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/material";
 
-export default function App() {
+ const SpecificationMailForm =(props) => {
+   const {onSubmit, status} = props
   const {
     control,
     handleSubmit,
@@ -16,14 +17,53 @@ export default function App() {
       message: "",
     },
   });
-  const onSubmit = (data) => console.log(data);
+  //const onSubmit = (data) => console.log(data);
   //const look = (errors) => console.log(errors.fullName?.message);
+
+  const formElementDecor = {
+    textField: {
+
+      width: "300px",
+      display: "flex",
+      justifyContent: "center",
+    },
+  }
+  const infoSubmitted = () => <div className="speciication-mail_title--success" >Information submitted</div>
+  const submittedField = (status) => {
+    if (!status){ 
+    return (
+      <div className="button-specification_wrap" >
+      <div className="button-specification_btn">
+        <Button variant="contained" color="success" type="submit">
+          Submit
+        </Button>
+      </div>
+    </div>
+    )}
+    if (status==='SUCCESS'){
+      return (
+        <Alert severity="success" color="info" sx={{width: 300}}>
+          Information submitted
+        </Alert>
+      )
+     }
+     if (status==='FAILED'){
+      return (
+        <Alert variant="filled" severity="error" sx={{width: 300}}>
+          Connection failed. Please try again.
+        </Alert>
+      )
+     }
+
+  }
 
   return (
     <div className="speciication-mail__wrap">
     <div className="speciication-mail_title">
-       <p>Contact information</p> 
-    </div>
+        
+        <p>Contact information</p>
+     </div>
+
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* ++++++++ Start Field fullName ++++++ */}
       <div className="specification-mail__field">
@@ -33,13 +73,13 @@ export default function App() {
           rules={{
             required: "This is required",
             maxLength: {
-              value: 5,
+              value: 100,
               message: "This is too long",
             },
           }}
           render={({ field }) => {
             return (
-              <FormControl>
+              <FormControl sx={formElementDecor.textField} >
                 <TextField
                   {...field}
                   label="Full Name"
@@ -77,7 +117,7 @@ export default function App() {
           }}
           render={({ field }) => {
             return (
-              <FormControl>
+              <FormControl sx={formElementDecor.textField}>
                 <TextField
                   {...field}
                   label="E-mail"
@@ -108,7 +148,7 @@ export default function App() {
           rules={{ maxLength: 12 }}
           render={({ field }) => {
             return (
-              <FormControl>
+              <FormControl sx={formElementDecor.textField}>
                 <TextField
                   {...field}
                   label="Your phone"
@@ -139,7 +179,7 @@ export default function App() {
           rules={{}}
           render={({ field }) => {
             return (
-              <FormControl>
+              <FormControl sx={formElementDecor.textField}>
                 <TextField
                   {...field}
                   label="Label message"
@@ -163,15 +203,12 @@ export default function App() {
         />
       </div>
       {/* ++++++++ Start Field message ++++++ */}
+      {/* Buttons show */}
+      { submittedField(status)} 
 
-      <div className="button-specification_wrap">
-        <div className="button-specification_btn">
-          <Button variant="contained" color="success" type="submit">
-            Submit
-          </Button>
-        </div>
-      </div>
     </form>
     </div>
   );
 }
+
+export default SpecificationMailForm

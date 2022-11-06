@@ -2,6 +2,7 @@
 @import "../../assets/scss/fonts";
 
 $speciication__wrap--max-width: 400px;
+$speciication__src-internal--width: 300px;
 $speciication__circle--size: $speciication__wrap--max-width*0.38;
 
 .speciication__wrap--position {
@@ -61,7 +62,10 @@ $speciication__circle--size: $speciication__wrap--max-width*0.38;
           height: $speciication__circle--size;
         }
       }
-
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       .speciication-model__package {
         font-size: .9rem;
         color: $color-secondary-2-0;
@@ -83,6 +87,53 @@ $speciication__circle--size: $speciication__wrap--max-width*0.38;
 
 .button-specification_wrap {
   display: flex;
-  justify-content: center;
-  margin: 1rem;
+  justify-content: space-between;
+  /* margin: 1rem; */
+  .button-specification_btn {
+    margin: 0 1rem 0 1rem;
+    height: 3rem;
+  }
+
 }
+
+.specification-form__wrap {
+  /*     display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; */
+      .radiogroup--decor {
+          /* background-color: #52520011; */
+          width: 91%;
+          margin: 1rem;
+          border: 1px solid rgba(0, 0, 0, 0.336);
+          border-radius: 6px;
+      }
+  }
+  .speciication__head-table {
+    background-color: $color-secondary-2-0;
+    color: white;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+    padding: .5rem;
+  }
+
+.speciication-mail__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  
+
+  .speciication-mail_title{
+    /* background-color: $color-secondary-2-0; */
+    color: $color-secondary-2-0;
+    border-bottom: 1px solid $color-secondary-2-0;
+    display: inline-block;
+    width: $speciication__src-internal--width;
+    text-align: center;
+    font-family: Raleway-SemiBold;
+  }
+}  

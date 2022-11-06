@@ -9,7 +9,8 @@ import "./assets/scss/menu.scss";
 import "./assets/scss/style.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer"
-import Xtest from "./components/Xtest/Xtest6_form";
+import Xtest6 from "./components/Xtest/Xtest6_form";
+import XtestMail from "./components/Xtest/Xtest7_mail";
 import SpecificationContainer from "./components/Specification/SpecificationContainer"
 import {
   BrowserRouter,
@@ -40,7 +41,8 @@ function App(props) {
               path="/gen_models_hello"
               element={<GenModelsHelloContainer />}
             />
-            <Route path="/xtest" element={<Xtest />} />
+            <Route path="/xtest-mail" element={<XtestMail />} />
+            <Route path="/xtest" element={<Xtest6 />} />
             <Route path="/specification/:generatorId" element={<SpecificationContainer />} />
             <Route
               path="/*"

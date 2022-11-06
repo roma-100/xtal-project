@@ -205,7 +205,7 @@ const initialState = {
     {
       "id": "1",
       "name": 'A',
-      "range": '0ºC..50ºC',
+      "range": '0..50ºC',
       "modelsStability": [
         { modelId: "1" ,
           model: 'XBO8' ,
@@ -278,7 +278,7 @@ const initialState = {
     {
       "id": "2",
       "name": 'B',
-      "range": '-10ºC..60ºC',
+      "range": '-10..60ºC',
       "modelsStability": [
         { modelId: "1" ,
           model: 'XBO8' , stabilityLimit: 2,
@@ -349,7 +349,7 @@ const initialState = {
     {
       "id": "3",
       "name": 'C',
-      "range": '-30ºC..70ºC',
+      "range": '-30..70ºC',
       "modelsStability": [
         { modelId: "1",
           model: 'XBO8' , stabilityLimit: 2,
@@ -420,7 +420,7 @@ const initialState = {
     {
       "id": "4",
       "name": 'D',
-      "range": '-40ºC..85ºC',
+      "range": '-40..85ºC',
       "modelsStability": [
         { modelId: "1",
           model: 'XBO8' , stabilityLimit: 3,
@@ -491,7 +491,7 @@ const initialState = {
     {
       "id": "5",
       "name": 'E',
-      "range": '-60ºC..85ºC',
+      "range": '-60..85ºC',
       "modelsStability": [
         { modelId: "1",
           model: 'XBO8' , stabilityLimit: 10,

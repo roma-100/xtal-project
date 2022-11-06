@@ -37,6 +37,9 @@ const HeaderMenu = (props) => {
         <li>
           <NavLink to="./xtest">Test Page</NavLink>
         </li>
+        <li>
+          <NavLink to="./xtest-mail">Test Mail</NavLink>
+        </li>        
       </ul>
     </section>
   );

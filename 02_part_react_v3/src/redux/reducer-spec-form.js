@@ -1,10 +1,12 @@
 // === reducer-spec-form.js ===
 const INPUT_SET_STEP2 = "INPUT_SET_STEP2"
+const SET_STEPS_LEVEL_FINISH = "SET_STEPS_LEVEL_FINISH" //stepsLevel=10
 const INIT_SELECTED_MODEL = "INIT_SELECTED_MODEL"
 const INIT_SELECTED_STABILITY_VS_TEMPERATURE = "INIT_SELECTED_STABILITY_VS_TEMPERATURE"
 const INIT_FREQUENCY_BLUR = "INIT_FREQUENCY_BLUR"
 const SET_FREQUENCY_BLUR = "SET_FREQUENCY_BLUR"
 const GET_STABILITY_VS_TEMPERATURE = "GET_STABILITY_VS_TEMPERATURE"
+
 
 const initialState = {
   selectedModel: {},
@@ -39,7 +41,7 @@ if (action.type === INIT_SELECTED_MODEL) {
       ...state,
       selectedModel: action.selectedModel,
       stabilityFromFrequencyBlur: state.selectedModel.stabilityLimit,
-      stepsLevel: 2
+      stepsLevel: 1
   }
   //debugger
   return stateCopy
@@ -107,6 +109,16 @@ if (action.type === GET_STABILITY_VS_TEMPERATURE) {
   return stateCopy
 }
 
+if (action.type === SET_STEPS_LEVEL_FINISH) {
+  //action.selectedModel
+  const stateCopy = { 
+      ...state,
+      stepsLevel: 10
+  }
+  //debugger
+  return stateCopy
+}
+
 //debugger
 return state
 
@@ -118,11 +130,11 @@ const setFrequencyBlurAC = (frequencyBlurValue) => ({type: SET_FREQUENCY_BLUR, f
 const getStabilityVsTemperature = () => ({type: GET_STABILITY_VS_TEMPERATURE});
 export const initSelectedModel = (selectedModel) => ({type: INIT_SELECTED_MODEL, selectedModel});
 export const initsselectedModelStabilityVsTemperature = (selectedModelStabilityVsTemperature) => ({type: INIT_SELECTED_STABILITY_VS_TEMPERATURE, selectedModelStabilityVsTemperature});
-
+export const setStepsLevelFinish = () => ({type: SET_STEPS_LEVEL_FINISH});
 //FREQUENCY_BLUR
 export const specFormInitStep2TC = (selectedModel, selectedModelStabilityVsTemperature) =>{ //temperatureRange has been already selested
   //console.log("specFormInitStep2TC  ffooo")
-  window.bc = selectedModel
+  //window.bc = selectedModel
   return (dispatch) => {
     dispatch(initSelectedModel(selectedModel))
     dispatch(initsselectedModelStabilityVsTemperature(selectedModelStabilityVsTemperature))

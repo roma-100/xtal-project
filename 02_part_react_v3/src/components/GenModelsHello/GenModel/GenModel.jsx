@@ -29,7 +29,7 @@ const modelActive =(props, filterInfo) => {
       <div className="gen-model__info">{props.genModelFrequencyRange}</div>
       {filterInfo}
       <div className="gen-model__picture"><img className="gen-model__picture--decor" 
-      src={props.genModelPicture} alt="xtal XBO37/8" /></div> 
+      src={props.genModelPicture} alt={props.genModelTitle} /></div> 
       <div className="gen-model__info">{props.genModelPackaging}</div>
       {props.genModelTemperatureRange ? 
         <div className="gen-model__btn">

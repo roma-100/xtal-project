@@ -1,10 +1,12 @@
 /* SpecificationMailForm.jsx */
-import * as React from "react";
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/material";
 
  const SpecificationMailForm =(props) => {
-   const {onSubmit, status} = props
+  const [backBtn, setBackBtn] = useState(false);
+   const {onSubmit, status, filterInitTC} = props
   const {
     control,
     handleSubmit,
@@ -23,19 +25,31 @@ import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/mate
   const formElementDecor = {
     textField: {
 
-      width: "300px",
+      width: "330px",
+      ml: 2,
       display: "flex",
       justifyContent: "center",
     },
   }
+  const handleClickBtnReset = () => {
+    filterInitTC() //resset store filter
+    setBackBtn(true)
+    //console.log('clicked!')
+  }
+
   const infoSubmitted = () => <div className="speciication-mail_title--success" >Information submitted</div>
   const submittedField = (status) => {
     if (!status){ 
     return (
-      <div className="button-specification_wrap" >
+      <div className="button-specification_wrap">
       <div className="button-specification_btn">
-        <Button variant="contained" color="success" type="submit">
-          Submit
+        <Button variant="contained" onClick={handleClickBtnReset}>
+          Reset
+        </Button>
+      </div>
+      <div className="button-specification_btn">
+        <Button variant="contained"  type="submit">
+          Submit Specification
         </Button>
       </div>
     </div>
@@ -57,6 +71,7 @@ import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/mate
 
   }
 
+const validForm = () => {
   return (
     <div className="speciication-mail__wrap">
     <div className="speciication-mail_title">
@@ -182,7 +197,7 @@ import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/mate
               <FormControl sx={formElementDecor.textField}>
                 <TextField
                   {...field}
-                  label="Label message"
+                  label="Your message"
                   id="outlined-multiline-flexible"
                   //error="true"
                   /* defaultValue="Small" */
@@ -208,7 +223,10 @@ import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/mate
 
     </form>
     </div>
-  );
+  )
+}
+
+  return ( !backBtn ? validForm() : <Navigate to="/gen_models_hello" />);
 }
 
 export default SpecificationMailForm

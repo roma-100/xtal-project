@@ -2,7 +2,8 @@ import React from "react";
 import GenModel from "./GenModel/GenModel";
 import FilterFrequencyType from "./GenFilter/FlterFrequencyType"
 import FilterTemperatureRange from "./GenFilter/FlterTemperatureRange"
-
+import StateSpecFormShowHelper from "../Helper/StateSpecFormShowHelper"
+ 
 /* https://mui.com/material-ui/react-radio-button/#api */
 
 const GenModelsHello = (props) => {
@@ -53,11 +54,7 @@ const genModel = props.gen_models.models.map((x, index) => {
         <div className="gen-models">{genModel}</div>
       </div>
 
-{/*       <div>
-        {" "}
-        <p>GenModelsHello Props:</p>
-        <pre>{JSON.stringify(props, null, 2)}</pre>
-      </div> */}
+      <StateSpecFormShowHelper stSpecForm={props} />
     </>
   );
 };

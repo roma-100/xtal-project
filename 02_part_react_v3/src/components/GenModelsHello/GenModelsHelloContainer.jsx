@@ -4,6 +4,7 @@ import GenModelsHello from "./GenModelsHello";
 import { filterFrequencyTypeTC,
   filterInitTC,
   filterTemperatureRangeTC } from "../../redux/reducer-gen_models";
+  import { resetSpecFormDataAC } from "../../redux/reducer-spec-form";
 import { connect } from "react-redux";
 //import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
@@ -13,7 +14,7 @@ class GenModelsHelloContainer extends React.Component {
     //console.log ('DialogsContainer props: ' + this.props.dialogPages.dialogs[0].name)
     //console.log(this.props)
     this.props.filterInitTC() // Initialise Frequency Type, Temperature Range
-  
+    this.props.resetSpecFormDataAC() // for correct working spec Form chain
   }
   render() {
     //debugger
@@ -48,7 +49,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = { 
   filterFrequencyTypeTC,
   filterInitTC,
-  filterTemperatureRangeTC
+  filterTemperatureRangeTC,
+  resetSpecFormDataAC
 
 }
 

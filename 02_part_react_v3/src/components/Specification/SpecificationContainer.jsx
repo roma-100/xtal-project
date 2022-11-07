@@ -11,8 +11,13 @@ import {
   initFrequencyBlurAC,
   specFormInitStep2TC,
   initSelectedModel,
-  setStepsLevelFinish
+  setEmailDataAC,
+  setStepsLevelFinish,
+  resetSpecFormDataAC
+
 } from "../../redux/reducer-spec-form";
+import {filterInitTC} from "../../redux/reducer-gen_models"
+
 
 //import SpecificationBannerStep1 from "./SpecificationBannerStep1"
 import SpecificationStep1 from "./SpecificationStep1";
@@ -27,6 +32,7 @@ import {
 class SpecificationContainer extends React.Component {
 
   componentDidMount() {
+    //if (this.state.isDidMount) { return 1}
     //Getting selected model from reducer-gen_models  -> to step2 (reducer-spec-form)
     const selectedModel = this.props.stGenModels.models.filter(
       (value, index) => {
@@ -57,12 +63,15 @@ class SpecificationContainer extends React.Component {
       selectedModel,
       selectedModelStabilityVsTemperature
     );
+
+    //this.state.isDidMount = true //Let's Stop didMount twice
   }
   
   render() {
     const picturePath = "../../pimages/types200/"+
     this.props.stSpecForm.selectedModel.pictureTag +
     "_200px.png"
+    
     // +++ Start Form Step 1 Component ++++++
     const specStep1 = () => {
     
@@ -80,6 +89,7 @@ class SpecificationContainer extends React.Component {
               this.props.stSpecForm.stabilityFromFrequencyBlur
             }
             frequencyRange={`${this.props.stSpecForm.selectedModel.frequencyMin}...${this.props.stSpecForm.selectedModel.frequencyMax}`}
+            filterInitTC = {this.props.filterInitTC}
           />
         </div>
       );
@@ -89,6 +99,7 @@ class SpecificationContainer extends React.Component {
     /*  === main Render ==== */
     const renderComponent = () => {
       if (this.props.stSpecForm.stepsLevel === 1) {
+        //this.props.resetSpecFormDataAC()
         return specStep1();
       }
       if (this.props.stSpecForm.stepsLevel === 2) {
@@ -97,7 +108,9 @@ class SpecificationContainer extends React.Component {
             dataForm={this.props.stSpecForm}
             picturePath={picturePath}
             selectedModel={this.props.stSpecForm.selectedModel}
+            setEmailDataAC = {this.props.setEmailDataAC}
             setStepsLevelFinish= {this.props.setStepsLevelFinish}
+            filterInitTC = {this.props.filterInitTC}
           />
         );
       }
@@ -130,7 +143,10 @@ const mapDispatchToProps = {
   initFrequencyBlurAC,
   specFormInitStep2TC,
   initSelectedModel,
-  setStepsLevelFinish
+  setEmailDataAC,
+  setStepsLevelFinish,
+  resetSpecFormDataAC,
+  filterInitTC
   /*     filterFrequencyTypeTC,
     filterInitTC,
     filterTemperatureRangeTC */

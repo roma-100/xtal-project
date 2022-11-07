@@ -71,6 +71,12 @@ const SpecificationStep1 = (props) => {
   const handleOnBlur = (e) => {
     props.setStabilituVsTemperature(e);
   };
+
+  const handleClickBtnReset = () => {
+    props.filterInitTC()
+    setBackBtn(true)
+    //console.log('clicked!')
+  }
   //console.log('stabilityFromFrequencyBlur ++->: ' + props.stabilityFromFrequencyBlur)
   const validForm = () => {
     return (
@@ -313,12 +319,12 @@ const SpecificationStep1 = (props) => {
 
               <div className="button-specification_wrap">
                 <div className="button-specification_btn">
-                  <Button variant="contained" onClick={() => setBackBtn(true)}>
+                  <Button variant="contained" onClick={handleClickBtnReset}>
                     Reset
                   </Button>
                 </div>
                 <div className="button-specification_btn">
-                  <Button variant="contained" color="success" type="submit">
+                  <Button variant="contained"  type="submit">
                     Submit Specification
                   </Button>
                 </div>
@@ -332,8 +338,8 @@ const SpecificationStep1 = (props) => {
     );
   };
 
-  return !backBtn ? validForm() : <Navigate to="/gen_models_hello" />;
+  return !backBtn ? validForm() :  <Navigate to="/gen_models_hello" />;
+  //return validForm()
 };
-
 
 export default SpecificationStep1;

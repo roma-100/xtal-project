@@ -11,8 +11,10 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 const SpecificationBannerStep2 = (props) => {
-      const {dataForm} = props
-      function createData(name, value) {
+      const {dataForm, emailData} = props
+
+      const rows = []
+/*       function createData(name, value) {
         return { name, value };
       }
       
@@ -27,17 +29,32 @@ const SpecificationBannerStep2 = (props) => {
         createData("Output Type:", dataForm.inputValueStep2.outputType.toUpperCase()),
       ];
       
+      window.bbb = rowsEmailData
+      window.bbc = rows
+      
+          if (!this.state.isDidMount) { 
+      //decode data for transfer to mailSender
+      for (const [key, value] of Object.entries(emailData)) {
+        this.state.emailDataRows.push ({name: key, value: value})
+      }
+    } else this.state.isDidMount = true  //Let's Stop didMount twice
+    */
+   //decode data for transfer to mailSender
+   for (const [key, value] of Object.entries(emailData)) {
+    rows.push ({name: key, value: value})
+  }
+
       return (
         <>
-   
-        <div className="speciication__wrap--position">
-          <div className="speciication__wrap--position">
-    
-            <div className="speciication__head-table">
+        <div className="speciication-selected__wrap">
+              <div className="speciication__head-table">
               <p>Selected data</p> 
-            </div>
+            </div> 
+        <div className=".speciication-selected--size ">
+   
+
             <TableContainer component={Paper}>
-              <Table sx={{ minWidth: 300}} size="normal" aria-label="simple table">
+              <Table sx={{ maxWidth: 300}} size="normal" aria-label="simple table">
                 <TableBody>
                   {rows.map((row) => (
                     <TableRow
@@ -54,7 +71,7 @@ const SpecificationBannerStep2 = (props) => {
               </Table>
             </TableContainer>
           </div>
-        </div>
+          </div>
         </>
       );
   }

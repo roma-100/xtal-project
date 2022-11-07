@@ -25,7 +25,7 @@ const initialState = {
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 3 ppb",
-      "packaging": "DIP8 15x15x9.5 mm",
+      "packaging": "DIP8 15.3x16x10 mm",
       "pictureTag": "type1",
       "features": [
         "3 ppb in -40 +85ºC range",
@@ -48,7 +48,7 @@ const initialState = {
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 3 ppb",
-      "packaging": "DIP8 SMD",
+      "packaging": "SMD 15.3x16x9.5 mm",
       "pictureTag": "type2",
       "features": [
         "3 ppb in -40 +85ºC range",
@@ -71,10 +71,10 @@ const initialState = {
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 2 ppb",
-      "packaging": "DIP14 15x21x9.5 mm",
+      "packaging": "DIP14 15.3x20.5x10 mm",
       "pictureTag": "type4",
       "features": [
-        "3 ppb in -40 +85ºC range",
+        "2 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
         "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
         "to 0.3 ppb/G sensitivity",
@@ -94,10 +94,10 @@ const initialState = {
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 2 ppb",
-      "packaging": "DIP14 SMD",
+      "packaging": "SMD 15.3x20.5x9.5 mm",
       "pictureTag": "type3",
       "features": [
-        "3 ppb in -40 +85ºC range",
+        "2 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
         "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
         "to 0.3 ppb/G sensitivity",
@@ -117,10 +117,10 @@ const initialState = {
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 0.5 ppb",
-      "packaging": "Steel case 20x20x12.6 mm",
+      "packaging": "Metal case 20.2x20.2x12.0 mm",
       "pictureTag": "type5",
       "features": [
-        "3 ppb in -40 +85ºC range",
+        "0.5 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
         "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
         "to 0.3 ppb/G sensitivity",
@@ -140,14 +140,14 @@ const initialState = {
       "frequencyType": "with multiplication",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 0.5 ppb",
-      "packaging": "Steel case 20x20x12.6 mm",
+      "packaging": "Metal case 20.2x20.2x12.0 mm",
       "pictureTag": "type5",
       "features": [
-        "3 ppb in -40 +85ºC range",
+        "0.5 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
-        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to -100dBc/Hz @ 1Hz (30MHz OCXO)",
         "to 0.3 ppb/G sensitivity",
-        "to 75 mW consumption",
+        "to 90 mW consumption",
         "to 45s frequency warm-up"
       ],
       "isActive": true,
@@ -163,14 +163,14 @@ const initialState = {
       "frequencyType": "with multiplication",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 2 ppb ",
-      "packaging": "DIP14 15x21x9.5 mm",
+      "packaging": "DIP14 15.3x20.5x10 mm",
       "pictureTag": "type4",
       "features": [
-        "3 ppb in -40 +85ºC range",
+        "10 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
-        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to -100dBc/Hz @ 1Hz (30MHz OCXO)",
         "to 0.3 ppb/G sensitivity",
-        "to 75 mW consumption",
+        "to 90 mW consumption",
         "to 45s frequency warm-up"
       ],
       "isActive": true,
@@ -186,14 +186,14 @@ const initialState = {
       "frequencyType": "with multiplication",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 2 ppb ",
-      "packaging": "DIP14 SMD ",
+      "packaging": "SMD 15.3x20.5x9.5 mm",
       "pictureTag": "type3",
       "features": [
-        "3 ppb in -40 +85ºC range",
+        "10 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
-        "to -110dBc/Hz @ 1Hz, -173 dBc/Hz floor",
+        "to -100dBc/Hz @ 1Hz, (30MHz OCXO)",
         "to 0.3 ppb/G sensitivity",
-        "to 75 mW consumption",
+        "to 90 mW consumption",
         "to 45s frequency warm-up"
       ],
       "isActive": true,
@@ -212,7 +212,6 @@ const initialState = {
          stabilityLimit: 1,
          stabilityVsTemperature:
          {
-          formula: 2,
           frequency:[10, 100, 150],
           stability:[2, 5, 10],
          }
@@ -255,6 +254,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[0.3, 3, 6],
+         frequency40:[50, 500, 750],
+         stability40:[0.3, 3, 6],         
         }
         },
         { modelId: "7" ,
@@ -263,6 +264,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[5, 20, 10],
+         frequency40:[50, 500, 750],
+         stability40:[5, 20, 10],
         }
         },
         { modelId: "8" ,
@@ -271,6 +274,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[5, 20, 10],
+         frequency40:[50, 500, 750],
+         stability40:[5, 20, 10],
         }
         },
       ]
@@ -326,6 +331,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[0.3, 3, 6],
+         frequency40:[50, 500, 750],
+         stability40:[0.3, 3, 6],
         }
         },
         { modelId: "7",
@@ -333,7 +340,9 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
-         stability:[5, 20, 10],
+         stability:[5, 30, 60],
+         frequency40:[50, 500, 750],
+         stability40:[5, 30, 60],
         }
         },
         { modelId: "8",
@@ -341,7 +350,9 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
-         stability:[5, 20, 10],
+         stability:[5, 30, 60],
+         frequency40:[50, 500, 750],
+         stability40:[5, 30, 60],
         }
         },
       ]
@@ -397,6 +408,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[0.3, 5, 10],
+         frequency40:[50, 500, 750],
+         stability40:[.5, 5, 10],
         }
         },
         { modelId: "7",
@@ -405,6 +418,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[10, 50, 100],
+         frequency40:[50, 500, 750],
+         stability40:[10, 50, 100],
         }
         },
         { modelId: "8",
@@ -413,6 +428,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[10, 50, 100],
+         frequency40:[50, 500, 750],
+         stability40:[10, 50, 100],
         }
         },
       ]
@@ -443,7 +460,7 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[10, 100, 150],
-         stability:[1, 10, 20],
+         stability:[2, 10, 20],
         }
         },
         { modelId: "4",
@@ -451,7 +468,7 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[10, 100, 150],
-         stability:[1, 10, 20],
+         stability:[2, 10, 20],
         }
         },
         { modelId: "5",
@@ -467,7 +484,9 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
-         stability:[0.3, 3, 6],
+         stability:[1, 10, 20],
+         frequency40:[50, 500, 750],
+         stability40:[.5, 5, 10],
         }
         },
         { modelId: "7",
@@ -475,7 +494,9 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
-         stability:[10, 50, 100],
+         stability:[10, 100, 200],
+         frequency40:[50, 500, 750],
+         stability40:[10, 100, 200],
         }
         },
         { modelId: "8",
@@ -483,7 +504,9 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
-         stability:[10, 50, 100],
+         stability:[10, 100, 200],
+         frequency40:[50, 500, 750],
+         stability40:[10, 100, 200],
         }
         },
       ]
@@ -514,7 +537,7 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[10, 100, 150],
-         stability:[1, 30, 60],
+         stability:[5, 30, 60],
         }
         },
         { modelId: "4",
@@ -522,7 +545,7 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[10, 100, 150],
-         stability:[1, 30, 60],
+         stability:[5, 30, 60],
         }
         },
         { modelId: "5",
@@ -538,7 +561,9 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
-         stability:[5, 10, 20],
+         stability:[1, 10, 20],
+         frequency40:[50, 500, 750],
+         stability40:[1, 10, 20],
         }
         },
         { modelId: "7",
@@ -547,6 +572,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[30, 100, 200],
+         frequency40:[50, 500, 750],
+         stability40:[30, 100, 200],
         }
         },
         { modelId: "8",
@@ -555,6 +582,8 @@ const initialState = {
         {
           frequency:[30, 300, 450],
          stability:[30, 100, 200],
+         frequency40:[50, 500, 750],
+         stability40:[30, 100, 200],
         }
         },
       ]
@@ -588,7 +617,7 @@ const gen_modelsReducer = (state = initialState, action) => {
 
   if (action.type === FILTERS_RESET) {
     //set free all models
-    let stateCopy = JSON.parse(JSON.stringify(state))
+    let stateCopy = {...initialState}
   
     return stateCopy
   }
@@ -732,8 +761,9 @@ export const filterTemperatureRangeTC = (event) =>{
 }
 
 export const filterInitTC = () => {
-
+    //console.log('gggg')
   return (dispatch) => {
+    dispatch(filtersReset)
     dispatch(filterFrequencyFreeApplyAC)
     dispatch(initTemperatureRangeArray)
 

@@ -109,15 +109,7 @@ $speciication__circle--size: $speciication__wrap--max-width*0.38;
           border-radius: 6px;
       }
   }
-  .speciication__head-table {
-    background-color: $color-secondary-2-0;
-    color: white;
-    width: 100%;
-    text-align: center;
-    display: inline-block;
-    font-size: 1rem;
-    padding: .5rem;
-  }
+
 
 .speciication-mail__wrap {
   display: flex;
@@ -125,7 +117,7 @@ $speciication__circle--size: $speciication__wrap--max-width*0.38;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-  
+
 
   .speciication-mail_title{
     /* background-color: $color-secondary-2-0; */
@@ -136,4 +128,27 @@ $speciication__circle--size: $speciication__wrap--max-width*0.38;
     text-align: center;
     font-family: Raleway-SemiBold;
   }
+  .button-specification_wrap {
+    margin: 2rem 0 2rem 0;
+  }
 }  
+.speciication-selected__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pad: 1rem;
+  .speciication-selected--size {
+    width: $speciication__src-internal--width;
+  }
+
+  .speciication__head-table {
+    background-color: $color-secondary-2-0;
+    color: white;
+    width: $speciication__src-internal--width;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+    padding: .5rem;
+  }
+}

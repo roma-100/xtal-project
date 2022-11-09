@@ -20,7 +20,14 @@ import {filterInitTC} from "../../redux/reducer-gen_models"
 
 
 //import SpecificationBannerStep1 from "./SpecificationBannerStep1"
-import SpecificationStep1 from "./SpecificationStep1";
+import SpecificationBannerStep1 from "./SpecificationBannerStep1"
+import SpecificationBannerStep2 from "./SpecificationBannerStep2"
+
+import SpecificationStep2 from "./SpecificationStep2";
+
+import SpecificationStep3fund from "./SpecificationStep3fund";
+import SpecificationStep3mult from "./SpecificationStep3mult";
+
 import {
   Navigate, // == redirect
   useLocation,
@@ -67,20 +74,33 @@ class SpecificationContainer extends React.Component {
     //this.state.isDidMount = true //Let's Stop didMount twice
   }
   
+ 
   render() {
     const picturePath = "../../pimages/types200/"+
     this.props.stSpecForm.selectedModel.pictureTag +
     "_200px.png"
     
-    // +++ Start Form Step 1 Component ++++++
-    const specStep1 = () => {
+    const specBannerStep1 = () => {
+      return (
+        <SpecificationBannerStep1
+        picturePath={picturePath}
+        selectedModel={this.props.stSpecForm.selectedModel}
+        features={this.props.stSpecForm.selectedModel.features}
+      />
+      )
+    }
+    // +++ Start Form Step 2 Component ++++++
+    const specStep2 = () => {
     
       return (
         <div>
-          <SpecificationStep1
+          {specBannerStep1()}
+
+          <SpecificationStep2
             specFormInputStep2={this.props.specFormInputStep2}
             picturePath={picturePath}
             selectedModel={this.props.stSpecForm.selectedModel}
+            formFieldsRules={this.props.stSpecForm.formFieldsRules}
             stabilityVsTemperature={
               this.props.stSpecForm.stabilityVsTemperature
             }
@@ -90,19 +110,65 @@ class SpecificationContainer extends React.Component {
             }
             frequencyRange={`${this.props.stSpecForm.selectedModel.frequencyMin}...${this.props.stSpecForm.selectedModel.frequencyMax}`}
             filterInitTC = {this.props.filterInitTC}
+
           />
         </div>
       );
     };
-    // +++ End Form Step 1 Component ++++++
+    // +++ End Form Step 2 Component ++++++
 
+    // +++ Start Form Step 3 Component ++++++
+    const specStep3 = () => {
+      if (this.props.stSpecForm.selectedModel.frequencyType === 'fundamental') {
+      return (
+        <div>
+          {specBannerStep1()}
+
+          <SpecificationBannerStep2
+            dataForm={this.props.stSpecForm}
+          />          
+
+          <SpecificationStep3fund
+            dataForm={this.props.stSpecForm}
+            setEmailDataAC = {this.props.setEmailDataAC}
+            filterInitTC = {this.props.filterInitTC}
+          />
+        </div>
+      );
+    }
+
+    if (this.props.stSpecForm.selectedModel.frequencyType === 'with multiplication') {
+      return (
+        <div>
+          {specBannerStep1()}
+
+          <SpecificationBannerStep2
+            dataForm={this.props.stSpecForm}
+          />          
+
+          <SpecificationStep3mult
+            dataForm={this.props.stSpecForm}
+            setEmailDataAC = {this.props.setEmailDataAC}
+            filterInitTC = {this.props.filterInitTC}
+          />
+        </div>
+      );
+    }
+
+    };
+    // +++ End Form Step 2 Component ++++++
+    
     /*  === main Render ==== */
     const renderComponent = () => {
       if (this.props.stSpecForm.stepsLevel === 1) {
         //this.props.resetSpecFormDataAC()
-        return specStep1();
+        return specStep2();
       }
       if (this.props.stSpecForm.stepsLevel === 2) {
+        return specStep3()
+      }
+
+      if (this.props.stSpecForm.stepsLevel === 3) {
         return (
           <SpecificationSubmit
             dataForm={this.props.stSpecForm}

@@ -36,12 +36,47 @@ if (action.type === RESET_SPEC_FORM_DATA) {
   
 if (action.type === INPUT_SET_STEP2) {
   //console.log("ffooo")  
-  const inputValueStep2 = action.pushValueStep2
+  const submitData = action.submitDataArr.inputValueStep2
+
+  const emailData =()=> {
+    if (state.selectedModel.frequencyType === 'with multiplication') {
+      return (
+        {
+          'Model': state.selectedModel.name,
+          'Packaging': state.selectedModel.packaging,
+          'FrequencyType': 'MULTIPLICATION',
+          'Frequency': submitData.nominalFrequency + ' MHz',
+          'Temperature Range': state.selectedModel.temperatureRangeSelected,
+          'Stability vs Temperature': submitData.stabilityVsTemperature + ' ppb',
+          'Supply Voltage': submitData.voltage + ' V',
+          'Output Type': submitData.outputType.toUpperCase()
+        }
+      )
+    }
+    return (
+      {
+        'Model': state.selectedModel.name,
+        'Packaging': state.selectedModel.packaging,
+        'Frequency': submitData.nominalFrequency + ' MHz',
+        'Temperature Range': state.selectedModel.temperatureRangeSelected,
+        'Stability vs Temperature': submitData.stabilityVsTemperature + ' ppb',
+        'Supply Voltage': submitData.voltage + ' V',
+        'Output Type': submitData.outputType.toUpperCase()
+      }
+    )
+  };
+/*   console.log(submitData.nominalFrequency + ' MHz')
+  console.log(submitData.voltage + ' V')
+  console.log(submitData.stabilityVsTemperature + ' ppb')
+  console.log(submitData.outputType.toUpperCase()) */
+  window.bc = submitData
+
   //debugger
   const stateCopy = { 
       ...state,
-      ...inputValueStep2,
-      stepsLevel: 2
+      ...action.submitDataArr,
+      emailData: emailData(),
+      stepsLevel: 2,
   }
   //debugger
   return stateCopy
@@ -154,7 +189,7 @@ return state
 
 };
 
-export const specFormInputStep2 = (pushValueStep2) => ({type: INPUT_SET_STEP2, pushValueStep2});
+export const specFormInputStep2 = (submitDataArr) => ({type: INPUT_SET_STEP2, submitDataArr});
 export const initFrequencyBlurAC = () => ({type: INIT_FREQUENCY_BLUR});
 const setFrequencyBlurAC = (frequencyBlurValue) => ({type: SET_FREQUENCY_BLUR, frequencyBlurValue});
 const getStabilityVsTemperature = () => ({type: GET_STABILITY_VS_TEMPERATURE});

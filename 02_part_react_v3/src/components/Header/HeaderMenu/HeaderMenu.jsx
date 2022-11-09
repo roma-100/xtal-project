@@ -25,21 +25,14 @@ const HeaderMenu = (props) => {
         <div className="menu-button"></div>
       </label>
       <ul className="menu" onClick={() => setIsChecked((prev) => !prev)} >
-        <li>Homepage</li>
-        <li>Create your generator</li>
+      <li>
+          <NavLink to="./">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="./gen_models_hello">OCXO Models</NavLink>
+        </li>   
         <li>About Us</li>
-        <li>
-          <NavLink to="./gen_models_hello">Model Types</NavLink>
-        </li>
-        <li>
-          <NavLink to="./specification">Specification Form</NavLink>
-        </li>        
-        <li>
-          <NavLink to="./xtest">Test Page</NavLink>
-        </li>
-        <li>
-          <NavLink to="./xtest-mail">Test Mail</NavLink>
-        </li>        
+        <li>Contacts</li>
       </ul>
     </section>
   );

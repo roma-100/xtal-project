@@ -17,18 +17,35 @@ class SpecificationSubmit extends React.Component {
 
     const { dataForm, setEmailDataAC } = this.props
 
-    const emailData = {
-      'Model': dataForm.selectedModel.name,
-      'Packaging': dataForm.selectedModel.packaging,
-      'FrequencyType': dataForm.selectedModel.frequencyType.toUpperCase(),
-      'Frequency': dataForm.inputValueStep2.nominalFrequency + ' MHz',
-      'Temperature Range': dataForm.selectedModel.temperatureRangeSelected,
-      'Stability vs Temperature': dataForm.inputValueStep2.stabilityVsTemperature + ' ppb',
-      'Supply Voltage': dataForm.inputValueStep2.voltage + ' V',
-      'Output Type': dataForm.inputValueStep2.outputType.toUpperCase()
+    const emailData =()=> {
+      if (dataForm.selectedModel.frequencyType === 'with multiplication') {
+        return (
+          {
+            'Model': dataForm.selectedModel.name,
+            'Packaging': dataForm.selectedModel.packaging,
+            'FrequencyType': 'MULTIPLICATION',
+            'Frequency': dataForm.inputValueStep2.nominalFrequency + ' MHz',
+            'Temperature Range': dataForm.selectedModel.temperatureRangeSelected,
+            'Stability vs Temperature': dataForm.inputValueStep2.stabilityVsTemperature + ' ppb',
+            'Supply Voltage': dataForm.inputValueStep2.voltage + ' V',
+            'Output Type': dataForm.inputValueStep2.outputType.toUpperCase()
+          }
+        )
+      }
+      return (
+        {
+          'Model': dataForm.selectedModel.name,
+          'Packaging': dataForm.selectedModel.packaging,
+          'Frequency': dataForm.inputValueStep2.nominalFrequency + ' MHz',
+          'Temperature Range': dataForm.selectedModel.temperatureRangeSelected,
+          'Stability vs Temperature': dataForm.inputValueStep2.stabilityVsTemperature + ' ppb',
+          'Supply Voltage': dataForm.inputValueStep2.voltage + ' V',
+          'Output Type': dataForm.inputValueStep2.outputType.toUpperCase()
+        }
+      )
     };
 
-    setEmailDataAC (emailData)
+    setEmailDataAC (emailData())
     
 
     

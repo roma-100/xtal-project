@@ -1,7 +1,7 @@
 @import "../../assets/scss/init.scss";
 @import "../../assets/scss/fonts";
 
-$speciication__wrap--max-width: 400px;
+$speciication__wrap--max-width: 300px;
 $speciication__src-internal--width: 300px;
 $speciication__circle--size: $speciication__wrap--max-width*0.38;
 
@@ -12,7 +12,7 @@ $speciication__circle--size: $speciication__wrap--max-width*0.38;
   align-items: center;
 
   .speciication-selected-banner_wrap--decor {
-    max-width: $speciication__wrap--max-width;
+    width: $speciication__wrap--max-width;
     margin: 1rem;
     padding: 1rem;
     border: 1px solid $color-secondary-2-2;
@@ -138,6 +138,7 @@ $speciication__circle--size: $speciication__wrap--max-width*0.38;
   justify-content: center;
   align-items: center;
   pad: 1rem;
+  
   .speciication-selected--size {
     width: $speciication__src-internal--width;
   }
@@ -150,5 +151,38 @@ $speciication__circle--size: $speciication__wrap--max-width*0.38;
     display: inline-block;
     font-size: 1rem;
     padding: .5rem;
+  }
+}
+
+.speciication-banner2__wrap--position {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .speciication-banner2-selected_wrap--decor {
+    width: $speciication__src-internal--width;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid $color-secondary-2-2;
+    border-radius: 1rem;
+    .speification-banner2__title {
+      color: $color-secondary-2-0;
+      text-align: center;
+      border-bottom: 1px solid $color-secondary-2-0;
+      margin-bottom: 1rem;
+    }
+    .speification-banner2__row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: .9rem;
+      color: $color-secondary-2-0;
+
+      .speification-banner2__row--name {
+        font-family: "Raleway-SemiBold";
+        font-size: .75rem;
+      }
+    }
   }
 }

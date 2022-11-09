@@ -81,15 +81,7 @@ const SpecificationStep1 = (props) => {
   const validForm = () => {
     return (
       <>
-        {/* Start Banner +++++++++++ */}
-        {
-          <SpecificationBanerStep1
-            picturePath={props.picturePath}
-            selectedModel={props.selectedModel}
-            features={props.selectedModel.features}
-          />
-        }
-        {/* END Banner +++++++++++ */}
+
         <div className="speciication__wrap--position">
           {/* Start Form  +++++++++++ */}
           <div className="specification-form__wrap">

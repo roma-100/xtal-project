@@ -8,6 +8,7 @@ import "./assets/scss/home_b_hello.scss";
 import "./assets/scss/menu.scss";
 import "./assets/scss/style.scss";
 import Header from "./components/Header/Header";
+import Home from "./components/AlphaHome/Home"
 import Footer from "./components/Footer/Footer"
 import Xtest6 from "./components/Xtest/Xtest6_form";
 import XtestMail from "./components/Xtest/Xtest7_mail";
@@ -31,13 +32,9 @@ function App(props) {
 
         <main className="maincontent">
           <Routes>
-            {/* profile/:userId? опциональный */}
-            <Route
-              /* path="/gen_models_hello" */
-              path="/"
-              element={<GenModelsHelloContainer />}
-            />
-                        <Route
+            <Route path="/" element={<Home />}  />
+            <Route path="/home" element={<Home />}  />
+              <Route
               path="/gen_models_hello"
               element={<GenModelsHelloContainer />}
             />
@@ -46,7 +43,7 @@ function App(props) {
             <Route path="/specification/:generatorId" element={<SpecificationContainer />} />
             <Route
               path="/*"
-              element={<GenModelsHelloContainer />}
+              element={<Home />}
             />
           </Routes>
         </main>

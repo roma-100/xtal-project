@@ -19,7 +19,7 @@ const initialState = {
     {
       "id": "1",
       "name": "XBO8",
-      "frequencyRange": "8-150 MHz Fundamental",
+      "frequencyRange": "8-150 MHz",
       "frequencyMin": "8",
       "frequencyMax": "150",
       "frequencyType": "fundamental",
@@ -42,7 +42,7 @@ const initialState = {
     {
       "id": "2",
       "name": "XBO8S",
-      "frequencyRange": "8-150 Fundamental",
+      "frequencyRange": "8-150 MHz",
       "frequencyMin": "8",
       "frequencyMax": "150",
       "frequencyType": "fundamental",
@@ -65,7 +65,7 @@ const initialState = {
     {
       "id": "3",
       "name": "XBO14",
-      "frequencyRange": "8-150 MHz Fundamental",
+      "frequencyRange": "8-150 MHz",
       "frequencyMin": "8",
       "frequencyMax": "150",
       "frequencyType": "fundamental",
@@ -88,7 +88,7 @@ const initialState = {
     {
       "id": "4",
       "name": "XBO14S",
-      "frequencyRange": "8-150 MHz Fundamental",
+      "frequencyRange": "8-150 MHz",
       "frequencyMin": "8",
       "frequencyMax": "150",
       "frequencyType": "fundamental",
@@ -111,13 +111,13 @@ const initialState = {
     {
       "id": "5",
       "name": "XBO20",
-      "frequencyRange": "8-150 MHz Fundamental",
+      "frequencyRange": "8-150 MHz",
       "frequencyMin": "8",
       "frequencyMax": "150",
       "frequencyType": "fundamental",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 0.5 ppb",
-      "packaging": "Metal case 20.2x20.2x12.0 mm",
+      "packaging": "20.2x20.2x12.0 mm",
       "pictureTag": "type5",
       "features": [
         "0.5 ppb in -40 +85ºC range",
@@ -140,7 +140,7 @@ const initialState = {
       "frequencyType": "with multiplication",
       "temperatureRange": "(-40+85)℃",
       "temperatureStability": "To 0.5 ppb",
-      "packaging": "Metal case 20.2x20.2x12.0 mm",
+      "packaging": "20.2x20.2x12.0 mm",
       "pictureTag": "type5",
       "features": [
         "0.5 ppb in -40 +85ºC range",
@@ -207,9 +207,9 @@ const initialState = {
       "name": 'A',
       "range": '0..50ºC',
       "modelsStability": [
-        { modelId: "1" ,
+        { modelId: "2" ,
           model: 'XBO8' ,
-         stabilityLimit: 1,
+         stabilityLimit: 2,
          stabilityVsTemperature:
          {
           frequency:[10, 100, 150],
@@ -359,7 +359,7 @@ const initialState = {
     },
     {
       "id": "3",
-      "name": 'C',
+      "name": 'E',
       "range": '-30..70ºC',
       "modelsStability": [
         { modelId: "1",
@@ -407,7 +407,7 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
-         stability:[0.3, 5, 10],
+         stability:[0.5, 5, 10],
          frequency40:[50, 500, 750],
          stability40:[.5, 5, 10],
         }
@@ -436,7 +436,7 @@ const initialState = {
     },
     {
       "id": "4",
-      "name": 'D',
+      "name": 'F',
       "range": '-40..85ºC',
       "modelsStability": [
         { modelId: "1",
@@ -484,7 +484,7 @@ const initialState = {
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
-         stability:[1, 10, 20],
+         stability:[.5, 5, 10],
          frequency40:[50, 500, 750],
          stability40:[.5, 5, 10],
         }
@@ -513,7 +513,7 @@ const initialState = {
     },
     {
       "id": "5",
-      "name": 'E',
+      "name": 'Q',
       "range": '-60..85ºC',
       "modelsStability": [
         { modelId: "1",
@@ -549,7 +549,7 @@ const initialState = {
         }
         },
         { modelId: "5",
-          model: 'XBO20' , stabilityLimit: 5,
+          model: 'XBO20' , stabilityLimit: 1,
         stabilityVsTemperature:
         {
           frequency:[10, 100, 150],
@@ -557,7 +557,7 @@ const initialState = {
         }
         },
         { modelId: "6",
-          model: 'XBOH20' , stabilityLimit: 5,
+          model: 'XBOH20' , stabilityLimit: 1,
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],
@@ -577,7 +577,7 @@ const initialState = {
         }
         },
         { modelId: "8",
-          model: 'XBOH14S' , stabilityLimit: 20,
+          model: 'XBOH14S' , stabilityLimit: 30,
         stabilityVsTemperature:
         {
           frequency:[30, 300, 450],

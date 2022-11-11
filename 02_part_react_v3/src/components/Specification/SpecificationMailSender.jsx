@@ -19,9 +19,12 @@ const SpecificationMailSender = (props) => {
   //const { control, handleSubmit, formState: { errors }  } = useForm();
 
   const onSubmit = data => { //fullName, email, phone, message
-      const txData = {...data, ...emailData}
+    
+      const messageHTML = data.message.replace(/\r?\n/g, '<br />')
+      const txData = {...data, message: messageHTML,
+        ...emailData, params: convertEmailDataHTML({...emailData})}
 
-      console.log(txData);
+      //console.log(txData.message.replace(/\r?\n/g, '<br />')); //text = text.replace(/\r?\n/g, '<br />');
       //console.log(txData);
       emailjs.send(SERVICE_ID, TEMPLATE_ID, txData, PUBLIC_KEY)
       .then(response => {
@@ -36,8 +39,9 @@ const SpecificationMailSender = (props) => {
 
   const hadleCkick = () => {
     console.log('click')
-    setStatus('SUCCESS');
-    setStepsLevelFinish()
+/*     setStatus('SUCCESS');
+    setStepsLevelFinish() */
+    convertEmailDataHTML({...emailData})
   }
 
   useEffect(() => {
@@ -59,6 +63,17 @@ const SpecificationMailSender = (props) => {
       />
     </div>
   )
+}
+
+const convertEmailDataHTML = (emailData) => {
+  let output = ''
+  for (const [key, value] of Object.entries(emailData)) {
+    //console.log(`${key}: ${value}`);
+    output = output + `<p><b>${key}:</b> ${value}</p>`
+  }
+/*   console.log(output)
+  console.log(emailData) */
+  return output
 }
 
 export default SpecificationMailSender

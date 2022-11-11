@@ -22,6 +22,8 @@ import OutputTypeField from "./FieldComponent/OutputTypeField"
 
 const SpecificationStep1 = (props) => {
   const {dataForm} = props
+  const {selectedModel, stabilityFromFrequencyBlur} = dataForm
+
   const [backBtn, setBackBtn] = useState(false);
 
   const {
@@ -106,17 +108,17 @@ const SpecificationStep1 = (props) => {
                       message: "Value is too long",
                     },
                     min: {
-                      value: props.selectedModel.frequencyMin,
+                      value: selectedModel.frequencyMin,
                       message:
                         "Min value is " +
-                        props.selectedModel.frequencyMin +
+                        selectedModel.frequencyMin +
                         " MHz",
                     },
                     max: {
-                      value: props.selectedModel.frequencyMax,
+                      value: selectedModel.frequencyMax,
                       message:
                         "Max value is " +
-                        props.selectedModel.frequencyMax +
+                        selectedModel.frequencyMax +
                         " MHz",
                     },
                   }}
@@ -147,10 +149,10 @@ const SpecificationStep1 = (props) => {
                       message: "Value is too long",
                     },
                     min: {
-                      value: props.stabilityFromFrequencyBlur,
+                      value: stabilityFromFrequencyBlur,
                       message:
                         "Min value is " +
-                        props.stabilityFromFrequencyBlur +
+                        stabilityFromFrequencyBlur +
                         " ppb",
                     },
                   }}
@@ -160,8 +162,8 @@ const SpecificationStep1 = (props) => {
                       field = {field}
                       error = {errors.stabilityVsTemperature}
                       decor = {formElementDecor.textField}
-                      temperatureRangeSelected = {props.selectedModel.temperatureRangeSelected}
-                      stabilityFromFrequencyBlur = {props.stabilityFromFrequencyBlur}
+                      temperatureRangeSelected = {selectedModel.temperatureRangeSelected}
+                      stabilityFromFrequencyBlur = {stabilityFromFrequencyBlur}
                       />
                     );
                   }}

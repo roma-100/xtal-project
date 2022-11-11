@@ -1,6 +1,7 @@
 // === reducer-spec-form.js ===
 const RESET_SPEC_FORM_DATA = "RESET_SPEC_FORM_DATA";
 const INPUT_SET_STEP2 = "INPUT_SET_STEP2";
+const INPUT_SET_STEP3 = "INPUT_SET_STEP3";
 const SET_STEPS_LEVEL_FINISH = "SET_STEPS_LEVEL_FINISH"; //stepsLevel=10
 const INIT_SELECTED_MODEL = "INIT_SELECTED_MODEL";
 const INIT_SELECTED_STABILITY_VS_TEMPERATURE =
@@ -88,7 +89,7 @@ const specFormReducer = (state = initialState, action) => {
          return state.continuousCurrentData.ccF.hsmos5V
        }
     }
-      console.log(nominalFrequency+ '; ' +frequencyType+ '; ' +voltage + '; '+outputType)
+      //console.log(nominalFrequency+ '; ' +frequencyType+ '; ' +voltage + '; '+outputType)
     }
 
     //console.log(getContinuousCurrentArray())
@@ -96,7 +97,7 @@ const specFormReducer = (state = initialState, action) => {
       const {nominalFrequency} = submitData
       const a = getContinuousCurrentArray()
       const cc = ((a[3]-a[1])*(nominalFrequency-a[0])/(a[2]-a[0])+a[1])+a[4]
-      return cc
+      return cc.toFixed(2)
     }
 
     const emailData = () => {
@@ -122,11 +123,6 @@ const specFormReducer = (state = initialState, action) => {
       }
       return { ...part1, ...part2 };
     };
-    /*   console.log(submitData.nominalFrequency + ' MHz')
-  console.log(submitData.voltage + ' V')
-  console.log(submitData.stabilityVsTemperature + ' ppb')
-  console.log(submitData.outputType.toUpperCase()) */
-    window.bc = submitData;
 
     //debugger
     const stateCopy = {
@@ -142,6 +138,68 @@ const specFormReducer = (state = initialState, action) => {
     return stateCopy;
   }
 
+  if (action.type === INPUT_SET_STEP3) {
+    const submitData = action.submitDataArr.inputValueSteps;
+
+    let emailData = {}
+/*           "subharmonicsLevel": data.subharmonicsLevel,
+          "continuousCurrent": data.continuousCurrent,
+          //"gSensitivity": data.gSensitivity,
+          "aginPerDay": data.aginPerDay,
+
+          "phaseNoise1Hz": data.phaseNoise1Hz,
+          "phaseNoise10Hz": data.phaseNoise10Hz,
+          "phaseNoise100Hz": data.phaseNoise100Hz,
+          "phaseNoise1KHz": data.phaseNoise1KHz,
+          "phaseNoise10KHz": data.phaseNoise10KHz,
+          "phaseNoise100KHz": data.phaseNoise100KHz */
+/*     for (const [key, value] of Object.entries(submitData)) {
+      //console.log(`${key}: ${value}`);
+      if (value) {
+        emailData = {...emailData, ...{[key]: value,}} 
+      }
+    } */
+    if (submitData.subharmonicsLevel) 
+    {emailData = {...emailData, ...{["Subharmonics Level"]: submitData.subharmonicsLevel + ' dBc',}}}
+
+    if (submitData.continuousCurrent) 
+    {emailData = {...emailData, ...{["Continuous current max limit"]: submitData.continuousCurrent + ' mA',}}}
+
+    if (submitData.aginPerDay) 
+    {emailData = {...emailData, ...{["Agin per Day"]: submitData.aginPerDay + ' ppb',}}}
+
+    if (submitData.phaseNoise1Hz) 
+    {emailData = {...emailData, ...{["Phase noise 1Hz"]: submitData.phaseNoise1Hz + ' dBc/Hz',}}}
+
+    if (submitData.phaseNoise10Hz) 
+    {emailData = {...emailData, ...{["Phase noise 10Hz"]: submitData.phaseNoise10Hz + ' dBc/Hz',}}}
+
+    if (submitData.phaseNoise100Hz) 
+    {emailData = {...emailData, ...{["Phase noise 100Hz"]: submitData.phaseNoise100Hz + ' dBc/Hz',}}}
+
+    if (submitData.phaseNoise1KHz) 
+    {emailData = {...emailData, ...{["Phase noise 1KHz"]: submitData.phaseNoise1KHz + ' dBc/Hz',}}}
+
+    if (submitData.phaseNoise10KHz) 
+    {emailData = {...emailData, ...{["Phase noise 10KHz"]: submitData.phaseNoise10KHz + ' dBc/Hz',}}}
+
+    if (submitData.phaseNoise100KHz) 
+    {emailData = {...emailData, ...{["Phase noise 100KHz"]: submitData.phaseNoise100KHz + ' dBc/Hz',}}}
+
+
+    //debugger
+    const stateCopy = {
+      ...state,
+      inputValueSteps: { ...state.inputValueSteps,
+        ...action.submitDataArr.inputValueSteps },
+      emailData: {...state.emailData, ...emailData}, 
+      stepsLevel: 3,
+    };
+    //debugger
+    return stateCopy;
+  }
+
+  
   if (action.type === INIT_SELECTED_MODEL) {
     //action.selectedModel
     const stateCopy = {
@@ -280,6 +338,8 @@ const specFormReducer = (state = initialState, action) => {
 };
 
 export const specFormInputStep2 = (submitDataArr) => ({ type: INPUT_SET_STEP2, submitDataArr});
+export const specFormInputStep3 = (submitDataArr) => ({ type: INPUT_SET_STEP3, submitDataArr});
+
 export const initFrequencyBlurAC = () => ({ type: INIT_FREQUENCY_BLUR });
 const setFrequencyBlurAC = (frequencyBlurValue) => ({ type: SET_FREQUENCY_BLUR, frequencyBlurValue,
 });

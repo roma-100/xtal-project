@@ -22,6 +22,12 @@ const GenModel = (props) => {
 }
 
 const modelActive =(props, filterInfo) => {
+    
+  const handleClick = () => {
+/*     console.log('ccclicked'+props.genModelId)
+    console.log(props) */
+    props.handleClickSelectedModel(props.genModelId)
+  }
   //props.genModelId
   return (
       <div className="gen-model">
@@ -32,7 +38,7 @@ const modelActive =(props, filterInfo) => {
       src={props.genModelPicture} alt={props.genModelTitle} /></div> 
       <div className="gen-model__info">{props.genModelPackaging}</div>
       {props.genModelTemperatureRange ? 
-        <div className="gen-model__btn">
+        <div className="gen-model__btn" onClick={handleClick}>
         <Link to={`/specification/${props.genModelId}`}>Specification</Link>
         </div>
        : <p></p>}

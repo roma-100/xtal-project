@@ -8,6 +8,52 @@ import StateSpecFormShowHelper from "../Helper/StateSpecFormShowHelper"
 
 const GenModelsHello = (props) => {
 
+ const handleClickSelectedModel = (idModel) => {
+  const selectedModel = props.gen_models.models.filter(
+    (value, index) => {
+      //console.log(JSON.stringify(value.id, null, 2))
+      return value.id === idModel;
+      //return value.id === "5"
+    }
+  )[0];
+/* Object { id: "2", name: "XBO8S", frequencyRange: "8-150 Fundamental", frequencyMin: "8", frequencyMax:  */
+   
+    // Get array StabilityVsTemperature from reducer-gen_models  -> to step2 (reducer-spec-form)
+    const selectedModelStabilityVsTemperature =
+    props.gen_models.temperatureRange
+        .filter((value, index) => {
+          //console.log(JSON.stringify(value.id, null, 2))
+          return value.range === props.gen_models.filterTemperatureRange;
+        })[0]
+        .modelsStability.filter((value, index) => {
+          return value.modelId === idModel;
+        })[0].stabilityVsTemperature;
+    /*         stabilityVsTemperature:
+        {
+         frequency:[24, 100, 295],
+         stability:[5, 10, 20],
+        } */
+        const continuousCurrent =
+        props.gen_models.temperatureRange
+          .filter((value, index) => {
+            //console.log(JSON.stringify(value.id, null, 2))
+            return value.range === props.gen_models.filterTemperatureRange;
+          })[0]
+          .modelsStability.filter((value, index) => {
+            return value.modelId === idModel;
+          })[0].continuousCurrent
+
+/* console.log("!!!!" + idModel)
+   console.log(selectedModel)
+   console.log(selectedModelStabilityVsTemperature)
+   console.log(continuousCurrent) */
+
+   props.specFormInitStep2TC(
+    selectedModel,
+    selectedModelStabilityVsTemperature,
+    continuousCurrent
+  );
+ }
 
 const genModel = props.gen_models.models.map((x, index) => {
   return (
@@ -22,6 +68,8 @@ const genModel = props.gen_models.models.map((x, index) => {
       genModelIsActive ={x.isActive}
       genModelTemperatureRange ={x.temperatureRangeSelected}
       genModelStabilityLimit ={x.stabilityLimit}
+      specFormInitStep2TC = {x.specFormInitStep2TC}
+      handleClickSelectedModel = {handleClickSelectedModel}
       />      
     );
   })

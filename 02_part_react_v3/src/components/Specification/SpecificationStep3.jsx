@@ -21,7 +21,8 @@ import UniversalLevelField from "./FieldComponent/UniversalLevelField"
 
 const SpecificationStep3fund = (props) => {
   const [backBtn, setBackBtn] = useState(false);
-  const { dataForm, picturePath, filterInitTC, phaseNoiseSwitchToggleAC } = props;
+  const { dataForm, picturePath, filterInitTC, 
+    phaseNoiseSwitchToggleAC, specFormInputStep3 } = props;
 
   const {
     control,
@@ -29,11 +30,10 @@ const SpecificationStep3fund = (props) => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      nominalFrequency: "12",
       phaseNoiseSwitch: dataForm.phaseNoiseSwitch,
-      subharmonicsLevel: '-40',
+      subharmonicsLevel: dataForm.selectedModel.frequencyType === "with multiplication" ? '-40' : '',
       continuousCurrent: '',
-      gSensitivity: '1',
+      //gSensitivity: '1',
       aginPerDay: '',
       phaseNoise1Hz: '',
       phaseNoise10Hz: '',
@@ -48,6 +48,21 @@ const SpecificationStep3fund = (props) => {
 
   const onSubmit = (data) => {
     console.log(data);
+    specFormInputStep3 (
+      { inputValueSteps: {
+          "subharmonicsLevel": data.subharmonicsLevel,
+          "continuousCurrent": data.continuousCurrent,
+          //"gSensitivity": data.gSensitivity,
+          "aginPerDay": data.aginPerDay,
+          "phaseNoise1Hz": data.phaseNoise1Hz,
+          "phaseNoise10Hz": data.phaseNoise10Hz,
+          "phaseNoise100Hz": data.phaseNoise100Hz,
+          "phaseNoise1KHz": data.phaseNoise1KHz,
+          "phaseNoise10KHz": data.phaseNoise10KHz,
+          "phaseNoise100KHz": data.phaseNoise100KHz
+      },
+    }
+    )
     //window.bb = errors
   };
   const look = (errors) => console.log(errors.firstName?.message);
@@ -103,9 +118,11 @@ const SpecificationStep3fund = (props) => {
               <Controller
                   name="subharmonicsLevel"
                   control={control}
-                  rules={{
+/*                   rules={{
                     required: "This is required",
-                  }}
+                    dataForm.selectedModel.frequencyType === "with multiplication" && {required: "This is required"}
+                  }} */
+                  rules={dataForm.selectedModel.frequencyType === "with multiplication" && {required: "This is required"}}
                   render={({ field }) => {
                     return (
                       <SubharmonicsLevelField 
@@ -160,7 +177,7 @@ const SpecificationStep3fund = (props) => {
                       <UniversalLevelField 
                       field = {field}
                       error = {errors.continuousCurrent}
-                      label = {'Continuous current'}
+                      label = {'Continuous current max limit'}
                       decor = {formElementDecor.textField}
                       placeholder = { errors.continuousCurrent? errors.continuousCurrent.message : null}
                       endAdornment = {'mA'}

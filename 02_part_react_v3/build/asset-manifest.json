@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.2ce02931.css",
-    "main.js": "./static/js/main.043fa29e.js",
+    "main.js": "./static/js/main.54fed0f1.js",
     "static/media/bc-earth-1.png": "./static/media/bc-earth-1.31a7cecc49a7455958f5.png",
     "static/media/NotoSans-Regular.woff": "./static/media/NotoSans-Regular.e48aa7026553aa67b245.woff",
     "static/media/NotoSans-Bold.woff": "./static/media/NotoSans-Bold.a288005efe57a0dc9e42.woff",
@@ -29,10 +29,10 @@
     "static/media/AvenirLTStd-Black.woff2": "./static/media/AvenirLTStd-Black.33f6f4605b6a3dd4def9.woff2",
     "index.html": "./index.html",
     "main.2ce02931.css.map": "./static/css/main.2ce02931.css.map",
-    "main.043fa29e.js.map": "./static/js/main.043fa29e.js.map"
+    "main.54fed0f1.js.map": "./static/js/main.54fed0f1.js.map"
   },
   "entrypoints": [
     "static/css/main.2ce02931.css",
-    "static/js/main.043fa29e.js"
+    "static/js/main.54fed0f1.js"
   ]
 }

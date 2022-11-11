@@ -44,10 +44,7 @@ const SpecificationStep3fund = (props) => {
     },
   });
 
-  const PhaseNoiseDecor = {
-    width: '120px',
-    display: !dataForm.phaseNoiseSwitch && "none"
-  }
+
 
   const onSubmit = (data) => {
     console.log(data);
@@ -65,6 +62,12 @@ const SpecificationStep3fund = (props) => {
     //console.log('clicked!')
   };
 
+  const PhaseNoiseDecor = {
+    width: '120px',
+    display: !dataForm.phaseNoiseSwitch && "none"
+  }
+
+
   const formElementDecor = {
     textField: {
       p: 1,
@@ -78,6 +81,13 @@ const SpecificationStep3fund = (props) => {
 
   };
 
+  const subharmonicsLevelDispaly = {
+    //...formElementDecor.textField, 
+    display: dataForm.selectedModel.frequencyType !== "with multiplication" && "none"
+    //display: "none"
+  }
+  //console.log (dataForm.selectedModel.frequencyType !== "with multiplication")
+
   //console.log('stabilityFromFrequencyBlur ++->: ' + props.stabilityFromFrequencyBlur)
   const validForm = () => {
     return (
@@ -89,7 +99,7 @@ const SpecificationStep3fund = (props) => {
             <form onSubmit={handleSubmit(onSubmit)}>
 
 {/* Start Subharmonics level +++++++++++ */}
-              <div>
+<div style={subharmonicsLevelDispaly}> {/* //style={{display: "none"}} visibility:hidden */}
               <Controller
                   name="subharmonicsLevel"
                   control={control}
@@ -102,9 +112,9 @@ const SpecificationStep3fund = (props) => {
                       field = {field}
                       error = {errors.subharmonicsLevel}
                       label = {'Subharmonics Level'}
-                      decor = {formElementDecor.textField}
+                      decor = {formElementDecor.textField} //subharmonicsLevelDecor dataForm.selectedModel.frequencyType === "with multiplication"
                       endAdornment = {'dBc'}
-                      helperText = {'Value: -100...0 dBc'}
+                      helperText = {null}
                       />
                     );
                   }}
@@ -126,9 +136,10 @@ const SpecificationStep3fund = (props) => {
                       field = {field}
                       error = {errors.aginPerDay}
                       label = {'Agin per Day'}
+                      placeholder = {'Max: 10'}
                       decor = {formElementDecor.textField}
                       endAdornment = {'ppb'}
-                      helperText = {'Max: 10'}
+                      helperText = {''}
                       />
                     );
                   }}

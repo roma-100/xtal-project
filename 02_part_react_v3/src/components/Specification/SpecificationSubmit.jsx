@@ -9,88 +9,95 @@ import SpecificationMailSender from "./SpecificationMailSender";
 class SpecificationSubmit extends React.Component {
   state = {
     emailDataRows: [],
-    isDidMount: false
-  }
+    isDidMount: false,
+  };
 
   componentDidMount() {
-    
+    const { dataForm, setEmailDataAC } = this.props;
 
-    const { dataForm, setEmailDataAC } = this.props
-
-    const emailData =()=> {
-      if (dataForm.selectedModel.frequencyType === 'with multiplication') {
-        return (
-          {
-            'Model': dataForm.selectedModel.name,
-            'Packaging': dataForm.selectedModel.packaging,
-            'FrequencyType': 'MULTIPLICATION',
-            'Frequency': dataForm.inputValueStep2.nominalFrequency + ' MHz',
-            'Temperature Range': dataForm.selectedModel.temperatureRangeSelected,
-            'Stability vs Temperature': dataForm.inputValueStep2.stabilityVsTemperature + ' ppb',
-            'Supply Voltage': dataForm.inputValueStep2.voltage + ' V',
-            'Output Type': dataForm.inputValueStep2.outputType.toUpperCase()
-          }
-        )
+    const emailData = () => {
+      if (dataForm.selectedModel.frequencyType === "with multiplication") {
+        return {
+          Model: dataForm.selectedModel.name,
+          Packaging: dataForm.selectedModel.packaging,
+          FrequencyType: "MULTIPLICATION",
+          Frequency: dataForm.inputValueSteps.nominalFrequency + " MHz",
+          "Temperature Range": dataForm.selectedModel.temperatureRangeSelected,
+          "Stability vs Temperature":
+            dataForm.inputValueSteps.stabilityVsTemperature + " ppb",
+          "Supply Voltage": dataForm.inputValueSteps.voltage + " V",
+          "Output Type": dataForm.inputValueSteps.outputType.toUpperCase(),
+        };
       }
-      return (
-        {
-          'Model': dataForm.selectedModel.name,
-          'Packaging': dataForm.selectedModel.packaging,
-          'Frequency': dataForm.inputValueStep2.nominalFrequency + ' MHz',
-          'Temperature Range': dataForm.selectedModel.temperatureRangeSelected,
-          'Stability vs Temperature': dataForm.inputValueStep2.stabilityVsTemperature + ' ppb',
-          'Supply Voltage': dataForm.inputValueStep2.voltage + ' V',
-          'Output Type': dataForm.inputValueStep2.outputType.toUpperCase()
-        }
-      )
+      return {
+        Model: dataForm.selectedModel.name,
+        Packaging: dataForm.selectedModel.packaging,
+        Frequency: dataForm.inputValueSteps.nominalFrequency + " MHz",
+        "Temperature Range": dataForm.selectedModel.temperatureRangeSelected,
+        "Stability vs Temperature":
+          dataForm.inputValueSteps.stabilityVsTemperature + " ppb",
+        "Supply Voltage": dataForm.inputValueSteps.voltage + " V",
+        "Output Type": dataForm.inputValueSteps.outputType.toUpperCase(),
+      };
     };
 
-    setEmailDataAC (emailData())
-    
-
-    
+    setEmailDataAC(emailData());
   }
-  
+
   render() {
-    const { dataForm, picturePath, selectedModel, setStepsLevelFinish, filterInitTC } = this.props
-    
+    const {
+      dataForm,
+      picturePath,
+      selectedModel,
+      setStepsLevelFinish,
+      filterInitTC,
+    } = this.props;
+
     return (
       <>
-      <SpecificationBanerStep1
-        picturePath={picturePath}
-        selectedModel={selectedModel}
-        features={selectedModel.features}
-      />
+        <SpecificationBanerStep1
+          picturePath={picturePath}
+          selectedModel={selectedModel}
+          features={selectedModel.features}
+        />
 
-      <SpecificationBanerStep2 
-          dataForm={dataForm} 
+        <SpecificationBanerStep2
+          dataForm={dataForm}
           emailData={dataForm.emailData}
-          />
-      <SpecificationMailSender 
+        />
+        <SpecificationMailSender
           setStepsLevelFinish={setStepsLevelFinish}
           emailData={dataForm.emailData}
-          filterInitTC = {filterInitTC}
-      />
-      {/* <SpecificationMailForm /> */}
-    </>
-    )
+          filterInitTC={filterInitTC}
+        />
+        {/* <SpecificationMailForm /> */}
+      </>
+    );
   }
 }
 const SpecificationSubmit1 = (props) => {
-  const { dataForm, picturePath, selectedModel, setEmailDataAC, setStepsLevelFinish, filterInitTC } = props;
+  const {
+    dataForm,
+    picturePath,
+    selectedModel,
+    setEmailDataAC,
+    setStepsLevelFinish,
+    filterInitTC,
+  } = props;
   //create MessageData object
   const emailData = {
-    'Model': dataForm.selectedModel.name,
-    'Packaging': dataForm.selectedModel.packaging,
-    'FrequencyType':+dataForm.selectedModel.frequencyType.toUpperCase(),
-    'Frequency': dataForm.inputValueStep2.nominalFrequency + ' MHz',
-    'Temperature Range': dataForm.selectedModel.temperatureRangeSelected,
-    'Stability vs Temperature': dataForm.inputValueStep2.stabilityVsTemperature + ' ppb',
-    'Supply Voltage': dataForm.inputValueStep2.voltage + ' V',
-    'Output Type': dataForm.inputValueStep2.outputType.toUpperCase()
+    Model: dataForm.selectedModel.name,
+    Packaging: dataForm.selectedModel.packaging,
+    FrequencyType: +dataForm.selectedModel.frequencyType.toUpperCase(),
+    Frequency: dataForm.inputValueSteps.nominalFrequency + " MHz",
+    "Temperature Range": dataForm.selectedModel.temperatureRangeSelected,
+    "Stability vs Temperature":
+      dataForm.inputValueSteps.stabilityVsTemperature + " ppb",
+    "Supply Voltage": dataForm.inputValueSteps.voltage + " V",
+    "Output Type": dataForm.inputValueSteps.outputType.toUpperCase(),
   };
   //setEmailDataAC (emailData)
-  
+
   return (
     <>
       <SpecificationBanerStep1
@@ -100,9 +107,9 @@ const SpecificationSubmit1 = (props) => {
       />
 
       <SpecificationBanerStep2 dataForm={dataForm} />
-      <SpecificationMailSender 
-      setStepsLevelFinish={setStepsLevelFinish}
-      filterInitTC = {filterInitTC}
+      <SpecificationMailSender
+        setStepsLevelFinish={setStepsLevelFinish}
+        filterInitTC={filterInitTC}
       />
       {/* <SpecificationMailForm /> */}
     </>

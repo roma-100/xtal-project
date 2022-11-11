@@ -13,7 +13,8 @@ import {
   initSelectedModel,
   setEmailDataAC,
   setStepsLevelFinish,
-  resetSpecFormDataAC
+  resetSpecFormDataAC,
+  phaseNoiseSwitchToggleAC
 
 } from "../../redux/reducer-spec-form";
 import {filterInitTC} from "../../redux/reducer-gen_models"
@@ -25,8 +26,8 @@ import SpecificationBannerStep2 from "./SpecificationBannerStep2"
 
 import SpecificationStep2 from "./SpecificationStep2";
 
-import SpecificationStep3fund from "./SpecificationStep3fund";
-import SpecificationStep3mult from "./SpecificationStep3mult";
+import SpecificationStep3 from "./SpecificationStep3";
+/* import SpecificationStep3mult from "./SpecificationStep3mult"; */
 
 import {
   Navigate, // == redirect
@@ -37,9 +38,12 @@ import {
 } from "react-router-dom";
 
 class SpecificationContainer extends React.Component {
-
+  state = {
+    isDidMount: false
+  }
   componentDidMount() {
-    //if (this.state.isDidMount) { return 1}
+    if (this.state.isDidMount) { return 1 } else { this.state.isDidMount = true; }
+
     //Getting selected model from reducer-gen_models  -> to step2 (reducer-spec-form)
     const selectedModel = this.props.stGenModels.models.filter(
       (value, index) => {
@@ -65,10 +69,20 @@ class SpecificationContainer extends React.Component {
          frequency:[24, 100, 295],
          stability:[5, 10, 20],
         } */
+        const continuousCurrent =
+        this.props.stGenModels.temperatureRange
+          .filter((value, index) => {
+            //console.log(JSON.stringify(value.id, null, 2))
+            return value.range === this.props.stGenModels.filterTemperatureRange;
+          })[0]
+          .modelsStability.filter((value, index) => {
+            return value.modelId === this.props.router.params.generatorId;
+          })[0].continuousCurrent
 
     this.props.specFormInitStep2TC(
       selectedModel,
-      selectedModelStabilityVsTemperature
+      selectedModelStabilityVsTemperature,
+      continuousCurrent
     );
 
     //this.state.isDidMount = true //Let's Stop didMount twice
@@ -99,6 +113,7 @@ class SpecificationContainer extends React.Component {
           <SpecificationStep2
             specFormInputStep2={this.props.specFormInputStep2}
             picturePath={picturePath}
+            dataForm={this.props.stSpecForm}
             selectedModel={this.props.stSpecForm.selectedModel}
             formFieldsRules={this.props.stSpecForm.formFieldsRules}
             stabilityVsTemperature={
@@ -119,7 +134,6 @@ class SpecificationContainer extends React.Component {
 
     // +++ Start Form Step 3 Component ++++++
     const specStep3 = () => {
-      if (this.props.stSpecForm.selectedModel.frequencyType === 'fundamental') {
       return (
         <div>
           {specBannerStep1()}
@@ -128,18 +142,19 @@ class SpecificationContainer extends React.Component {
             dataForm={this.props.stSpecForm}
           />          
 
-          <SpecificationStep3fund
+          <SpecificationStep3
             dataForm={this.props.stSpecForm}
             setEmailDataAC = {this.props.setEmailDataAC}
             filterInitTC = {this.props.filterInitTC}
+            phaseNoiseSwitchToggleAC = {this.props.phaseNoiseSwitchToggleAC}
           />
         </div>
       );
-    }
 
+/* 
     if (this.props.stSpecForm.selectedModel.frequencyType === 'with multiplication') {
       return (
-        <div>
+        <div>haseNoiseSwitchToggleAC
           {specBannerStep1()}
 
           <SpecificationBannerStep2
@@ -152,8 +167,8 @@ class SpecificationContainer extends React.Component {
             filterInitTC = {this.props.filterInitTC}
           />
         </div>
-      );
-    }
+      ); 
+    }*/
 
     };
     // +++ End Form Step 2 Component ++++++
@@ -212,7 +227,8 @@ const mapDispatchToProps = {
   setEmailDataAC,
   setStepsLevelFinish,
   resetSpecFormDataAC,
-  filterInitTC
+  filterInitTC,
+  phaseNoiseSwitchToggleAC
   /*     filterFrequencyTypeTC,
     filterInitTC,
     filterTemperatureRangeTC */

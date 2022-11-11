@@ -29,7 +29,7 @@ const genModel = props.gen_models.models.map((x, index) => {
   return (
     <>
       <div className="gen-models-filter__wrap">
-        <h2>Assistant</h2>
+        <h2>Define your main requirements</h2>
         <div className="gen-models-filter">
           <div className="gen-models-filter__title"><span>Frequency Type</span></div>
           <div className="gen-models-filter__source">

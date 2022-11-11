@@ -15,8 +15,13 @@ import {
   Button,
 } from "@mui/material/";
 import SpecificationBanerStep1 from "./SpecificationBannerStep1";
+import NominalFrequencyField from "./FieldComponent/NominalFrequencyField"
+import StabilityVsTemperatureField from "./FieldComponent/StabilityVsTemperatureField"
+import VoltageField from "./FieldComponent/VoltageField"
+import OutputTypeField from "./FieldComponent/OutputTypeField"
 
 const SpecificationStep1 = (props) => {
+  const {dataForm} = props
   const [backBtn, setBackBtn] = useState(false);
 
   const {
@@ -56,15 +61,19 @@ const SpecificationStep1 = (props) => {
   };
 
   const onSubmit = (data) => {
+    //const myObject = dataForm.continuousCurrentData.continuousCurrent
+    //Object.keys(myObject).forEach(key => console.log(key + ': ' + myObject[key]))
+    //console.log(continuousCurrentDataSelected)
+
     props.specFormInputStep2({
-      inputValueStep2: {
+      inputValueSteps: {
         nominalFrequency: data.nominalFrequency,
         stabilityVsTemperature: data.stabilityVsTemperature,
         voltage: data.voltage,
-        outputType: data.outputType,
+        outputType: data.outputType
       },
     });
-    // console.log(data)
+    console.log(data);
   };
   const look = (errors) => console.log(errors.firstName?.message);
 
@@ -73,15 +82,14 @@ const SpecificationStep1 = (props) => {
   };
 
   const handleClickBtnReset = () => {
-    props.filterInitTC()
-    setBackBtn(true)
+    props.filterInitTC();
+    setBackBtn(true);
     //console.log('clicked!')
-  }
+  };
   //console.log('stabilityFromFrequencyBlur ++->: ' + props.stabilityFromFrequencyBlur)
   const validForm = () => {
     return (
       <>
-
         <div className="speciication__wrap--position">
           {/* Start Form  +++++++++++ */}
           <div className="specification-form__wrap">
@@ -114,40 +122,13 @@ const SpecificationStep1 = (props) => {
                   }}
                   render={({ field }) => {
                     return (
-                      <FormControl
-                        sx={formElementDecor.textField}
-                        onBlur={handleOnBlur}
-                      >
-                        <TextField
-                          {...field}
-                          label="Nominal Frequency"
-                          /* id="standard-size-small" */
-                          /* sx={{ m: 1, width: '25ch' }} */
-                          margin="dense"
-                          variant="outlined"
-                          error={errors.nominalFrequency ? true : false}
-                          placeholder={
-                            errors.nominalFrequency
-                              ? errors.nominalFrequency.message
-                              : props.frequencyRange
-                          }
-                          InputProps={{
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                MHz
-                              </InputAdornment>
-                            ),
-                          }}
-                          /* onChange={handleChange('weight')} */
-                        />
-                        <FormHelperText
-                          sx={{ color: "red" }}
-                          id="standard-weight-helper-text"
-                        >
-                          {errors.nominalFrequency !== "This is required" &&
-                            errors.nominalFrequency?.message}
-                        </FormHelperText>
-                      </FormControl>
+                      <NominalFrequencyField 
+                      field = {field}
+                      error = {errors.nominalFrequency}
+                      decor = {formElementDecor.textField}
+                      handleOnBlur={handleOnBlur}
+                      frequencyRange = {props.frequencyRange}
+                      />
                     );
                   }}
                 />
@@ -175,43 +156,13 @@ const SpecificationStep1 = (props) => {
                   }}
                   render={({ field }) => {
                     return (
-                      <FormControl sx={formElementDecor.textField}>
-                        <TextField
-                          {...field}
-                          label={
-                            props.selectedModel.temperatureRangeSelected
-                              ? `Stability vs Temperature`
-                              : "Error. Temperature range has not been selected!"
-                          }
-                          /* id="standard-size-small" */
-                          /* sx={{ m: 1, width: '25ch' }} */
-                          margin="dense"
-                          variant="outlined"
-                          error={errors.stabilityVsTemperature ? true : false}
-                          placeholder={props.stabilityFromFrequencyBlur + ""}
-                          InputProps={{
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                ppb
-                              </InputAdornment>
-                            ),
-                          }}
-
-                          /* onChange={handleChange('weight')} */
-                        />
-                        <FormHelperText
-                          sx={
-                            errors.stabilityVsTemperature
-                              ? { color: "red" }
-                              : { color: "grey" }
-                          }
-                          id="standard-weight-helper-text"
-                        >
-                          {errors.stabilityVsTemperature
-                            ? errors.stabilityVsTemperature?.message
-                            : `Temperature range: ${props.selectedModel.temperatureRangeSelected}`}
-                        </FormHelperText>
-                      </FormControl>
+                      <StabilityVsTemperatureField 
+                      field = {field}
+                      error = {errors.stabilityVsTemperature}
+                      decor = {formElementDecor.textField}
+                      temperatureRangeSelected = {props.selectedModel.temperatureRangeSelected}
+                      stabilityFromFrequencyBlur = {props.stabilityFromFrequencyBlur}
+                      />
                     );
                   }}
                 />
@@ -223,39 +174,12 @@ const SpecificationStep1 = (props) => {
                 <Controller
                   name="voltage"
                   control={control}
-                  rules={{ required: true }}
                   render={({ field }) => {
                     return (
-                      <div className="radiogroup--decor">
-                        <FormControl
-                          sx={formElementDecor.radioGroupFormControl}
-                        >
-                          <FormLabel
-                            id="voltage-radio-buttons-group-label"
-                            sx={formElementDecor.radioGroupLabel}
-                          >
-                            Supply Voltage
-                          </FormLabel>
-                          <RadioGroup
-                            sx={formElementDecor.radioGroup}
-                            {...field}
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            name="radio-buttons-group"
-                            row
-                          >
-                            <FormControlLabel
-                              value="3.3"
-                              control={<Radio />}
-                              label="3.3V"
-                            />
-                            <FormControlLabel
-                              value="5"
-                              control={<Radio color="secondary" />}
-                              label="5V"
-                            />
-                          </RadioGroup>
-                        </FormControl>
-                      </div>
+                      <VoltageField 
+                      field = {field}
+                      formElementDecor= {formElementDecor}
+                      />
                     );
                   }}
                 />
@@ -267,47 +191,17 @@ const SpecificationStep1 = (props) => {
                 <Controller
                   name="outputType"
                   control={control}
-                  rules={{ required: true }}
                   render={({ field }) => {
                     return (
-                      <div className="radiogroup--decor">
-                        <FormControl
-                          sx={formElementDecor.radioGroupFormControl}
-                        >
-                          <FormLabel
-                            id="outputType-radio-buttons-group-label"
-                            sx={formElementDecor.radioGroupLabel}
-                          >
-                            Output Type
-                          </FormLabel>
-                          <RadioGroup
-                            sx={formElementDecor.radioGroup}
-                            {...field}
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            name="radio-buttons-group"
-                            row
-                          >
-                            <FormControlLabel
-                              value="Sine-wave"
-                              control={<Radio />}
-                              label="Sine-wave"
-                            />
-                            <FormControlLabel
-                              value="HCMOS"
-                              control={<Radio />}
-                              label="HCMOS"
-                            />
-                          </RadioGroup>
-                        </FormControl>
-                      </div>
+                      <OutputTypeField 
+                      field = {field}
+                      formElementDecor= {formElementDecor}
+                      />
                     );
                   }}
                 />
               </div>
               {/* END Output Type +++++++++++ */}
-              {/*         <div className="button-specification_wrap">
-                <input className="button-specification" type="submit" />
-              </div> */}
 
               <div className="button-specification_wrap">
                 <div className="button-specification_btn">
@@ -316,7 +210,7 @@ const SpecificationStep1 = (props) => {
                   </Button>
                 </div>
                 <div className="button-specification_btn">
-                  <Button variant="contained"  type="submit">
+                  <Button variant="contained" type="submit">
                     Submit Specification
                   </Button>
                 </div>
@@ -330,7 +224,7 @@ const SpecificationStep1 = (props) => {
     );
   };
 
-  return !backBtn ? validForm() :  <Navigate to="/gen_models_hello" />;
+  return !backBtn ? validForm() : <Navigate to="/gen_models_hello" />;
   //return validForm()
 };
 

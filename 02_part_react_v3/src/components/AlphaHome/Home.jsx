@@ -31,7 +31,7 @@ Owing to the extraordinary performances the LP OCXOs have become unreplaceable p
 <div className="hello-article">
     <h4 className="hello-article__title">High Precision Low Power Real-Time Clock/Calendar</h4>
     <div className="hello-article__collage">
-        <div className="collage__circle--large"> <img  src="../../pimages/types200/type9_200px.png" alt="Real-Time Clock/Calendar" /></div>
+        <div className="collage__circle--large"> <img  src="./pimages/types200/type9_200px.png" alt="Real-Time Clock/Calendar" /></div>
     </div>
     <p className="hello-article__content">Basing on the LP OCXOs operating at 8.192 MHz or 16.384 MHz frequency these clocks ensure very high precision of 1 s time intervals at very low power consumption and small sizes. Owing to the very attractive combination of properties these clocks are now very demanded part of different modern equipment with battery supply, for instance, of  the underwater geological exploration equipment providing its long service-free period at high precision of the geological data.</p>
     <div className="hello-article__more">
@@ -42,7 +42,7 @@ Owing to the extraordinary performances the LP OCXOs have become unreplaceable p
 <div className="hello-article">
     <h4 className="hello-article__title">Ultra stable Low Noise Low Power Frequency Reference </h4>
     <div className="hello-article__collage">
-        <div className="collage__circle--large"> <img  src="../../pimages/types200/type10_200px.png" alt="Real-Time Clock/Calendar" /></div>
+        <div className="collage__circle--large"> <img  src="./pimages/types200/type10_200px.png" alt="Real-Time Clock/Calendar" /></div>
     </div>
     <p className="hello-article__content">These miniature frequency standards using high stability LP OCXO together with PLL discipline option from external GPS or PSS signals provide very high short-term and long-term stability reaching the “atomic” rank of 0.03 ppb/day during long hold-over period. Owing to these excellent performances the references can be successfully used at high-end portable instrumentation and other modern high precision battery supply equipment.</p>
     <div className="hello-article__more">

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.3f97158b.css",
-    "main.js": "./static/js/main.efa30894.js",
+    "main.css": "./static/css/main.2ce02931.css",
+    "main.js": "./static/js/main.043fa29e.js",
     "static/media/bc-earth-1.png": "./static/media/bc-earth-1.31a7cecc49a7455958f5.png",
     "static/media/NotoSans-Regular.woff": "./static/media/NotoSans-Regular.e48aa7026553aa67b245.woff",
     "static/media/NotoSans-Bold.woff": "./static/media/NotoSans-Bold.a288005efe57a0dc9e42.woff",
@@ -28,11 +28,11 @@
     "static/media/AvenirLTStd-Roman.woff2": "./static/media/AvenirLTStd-Roman.3920e92db1a46b54221f.woff2",
     "static/media/AvenirLTStd-Black.woff2": "./static/media/AvenirLTStd-Black.33f6f4605b6a3dd4def9.woff2",
     "index.html": "./index.html",
-    "main.3f97158b.css.map": "./static/css/main.3f97158b.css.map",
-    "main.efa30894.js.map": "./static/js/main.efa30894.js.map"
+    "main.2ce02931.css.map": "./static/css/main.2ce02931.css.map",
+    "main.043fa29e.js.map": "./static/js/main.043fa29e.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f97158b.css",
-    "static/js/main.efa30894.js"
+    "static/css/main.2ce02931.css",
+    "static/js/main.043fa29e.js"
   ]
 }

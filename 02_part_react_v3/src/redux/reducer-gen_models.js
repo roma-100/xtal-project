@@ -214,7 +214,15 @@ const initialState = {
          {
           frequency:[10, 100, 150],
           stability:[2, 5, 10],
-         }
+         },
+         continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,14.16],
+            sWave5V: [10,12,100,17,9.381],
+            hsmos5V: [10,9,100,13,9.381],
+            hsmos3p3V: [10,6,100,8.7,14.16],
+          },
+        },
          },
         { modelId: "2" ,
           model: 'XBO8S' , stabilityLimit: 2,
@@ -222,7 +230,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[2, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,14.16],
+            sWave5V: [10,12,100,17,9.381],
+            hsmos5V: [10,9,100,13,9.381],
+            hsmos3p3V: [10,6,100,8.7,14.16],
+          },
+        },
         },
         { modelId: "3" ,
           model: 'XBO14' , stabilityLimit: 1,
@@ -230,7 +246,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[1, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,14.16],
+            sWave5V: [10,12,100,17,9.381],
+            hsmos5V: [10,9,100,13,9.381],
+            hsmos3p3V: [10,6,100,8.7,14.16],
+          },
+        },
         },
         { modelId: "4" ,
           model: 'XBO14S' , stabilityLimit: 1,
@@ -238,7 +262,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[1, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,14.16],
+            sWave5V: [10,12,100,17,9.381],
+            hsmos5V: [10,9,100,13,9.381],
+            hsmos3p3V: [10,6,100,8.7,14.16],
+          },
+        },
         },
         { modelId: "5" ,
           model: 'XBO20' , stabilityLimit: 0.3,
@@ -246,7 +278,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[0.3, 3, 6],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,14.16],
+            sWave5V: [10,12,100,17,9.381],
+            hsmos5V: [10,9,100,13,9.381],
+            hsmos3p3V: [10,6,100,8.7,14.16],
+          },
+        },
         },
         { modelId: "6" ,
           model: 'XBOH20' , stabilityLimit: 0.3,
@@ -256,7 +296,21 @@ const initialState = {
          stability:[0.3, 3, 6],
          frequency40:[50, 500, 750],
          stability40:[0.3, 3, 6],         
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,14.16],
+            sWave5V: [10,16.248,100,23.018,9.381],
+            hsmos5V: [10,12.186,100,17.602,9.381],
+            hsmos3p3V: [10,8.124,100,11.7798,14.16],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,14.16],
+            sWave5V: [10,16.248,100,23.018,9.381],
+            hsmos5V: [10,12.186,100,17.602,9.381],
+            hsmos3p3V: [10,8.124,100,11.7798,14.16],
+          },
+        },
         },
         { modelId: "7" ,
           model: 'XBOH14' , stabilityLimit: 5,
@@ -266,7 +320,21 @@ const initialState = {
          stability:[5, 20, 10],
          frequency40:[50, 500, 750],
          stability40:[5, 20, 10],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,14.16],
+            sWave5V: [10,16.248,100,23.018,9.381],
+            hsmos5V: [10,12.186,100,17.602,9.381],
+            hsmos3p3V: [10,8.124,100,11.7798,14.16],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,14.16],
+            sWave5V: [10,16.248,100,23.018,9.381],
+            hsmos5V: [10,12.186,100,17.602,9.381],
+            hsmos3p3V: [10,8.124,100,11.7798,14.16],
+          },
+        },
         },
         { modelId: "8" ,
           model: 'XBOH14S' , stabilityLimit: 5,
@@ -276,7 +344,21 @@ const initialState = {
          stability:[5, 20, 10],
          frequency40:[50, 500, 750],
          stability40:[5, 20, 10],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,14.16],
+            sWave5V: [10,16.248,100,23.018,9.381],
+            hsmos5V: [10,12.186,100,17.602,9.381],
+            hsmos3p3V: [10,8.124,100,11.7798,14.16],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,14.16],
+            sWave5V: [10,16.248,100,23.018,9.381],
+            hsmos5V: [10,12.186,100,17.602,9.381],
+            hsmos3p3V: [10,8.124,100,11.7798,14.16],
+          },
+        },
         },
       ]
     },
@@ -291,7 +373,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[2, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,17.265],
+            sWave5V: [10,12,100,17,11.422],
+            hsmos5V: [10,9,100,13,11.422],
+            hsmos3p3V: [10,6,100,8.7,17.265],
+          },
+        },
         },
         { modelId: "2" ,
           model: 'XBO8S' , stabilityLimit: 2,
@@ -299,7 +389,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[2, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,17.265],
+            sWave5V: [10,12,100,17,11.422],
+            hsmos5V: [10,9,100,13,11.422],
+            hsmos3p3V: [10,6,100,8.7,17.265],
+          },
+        },
         },
         { modelId: "3" ,
           model: 'XBO14' , stabilityLimit: 1,
@@ -307,7 +405,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[1, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,17.265],
+            sWave5V: [10,12,100,17,11.422],
+            hsmos5V: [10,9,100,13,11.422],
+            hsmos3p3V: [10,6,100,8.7,17.265],
+          },
+        },
         },
         { modelId: "4" ,
           model: 'XBO14S' , stabilityLimit: 1,
@@ -315,7 +421,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[1, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,17.265],
+            sWave5V: [10,12,100,17,11.422],
+            hsmos5V: [10,9,100,13,11.422],
+            hsmos3p3V: [10,6,100,8.7,17.265],
+          },
+        },
         },
         { modelId: "5" ,
           model: 'XBO20' , stabilityLimit: 0.3,
@@ -323,7 +437,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[0.3, 3, 6],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,17.265],
+            sWave5V: [10,12,100,17,11.422],
+            hsmos5V: [10,9,100,13,11.422],
+            hsmos3p3V: [10,6,100,8.7,17.265],
+          },
+        },
         },
         { modelId: "6" ,
           model: 'XBOH20' , stabilityLimit: 0.3,
@@ -333,7 +455,21 @@ const initialState = {
          stability:[0.3, 3, 6],
          frequency40:[50, 500, 750],
          stability40:[0.3, 3, 6],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,17.265],
+            sWave5V: [10,16.248,100,23.018,11.422],
+            hsmos5V: [10,12.186,100,17.602,11.422],
+            hsmos3p3V: [10,8.124,100,11.7798,17.265],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,17.265],
+            sWave5V: [10,16.248,100,23.018,11.422],
+            hsmos5V: [10,12.186,100,17.602,11.422],
+            hsmos3p3V: [10,8.124,100,11.7798,17.265],
+          },
+        },
         },
         { modelId: "7",
           model: 'XBOH14' , stabilityLimit: 5,
@@ -343,7 +479,21 @@ const initialState = {
          stability:[5, 30, 60],
          frequency40:[50, 500, 750],
          stability40:[5, 30, 60],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,17.265],
+            sWave5V: [10,16.248,100,23.018,11.422],
+            hsmos5V: [10,12.186,100,17.602,11.422],
+            hsmos3p3V: [10,8.124,100,11.7798,17.265],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,17.265],
+            sWave5V: [10,16.248,100,23.018,11.422],
+            hsmos5V: [10,12.186,100,17.602,11.422],
+            hsmos3p3V: [10,8.124,100,11.7798,17.265],
+          },
+        },
         },
         { modelId: "8",
           model: 'XBOH14S' , stabilityLimit: 5,
@@ -353,7 +503,21 @@ const initialState = {
          stability:[5, 30, 60],
          frequency40:[50, 500, 750],
          stability40:[5, 30, 60],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,17.265],
+            sWave5V: [10,16.248,100,23.018,11.422],
+            hsmos5V: [10,12.186,100,17.602,11.422],
+            hsmos3p3V: [10,8.124,100,11.7798,17.265],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,17.265],
+            sWave5V: [10,16.248,100,23.018,11.422],
+            hsmos5V: [10,12.186,100,17.602,11.422],
+            hsmos3p3V: [10,8.124,100,11.7798,17.265],
+          },
+        },
         },
       ]
     },
@@ -368,7 +532,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[2, 10, 20],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,21.881],
+            sWave5V: [10,12,100,17,14.446],
+            hsmos5V: [10,9,100,13,14.446],
+            hsmos3p3V: [10,6,100,8.7,21.881],
+          },
+        },
         },
         { modelId: "2",
           model: 'XBO8S' , stabilityLimit: 2,
@@ -376,7 +548,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[2, 10, 20],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,21.881],
+            sWave5V: [10,12,100,17,14.446],
+            hsmos5V: [10,9,100,13,14.446],
+            hsmos3p3V: [10,6,100,8.7,21.881],
+          },
+        },
         },
         { modelId: "3",
           model: 'XBO14' , stabilityLimit: 1,
@@ -384,7 +564,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[1, 10, 20],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,21.881],
+            sWave5V: [10,12,100,17,14.446],
+            hsmos5V: [10,9,100,13,14.446],
+            hsmos3p3V: [10,6,100,8.7,21.881],
+          },
+        },
         },
         { modelId: "4",
           model: 'XBO14S' , stabilityLimit: 1,
@@ -392,7 +580,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[1, 10, 20],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,21.881],
+            sWave5V: [10,12,100,17,14.446],
+            hsmos5V: [10,9,100,13,14.446],
+            hsmos3p3V: [10,6,100,8.7,21.881],
+          },
+        },
         },
         { modelId: "5",
           model: 'XBO20' , stabilityLimit: 0.5,
@@ -400,7 +596,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[0.5, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,21.881],
+            sWave5V: [10,12,100,17,14.446],
+            hsmos5V: [10,9,100,13,14.446],
+            hsmos3p3V: [10,6,100,8.7,21.881],
+          },
+        },
         },
         { modelId: "6",
           model: 'XBOH20' , stabilityLimit: 0.5,
@@ -410,7 +614,21 @@ const initialState = {
          stability:[0.5, 5, 10],
          frequency40:[50, 500, 750],
          stability40:[.5, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,21.881],
+            sWave5V: [10,16.248,100,23.018,14.446],
+            hsmos5V: [10,12.186,100,17.602,14.446],
+            hsmos3p3V: [10,8.124,100,11.7798,21.881],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,21.881],
+            sWave5V: [10,16.248,100,23.018,14.446],
+            hsmos5V: [10,12.186,100,17.602,14.446],
+            hsmos3p3V: [10,8.124,100,11.7798,21.881],
+          },
+        },
         },
         { modelId: "7",
           model: 'XBOH14' , stabilityLimit: 10,
@@ -420,7 +638,21 @@ const initialState = {
          stability:[10, 50, 100],
          frequency40:[50, 500, 750],
          stability40:[10, 50, 100],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,21.881],
+            sWave5V: [10,16.248,100,23.018,14.446],
+            hsmos5V: [10,12.186,100,17.602,14.446],
+            hsmos3p3V: [10,8.124,100,11.7798,21.881],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,21.881],
+            sWave5V: [10,16.248,100,23.018,14.446],
+            hsmos5V: [10,12.186,100,17.602,14.446],
+            hsmos3p3V: [10,8.124,100,11.7798,21.881],
+          },
+        },
         },
         { modelId: "8",
           model: 'XBOH14S' , stabilityLimit: 10,
@@ -430,7 +662,21 @@ const initialState = {
          stability:[10, 50, 100],
          frequency40:[50, 500, 750],
          stability40:[10, 50, 100],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,21.881],
+            sWave5V: [10,16.248,100,23.018,14.446],
+            hsmos5V: [10,12.186,100,17.602,14.446],
+            hsmos3p3V: [10,8.124,100,11.7798,21.881],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,21.881],
+            sWave5V: [10,16.248,100,23.018,14.446],
+            hsmos5V: [10,12.186,100,17.602,14.446],
+            hsmos3p3V: [10,8.124,100,11.7798,21.881],
+          },
+        },
         },
       ]
     },
@@ -445,7 +691,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[3, 15, 30],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "2",
           model: 'XBO8S' , stabilityLimit: 3,
@@ -453,7 +707,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[3, 15, 30],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "3",
           model: 'XBO14' , stabilityLimit: 2,
@@ -461,7 +723,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[2, 10, 20],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "4",
           model: 'XBO14S' , stabilityLimit: 2,
@@ -469,7 +739,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[2, 10, 20],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "5",
           model: 'XBO20' , stabilityLimit: 0.5,
@@ -477,7 +755,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[0.5, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "6",
           model: 'XBOH20' , stabilityLimit: 0.5,
@@ -487,7 +773,21 @@ const initialState = {
          stability:[.5, 5, 10],
          frequency40:[50, 500, 750],
          stability40:[.5, 5, 10],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+        },
         },
         { modelId: "7",
           model: 'XBOH14' , stabilityLimit: 10,
@@ -497,7 +797,21 @@ const initialState = {
          stability:[10, 100, 200],
          frequency40:[50, 500, 750],
          stability40:[10, 100, 200],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+        },
         },
         { modelId: "8",
           model: 'XBOH14S' , stabilityLimit: 10,
@@ -507,7 +821,21 @@ const initialState = {
          stability:[10, 100, 200],
          frequency40:[50, 500, 750],
          stability40:[10, 100, 200],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+        },
         },
       ]
     },
@@ -522,7 +850,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[10, 30, 60],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "2",
           model: 'XBO8S' , stabilityLimit: 10,
@@ -530,7 +866,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[10, 30, 60],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "3",
           model: 'XBO14' , stabilityLimit: 5,
@@ -538,7 +882,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[5, 30, 60],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "4",
           model: 'XBO14S' , stabilityLimit: 5,
@@ -546,7 +898,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[5, 30, 60],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "5",
           model: 'XBO20' , stabilityLimit: 1,
@@ -554,7 +914,15 @@ const initialState = {
         {
           frequency:[10, 100, 150],
          stability:[1, 10, 20],
-        }
+        },
+        continuousCurrent: {
+          ccF: {
+            sWave3p3V: [10,8,100,11.3,29.23],
+            sWave5V: [10,12,100,17,19.233],
+            hsmos5V: [10,9,100,13,19.233],
+            hsmos3p3V: [10,6,100,8.7,29.23],
+          },
+        },
         },
         { modelId: "6",
           model: 'XBOH20' , stabilityLimit: 1,
@@ -564,7 +932,21 @@ const initialState = {
          stability:[1, 10, 20],
          frequency40:[50, 500, 750],
          stability40:[1, 10, 20],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+        },
         },
         { modelId: "7",
           model: 'XBOH14' , stabilityLimit: 30,
@@ -574,7 +956,21 @@ const initialState = {
          stability:[30, 100, 200],
          frequency40:[50, 500, 750],
          stability40:[30, 100, 200],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+        },
         },
         { modelId: "8",
           model: 'XBOH14S' , stabilityLimit: 30,
@@ -584,7 +980,21 @@ const initialState = {
          stability:[30, 100, 200],
          frequency40:[50, 500, 750],
          stability40:[30, 100, 200],
-        }
+        },
+        continuousCurrent: {
+          ccM: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+          ccM40: {
+            sWave3p3V: [10,10.832,100,15.3002,29.23],
+            sWave5V: [10,16.248,100,23.018,19.233],
+            hsmos5V: [10,12.186,100,17.602,19.233],
+            hsmos3p3V: [10,8.124,100,11.7798,29.23],
+          },
+        },
         },
       ]
     }

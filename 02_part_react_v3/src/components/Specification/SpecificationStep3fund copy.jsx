@@ -13,7 +13,6 @@ import {
   FormControlLabel,
   FormHelperText,
   Button,
-  Switch, Checkbox
 } from "@mui/material/";
 import SpecificationBanerStep1 from "./SpecificationBannerStep1";
 
@@ -27,14 +26,13 @@ const SpecificationStep3fund = (props) => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      nominalFrequency: "12",
-      phaseNoiseSwitch: "false",
+      nominalFrequency: "",
     },
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    //window.bb = errors
+    console.log("Step3fund data: " + data.nominalFrequency);
+
   };
   const look = (errors) => console.log(errors.firstName?.message);
 
@@ -147,25 +145,6 @@ const SpecificationStep3fund = (props) => {
                 />
               </div>
               {/* END nominalFrequency +++++++++++ */}
-
-      {/* ++++++++ Start xx ++++++ */}
-      <div className="specification-mail__field">
-        <Controller
-          name="phaseNoiseSwitch"
-          control={control}
-          render={({ field }) => {
-            return (
-                <FormControlLabel 
-                control={<Switch defaultChecked onClick={(e) => console.log('Hello3' + e.target.checked)} />}
-                label="Label" 
-                labelPlacement="start"
-                /* Checked={dataForm.phaseNoiseSwitchDefault} */
-                />
-            );
-          }}
-        />
-      </div>
-      {/* ++++++++ End xx ++++++ */}
 
               {/*         <div className="button-specification_wrap">
                 <input className="button-specification" type="submit" />

@@ -2,6 +2,7 @@
 import React, { useEffect, useState }  from 'react';
 import ReportTemplate from "./SpecTemplate"
 import './SpecificationLoader.scss'
+import html2canvas from 'html2canvas';
 
 /* =====End cmponents ======== */
 import { useRef } from "react";
@@ -38,7 +39,9 @@ const Cofee = (props) => {
 {/*         <button className="button" onClick={handleGeneratePdf}>
           Generate PDF
         </button> */}
+        
         <button className="specification-download-btn" role="button" onClick={handleGeneratePdf} ><span class="text">Download Specification</span></button>
+        
         {/* <div className="specification-download-btn" onClick={handleGeneratePdf}> Generate PDF </div> */}
         {/* <p>{`screen: ${ssStyle().screenWidth} tableWidth: ${ssStyle().tableWidth.width} pdfOffset: ${ssStyle().pdfOffset}`}</p> */}
         

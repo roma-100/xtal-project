@@ -5,11 +5,12 @@ import StateSpecFormShowHelper from "../Helper/StateSpecFormShowHelper";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import {
-  specFormInputStep2,
+  specFormInputStep2TC,
   specFormInputStep3,
-  setStabilituVsTemperature,
-  initFrequencyBlurAC,
-  specFormInitStep2TC,
+  setFrequencyBlurTC,
+  setstabilityVsTemperatureBlurValueBlurTC,
+  updateVoltageBlurTC,
+  updateOutputTypeBlurTC,
   initSelectedModel,
   setEmailDataAC,
   setStepsLevelFinish,
@@ -65,13 +66,21 @@ class SpecificationContainer extends React.Component {
         <div>
           {specBannerStep1()}
 
+          <SpecificationBannerStep2
+            dataForm={this.props.stSpecForm}
+          />    
+
           <SpecificationStep2
-            specFormInputStep2={this.props.specFormInputStep2}
+            specFormInputStep2TC={this.props.specFormInputStep2TC}
             picturePath={picturePath}
             dataForm={this.props.stSpecForm}
-            setStabilituVsTemperature={this.props.setStabilituVsTemperature}
+            setFrequencyBlurTC={this.props.setFrequencyBlurTC}
+            setstabilityVsTemperatureBlurValueBlurTC= {this.props.setstabilityVsTemperatureBlurValueBlurTC}
+            updateVoltageBlurTC={this.props.updateVoltageBlurTC}
+            updateOutputTypeBlurTC={this.props.updateOutputTypeBlurTC}
             frequencyRange={`${this.props.stSpecForm.selectedModel.frequencyMin}...${this.props.stSpecForm.selectedModel.frequencyMax}`}
             filterInitTC = {this.props.filterInitTC}
+            phaseNoiseSwitchToggleAC = {this.props.phaseNoiseSwitchToggleAC}
 
           />
         </div>
@@ -179,11 +188,12 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  specFormInputStep2,
+  specFormInputStep2TC,
   specFormInputStep3,
-  setStabilituVsTemperature,
-  initFrequencyBlurAC,
-  specFormInitStep2TC,
+  setFrequencyBlurTC,
+  setstabilityVsTemperatureBlurValueBlurTC,
+  updateVoltageBlurTC,
+  updateOutputTypeBlurTC,
   initSelectedModel,
   setEmailDataAC,
   setStepsLevelFinish,

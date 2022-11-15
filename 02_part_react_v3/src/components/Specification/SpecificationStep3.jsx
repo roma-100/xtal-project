@@ -190,27 +190,7 @@ const SpecificationStep3fund = (props) => {
  {/* END aginPerDay level +++++++++++ */}
 
 {/* Start G-sensitivity +++++++++++ */}
-{/* <div>
-              <Controller
-                  name="gSensitivity"
-                  control={control}
-                  rules={{
-                    required: "This is required",
-                  }}
-                  render={({ field }) => {
-                    return (
-                      <SubharmonicsLevelField 
-                      field = {field}
-                      error = {errors.continuousCurrent}
-                      label = {'G-sensitivity'}
-                      decor = {formElementDecor.textField}
-                      endAdornment = {''}
-                      helperText = {'min: 0, max: 2'}
-                      />
-                    );
-                  }}
-                />
-            </div> */}
+
  {/* END aginPerDay G-sensitivity +++++++++++ */}
 
  {/* ++++++++ Start phaseNoiseSwitch ++++++ */}

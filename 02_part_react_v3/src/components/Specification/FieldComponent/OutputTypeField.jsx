@@ -12,12 +12,13 @@ import {    TextField,
     Button,} from "@mui/material";
 
 export default function StabilityVsTemperatureField (props) {
-  const { formElementDecor, field } = props
+  const { formElementDecor, field, onChange } = props
 
             return (
                 <div className="radiogroup--decor">
                 <FormControl
                   sx={formElementDecor.radioGroupFormControl}
+                  onChange={onChange}
                 >
                   <FormLabel
                     id="outputType-radio-buttons-group-label"

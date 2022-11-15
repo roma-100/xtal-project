@@ -30,7 +30,7 @@ const GenModelsHello = (props) => {
          frequency:[24, 100, 295],
          stability:[5, 10, 20],
         } */
-    const continuousCurrent = props.gen_models.temperatureRange
+    const continuousCurrentArraySet = props.gen_models.temperatureRange
       .filter((value, index) => {
         //console.log(JSON.stringify(value.id, null, 2))
         return value.range === props.gen_models.filterTemperatureRange;
@@ -43,11 +43,12 @@ const GenModelsHello = (props) => {
    console.log(selectedModel)
    console.log(selectedModelStabilityVsTemperature)
    console.log(continuousCurrent) */
+   //console.log(continuousCurrentArraySet)
 
     props.specFormInitStep2TC(
       selectedModel,
       selectedModelStabilityVsTemperature,
-      continuousCurrent
+      continuousCurrentArraySet
     );
   };
 

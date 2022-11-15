@@ -3,11 +3,11 @@ import Box from "@mui/material/Box";
 import { TextField, FormControl, FormHelperText, InputAdornment } from "@mui/material";
 
 export default function StabilityVsTemperatureField (props) {
-  const { temperatureRangeSelected, stabilityFromFrequencyBlur, 
+  const { temperatureRangeSelected, stabilityFromFrequencyBlur, handleOnBlur,
         decor, field, error } = props
 
             return (
-                <FormControl sx={decor}>
+                <FormControl sx={decor} onBlur={handleOnBlur} >
                 <TextField
                   {...field}
                   label={

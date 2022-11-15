@@ -2,7 +2,7 @@
 import React, { useEffect, useState }  from 'react';
 import SpecificationMailForm from "./SpecificationMailForm"
 import emailjs from '@emailjs/browser';
-
+import SpecificationLoader from "./SpecificationLoader/SpecificationLoader"
 import { useForm, Controller  } from "react-hook-form";
 
 
@@ -26,14 +26,16 @@ const SpecificationMailSender = (props) => {
 
       //console.log(txData.message.replace(/\r?\n/g, '<br />')); //text = text.replace(/\r?\n/g, '<br />');
       //console.log(txData);
-      emailjs.send(SERVICE_ID, TEMPLATE_ID, txData, PUBLIC_KEY)
+
+
+/*       emailjs.send(SERVICE_ID, TEMPLATE_ID, txData, PUBLIC_KEY)
       .then(response => {
         console.log('SUCCESS!', response);
         setStatus('SUCCESS');
       }, error => {
         console.log('FAILED...', error);
         setStatus('FAILED');
-      });
+      }); */
 
   };
 
@@ -56,11 +58,13 @@ const SpecificationMailSender = (props) => {
   return (
     <div>
       {/* <button onClick={hadleCkick}>Click me</button> */}
+      
       <SpecificationMailForm 
       onSubmit = {onSubmit} /* transport event */
       status = {status}
       filterInitTC = {filterInitTC}
       />
+      <SpecificationLoader />
     </div>
   )
 }

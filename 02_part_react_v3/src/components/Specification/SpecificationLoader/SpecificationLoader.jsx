@@ -1,24 +1,21 @@
 //***********  SpecificationStep1.jsx **** */
 import React, { useEffect, useState }  from 'react';
-import ReportTemplate from "./Xtest7_template"
+import ReportTemplate from "./SpecTemplate"
+import './SpecificationLoader.scss'
+
 /* =====End cmponents ======== */
 import { useRef } from "react";
 import jsPDF from "jspdf";
 
 const Cofee = (props) => {
   const reportTemplateRef = useRef(null);
-  
-  const sStyle = ssStyle()
-/*   const style = {
-    tableWidth: 360,
-    pdfOffset: 0,
-  } */
-
+ 
   const handleGeneratePdf = () => {
     const doc = new jsPDF({
       format: "a4",
-      unit: "px"
+      unit: "pt"
     });
+
 
     doc.html(reportTemplateRef.current, {
       async callback(doc) {
@@ -26,29 +23,28 @@ const Cofee = (props) => {
        //doc.addFont('Roboto-Black-normal.ttf', 'Roboto-Black', 'normal');
          doc.save("document");
       },
-      x: sStyle.pdfOffset,
-      y: 15,
-      width: sStyle.tableWidth.width, //target width in the PDF document
-      windowWidth: sStyle.screenWidth //window width in CSS pixels
+      x: ssStyle().pdfOffset,
+      y: 20,
+      width: ssStyle().pdfWidth, //target width in the PDF document
+      windowWidth: ssStyle().screenWidth //window width in CSS pixels
     });
  
   };
-
   console.log(ssStyle())
   
-
-
-
   return (
     <>
       <div className="spec-pdf__doc-wrap">
-        <button className="button" onClick={handleGeneratePdf}>
+{/*         <button className="button" onClick={handleGeneratePdf}>
           Generate PDF
-        </button>
-        <p>{`screen: ${sStyle.screenWidth} tableWidth: ${sStyle.tableWidth.width} pdfOffset: ${sStyle.pdfOffset}`}</p>
+        </button> */}
+        <button className="specification-download-btn" role="button" onClick={handleGeneratePdf} ><span class="text">Download Specification</span></button>
+        {/* <div className="specification-download-btn" onClick={handleGeneratePdf}> Generate PDF </div> */}
+        {/* <p>{`screen: ${ssStyle().screenWidth} tableWidth: ${ssStyle().tableWidth.width} pdfOffset: ${ssStyle().pdfOffset}`}</p> */}
+        
         <div ref={reportTemplateRef} >
           <ReportTemplate 
-          decor = {sStyle.tableWidth}
+          decor = {ssStyle().tableWidth}/* {sStyle.tableWidth} */
           />
   
         </div>
@@ -62,6 +58,7 @@ const ssStyle = () => {
     screenWidth: window.innerWidth,
     tableWidth: {width: 300},
     pdfOffset: 0,
+    pdfWidth: window.innerWidth,
     margin: 10
   }
   const tableWidthMin = 300
@@ -75,7 +72,8 @@ const ssStyle = () => {
     }
   }
 
-  style.pdfOffset = (style.screenWidth - style.tableWidth.width)/10
+  style.pdfOffset = (style.screenWidth - style.tableWidth.width)/9
+  style.pdfWidth = 0.6 * style.tableWidth.width * (style.screenWidth / style.tableWidth.width)
 
   return style
 }

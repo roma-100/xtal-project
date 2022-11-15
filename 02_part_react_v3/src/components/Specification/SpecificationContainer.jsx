@@ -148,6 +148,7 @@ class SpecificationContainer extends React.Component {
           <SpecificationBannerStep2
             dataForm={this.props.stSpecForm}
           />   
+          
         <SpecificationMailSender
           setStepsLevelFinish={this.props.setStepsLevelFinish}
           emailData={this.props.stSpecForm.emailData}

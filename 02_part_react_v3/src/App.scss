@@ -1,3 +1,8 @@
+@function get-vw($target) { 
+  $vw-context: (1000*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
 .hero-step2 {
     width: 100vw;
     height: 30vw;
@@ -57,5 +62,22 @@
     padding: 0.8vw;
   }
 
-  /*  */
+  /* spec-pdf__doc-wrap */
+.spec-pdf__doc-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
+/*   .spec-pdf__doc--size {
+    width: 350px;
+    margin: 30px;
+  } */
+}
+.spec-pdf__template--bottom-space {
+  height: 200px;
+  border-bottom: 1px solid #000;
+}
+.xxx {
+  margin-left: 200px;
+}

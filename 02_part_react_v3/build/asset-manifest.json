@@ -1,7 +1,10 @@
 {
   "files": {
-    "main.css": "./static/css/main.2ce02931.css",
-    "main.js": "./static/js/main.f1606d64.js",
+    "main.css": "./static/css/main.2cfb377e.css",
+    "main.js": "./static/js/main.c44a75eb.js",
+    "static/js/498.c18bd6c3.chunk.js": "./static/js/498.c18bd6c3.chunk.js",
+    "static/js/703.ff5270c4.chunk.js": "./static/js/703.ff5270c4.chunk.js",
+    "static/js/598.7602d9a9.chunk.js": "./static/js/598.7602d9a9.chunk.js",
     "static/media/bc-earth-1.png": "./static/media/bc-earth-1.31a7cecc49a7455958f5.png",
     "static/media/NotoSans-Regular.woff": "./static/media/NotoSans-Regular.e48aa7026553aa67b245.woff",
     "static/media/NotoSans-Bold.woff": "./static/media/NotoSans-Bold.a288005efe57a0dc9e42.woff",
@@ -28,11 +31,14 @@
     "static/media/AvenirLTStd-Roman.woff2": "./static/media/AvenirLTStd-Roman.3920e92db1a46b54221f.woff2",
     "static/media/AvenirLTStd-Black.woff2": "./static/media/AvenirLTStd-Black.33f6f4605b6a3dd4def9.woff2",
     "index.html": "./index.html",
-    "main.2ce02931.css.map": "./static/css/main.2ce02931.css.map",
-    "main.f1606d64.js.map": "./static/js/main.f1606d64.js.map"
+    "main.2cfb377e.css.map": "./static/css/main.2cfb377e.css.map",
+    "main.c44a75eb.js.map": "./static/js/main.c44a75eb.js.map",
+    "498.c18bd6c3.chunk.js.map": "./static/js/498.c18bd6c3.chunk.js.map",
+    "703.ff5270c4.chunk.js.map": "./static/js/703.ff5270c4.chunk.js.map",
+    "598.7602d9a9.chunk.js.map": "./static/js/598.7602d9a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ce02931.css",
-    "static/js/main.f1606d64.js"
+    "static/css/main.2cfb377e.css",
+    "static/js/main.c44a75eb.js"
   ]
 }

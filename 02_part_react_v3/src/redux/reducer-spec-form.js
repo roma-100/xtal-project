@@ -76,7 +76,8 @@ const specFormReducer = (state = initialState, action) => {
         phaseNoise1KHz: submitData.phaseNoise1KHz,
         phaseNoise10KHz: submitData.phaseNoise10KHz,
         phaseNoise100KHz: submitData.phaseNoise100KHz, 
-      }
+      },
+      stepsLevel: 3,
     };
     //debugger
     return stateCopy;

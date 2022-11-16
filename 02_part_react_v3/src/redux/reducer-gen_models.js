@@ -207,7 +207,7 @@ const initialState = {
       range: "0..50ºC",
       modelsTemperatureData: [
         {
-          modelId: "2",
+          modelId: "1",
           model: "XBO8",
           stabilityLimit: 2,
           stabilityVsTemperature: {

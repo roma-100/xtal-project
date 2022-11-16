@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.2cfb377e.css",
-    "main.js": "./static/js/main.985cc959.js",
+    "main.js": "./static/js/main.d6637bbb.js",
     "static/js/703.ff5270c4.chunk.js": "./static/js/703.ff5270c4.chunk.js",
     "static/js/598.7602d9a9.chunk.js": "./static/js/598.7602d9a9.chunk.js",
     "static/media/bc-earth-1.png": "./static/media/bc-earth-1.31a7cecc49a7455958f5.png",
@@ -31,12 +31,12 @@
     "static/media/AvenirLTStd-Black.woff2": "./static/media/AvenirLTStd-Black.33f6f4605b6a3dd4def9.woff2",
     "index.html": "./index.html",
     "main.2cfb377e.css.map": "./static/css/main.2cfb377e.css.map",
-    "main.985cc959.js.map": "./static/js/main.985cc959.js.map",
+    "main.d6637bbb.js.map": "./static/js/main.d6637bbb.js.map",
     "703.ff5270c4.chunk.js.map": "./static/js/703.ff5270c4.chunk.js.map",
     "598.7602d9a9.chunk.js.map": "./static/js/598.7602d9a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2cfb377e.css",
-    "static/js/main.985cc959.js"
+    "static/js/main.d6637bbb.js"
   ]
 }

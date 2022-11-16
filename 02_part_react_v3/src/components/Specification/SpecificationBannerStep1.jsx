@@ -51,6 +51,7 @@ const extractFeatures = (a) => {
           </div>
 
           <div className="speciication-model__features">
+            <h4>Features:</h4>
             {extractFeatures(props.features)}
           </div>
         </div>

@@ -1,7 +1,128 @@
 import React from "react";
 
 const ReportTemplate = (props) => {
-  const {decor} = props
+  const {decor,xlsData} = props
+//console.log('row16subHarmonicsVisible: '+xlsData.row16subHarmonicsVisible)
+  const row8__10_waveForm = () => {
+    if (xlsData.row8__10_waveFormVisible) {
+    return (
+      <>
+      {/* row8 */}<tr>
+      <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.2" sdnum="1033;" height={18} align="center">2.2</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Level</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={7} sdnum="1033;" align="center">7</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">dBm</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center">+</td>
+        </tr>
+  {/* row9 */} <tr>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.3" sdnum="1033;" height={18} align="center">2.3</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Harmonics level</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-25} sdnum="1033;" align="center">-25</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">dBc</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
+        </tr>
+  {/* row10 */} <tr>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.4" sdnum="1033;" height={17} align="center">2.4</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Load</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={45} sdnum="1033;" align="center">45</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={50} sdnum="1033;" align="center">50</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={55} sdnum="1033;" align="center">55</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">Ohm</td>
+          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
+        </tr>
+      </>
+      )
+    }
+  }
+
+  const row11__15_waveForm = () => {
+    if (xlsData.row11__15_waveFormVisible) {
+    return (
+      <>
+{/* row11 */} <tr>
+<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.2" sdnum="1033;" height={17} align="center">2.2</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> High -Voltage</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="3.8" sdnum="1033;" align="center">3.8</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
+      </tr>
+{/* row12 */}<tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.3" sdnum="1033;" height={17} align="center">2.3</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Low - Voltage</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="0.4" sdnum="1033;" align="center">0.4</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
+      </tr>
+{/* row13 */}<tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.4" sdnum="1033;" height={34} align="center">2.4</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Load</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={10} sdnum="1033;" align="center">10</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={15} sdnum="1033;" align="center">15</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">kOhm<br />pF</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
+      </tr>
+{/* row14 */}<tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.5" sdnum="1033;" height={17} align="center">2.5</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left">Duty Cycle</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={45} sdnum="1033;" align="center">45</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={55} sdnum="1033;" align="center">55</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">%</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
+      </tr>
+{/* row15 */}<tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.6" sdnum="1033;" height={18} align="center">2.6</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left">Rise &amp; Fall time</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10, 90 %</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={10} sdnum="1033;" align="center">10</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ns</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
+      </tr>
+      </>
+      )
+    }
+  }
+
+  const row16subHarmonics = () => {
+   /*  if (xlsData.row16subHarmonicsVisible) { */
+   //console.log('row16subHarmonicsVisible' + xlsData.row16subHarmonicsVisible )
+   if (xlsData.row16subHarmonicsVisible) { 
+    return (
+      <>
+     <tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} height={18} align="center">2.5/2.7</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Sub-harmonics level*</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">fsh=f0±(n*f0/5)  n=1,2,3...</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+{/* cellH16 */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-40} sdnum="1033;" align="center">{xlsData.cellH16subHarmonicsValue}</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">dBc</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
+      </tr>
+      </>
+      )
+    }
+  }
+
+/* @@@@@@@@@@ MAIN RETURN @@@@@@@@@@@@@@@@@@@@@@ */
 	 return (
 		<div>
 
@@ -20,7 +141,7 @@ const ReportTemplate = (props) => {
     <colgroup width={69} />
     <colgroup width={85} />
     <tbody><tr>
-        <td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={4} height={17} align="left">Model: XBO14-0001</td>
+{/* row1modelNameCode */}<td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={4} height={17} align="left">{xlsData.row1modelNameCode}</td>
         <td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={6} align="right">Rev. 14.11.2022</td>
       </tr>
       <tr>
@@ -45,7 +166,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="1.1" sdnum="1033;" height={18} align="center">1.1</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"><b>Nominal Frequency, f0</b></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={3} sdval={10} sdnum="1033;" align="center">10</td>
+{/* cellG7waveFormValue */} <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={3} sdval={10} sdnum="1033;" align="center">{xlsData.cellG5nominalFrequencyValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">MHz</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
@@ -66,100 +187,13 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.1" sdnum="1033;" height={17} align="center">2.1</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Wave form</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={3} align="center">Sine-wave</td>
+{/* cellG5nominalFrequencyArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={3} align="center">{xlsData.cellG7waveFormValue[0]}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.2" sdnum="1033;" height={18} align="center">2.2</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Level</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={7} sdnum="1033;" align="center">7</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">dBm</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center">+</td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.3" sdnum="1033;" height={18} align="center">2.3</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Harmonics level</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-25} sdnum="1033;" align="center">-25</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">dBc</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.4" sdnum="1033;" height={17} align="center">2.4</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Load</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={45} sdnum="1033;" align="center">45</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={50} sdnum="1033;" align="center">50</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={55} sdnum="1033;" align="center">55</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">Ohm</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.2" sdnum="1033;" height={17} align="center">2.2</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> High -Voltage</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="3.8" sdnum="1033;" align="center">3.8</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.3" sdnum="1033;" height={17} align="center">2.3</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Low - Voltage</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="0.4" sdnum="1033;" align="center">0.4</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.4" sdnum="1033;" height={34} align="center">2.4</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Load</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={10} sdnum="1033;" align="center">10</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={15} sdnum="1033;" align="center">15</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">kOhm<br />pF</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.5" sdnum="1033;" height={17} align="center">2.5</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left">Duty Cycle</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={45} sdnum="1033;" align="center">45</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={55} sdnum="1033;" align="center">55</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">%</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.6" sdnum="1033;" height={18} align="center">2.6</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left">Rise &amp; Fall time</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10, 90 %</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={10} sdnum="1033;" align="center">10</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ns</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} height={18} align="center">2.5/2.7</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Sub-harmonics level*</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">fsh=f0±(n*f0/5)  n=1,2,3...</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-40} sdnum="1033;" align="center">-40</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">dBc</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
-      </tr>
+      </tr>    
+{row8__10_waveForm()}
+{row11__15_waveForm()}
+{row16subHarmonics()}
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={10} height={17} align="left"><b>             Frequency control</b></td>
       </tr>
@@ -273,20 +307,20 @@ const ReportTemplate = (props) => {
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={10} height={17} align="left"><b>             Power supply</b></td>
       </tr>
-      <tr>
+{/* row30inputVoltage */}<tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.1" sdnum="1033;" height={17} align="center">4.1</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Input Voltage</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.75" sdnum="1033;" align="center">4.75</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={5} sdnum="1033;" align="center">5</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="5.25" sdnum="1033;" align="center">5.25</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.75" sdnum="1033;" align="center">{xlsData.row30inputVoltageArray[0]}</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={5} sdnum="1033;" align="center">{xlsData.row30inputVoltageArray[1]}</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="5.25" sdnum="1033;" align="center">{xlsData.row30inputVoltageArray[2]}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.2" sdnum="1033;" height={18} align="center">4.2</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Warm-up current*</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">Vcc=5.0V</td>
+{/* cellD31warmUpCurrent */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">{xlsData.cellD31warmUpCurrentValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">240</td>
@@ -296,9 +330,9 @@ const ReportTemplate = (props) => {
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.3" sdnum="1033;" height={18} align="center">4.3</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Continuous current</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">at +25°C, Vcc=5.0V</td>
+{/* cellG32continuousCurrent */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">{xlsData.cellG32continuousCurrentValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={30} sdnum="1033;" align="center">30</td>
+{/* cellH32continuousCurrentValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={30} sdnum="1033;" align="center">{xlsData.cellH32continuousCurrentValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">mA</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
@@ -322,7 +356,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">ref 25°C</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">±10</font></td>
+{/* cellH35stabilityVsTemperatureValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">{xlsData.cellH35stabilityVsTemperatureValue}</font></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppb</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center">+</td>
       </tr>
@@ -362,7 +396,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">1 Hz</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-105} sdnum="1033;" align="center">-105</td>
+{/* cellH39PhazeNoise1HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-105} sdnum="1033;" align="center">{xlsData.cellH39PhazeNoise1HzValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} rowSpan={6} valign="middle" align="center">dBc/Hz</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} rowSpan={6} valign="middle" align="center"><br /></td>
       </tr>
@@ -370,31 +404,31 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10 Hz</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-137} sdnum="1033;" align="center">-137</td>
+{/* cellH39PhazeNoise10HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-137} sdnum="1033;" align="center">{xlsData.cellH39PhazeNoise10HzValue}</td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">100 Hz</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-156} sdnum="1033;" align="center">-156</td>
+{/* cellH40PhazeNoise100HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-156} sdnum="1033;" align="center">{xlsData.cellH40PhazeNoise100HzValue}</td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">1 kHz</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-164} sdnum="1033;" align="center">-164</td>
+{/* cellH41PhazeNoise1KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-164} sdnum="1033;" align="center">{xlsData.cellH41PhazeNoise1KHzValue}</td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10 kHz</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-170} sdnum="1033;" align="center">-170</td>
+{/* cellH42PhazeNoise10KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-170} sdnum="1033;" align="center">{xlsData.cellH42PhazeNoise10KHzValue}</td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">100 kHz</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-170} sdnum="1033;" align="center">-170</td>
+{/* cellH43PhazeNoise100KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-170} sdnum="1033;" align="center">{xlsData.cellH43PhazeNoise100KHzValue}</td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} rowSpan={2} sdval="7.1" sdnum="1033;" valign="middle" height={36} align="center">7.1</td>
@@ -403,7 +437,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} rowSpan={2} valign="middle" align="center">after 30 days of operation</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">±0.5</font></td>
+{/* cellH45stabilityVsTemperatureValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">{xlsData.cellH45stabilityVsTemperatureValue}</font></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppb</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
@@ -470,4 +504,7 @@ const ReportTemplate = (props) => {
 	  );
 };
  
+
+
+
 export default ReportTemplate;

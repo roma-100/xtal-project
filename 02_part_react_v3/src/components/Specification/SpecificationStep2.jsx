@@ -94,7 +94,7 @@ const SpecificationStep1 = (props) => {
     //console.log(continuousCurrentDataSelected)
 
     props.specFormInputStep2TC({
-      inputValueSteps: {
+      submitData: {
         nominalFrequency: data.nominalFrequency,
         stabilityVsTemperature: data.stabilityVsTemperature,
         voltage: data.voltage,
@@ -312,14 +312,14 @@ const SpecificationStep1 = (props) => {
                   name="continuousCurrent"
                   control={control}
                   rules={{
-                    required: "This is required",
+                    required: "This is required"/* ,
                     min: {
                       value: dataForm.blurDataset.continuousCurrentResult,
                       message:
                         "Min value is " +
                         dataForm.blurDataset.continuousCurrentResult +
                         " mA",
-                    },
+                    }, */
                   }}
                   render={({ field }) => {
                     return (
@@ -329,7 +329,7 @@ const SpecificationStep1 = (props) => {
                       label = {'Continuous current max limit'}
                       /* decor = {{...formElementDecor.textField, width: "98%"}} */
                       /* decor = {{...formElementDecor.textField, continuousCurrentDispaly}} */
-                      decor = {dataForm.blurDataset.frequencyBlur ? {...formElementDecor.textField, width: "100%"} : {display: "none"}}
+                      decor = {dataForm.blurDataset.frequency ? {...formElementDecor.textField, width: "100%"} : {display: "none"}}
                       /*                       formElementDecor= {{...formElementDecor,
                         //display: !dataForm.blurDataset.frequencyBlur ? "none" : null
                         continuousCurrentDispaly
@@ -341,7 +341,7 @@ const SpecificationStep1 = (props) => {
                       helperText = {errors.continuousCurrent ? 
                         errors.continuousCurrent.message + '; Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA': 
                         'Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'}
-                      helperTextDecor = {dataForm.blurDataset.frequencyBlur ? formElementDecor.helperText : {display: "none"}}
+                      helperTextDecor = {dataForm.blurDataset.frequency ? formElementDecor.helperText : {display: "none"}}
                       />
                     );
                   }}

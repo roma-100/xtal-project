@@ -11,7 +11,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/AlphaHome/Home"
 import Footer from "./components/Footer/Footer"
 import Xtest6 from "./components/Xtest/Xtest6_form";
-import XtestMail from "./components/Xtest/Xtest7_mail";
+import XtestMail from "./components/Xtest/Xtest8_mail";
 import SpecificationContainer from "./components/Specification/SpecificationContainer"
 import {
   BrowserRouter,

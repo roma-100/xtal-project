@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import {
   specFormInputStep2TC,
-  specFormInputStep3,
+  //specFormInputStep3,
   setFrequencyBlurTC,
   setstabilityVsTemperatureBlurValueBlurTC,
   updateVoltageBlurTC,
@@ -103,7 +103,7 @@ class SpecificationContainer extends React.Component {
             setEmailDataAC = {this.props.setEmailDataAC}
             filterInitTC = {this.props.filterInitTC}
             phaseNoiseSwitchToggleAC = {this.props.phaseNoiseSwitchToggleAC}
-            specFormInputStep3 = {this.props.specFormInputStep3}
+            /* specFormInputStep3 = {this.props.specFormInputStep3} */
           />
         </div>
       );
@@ -152,6 +152,7 @@ class SpecificationContainer extends React.Component {
         <SpecificationMailSender
           setStepsLevelFinish={this.props.setStepsLevelFinish}
           emailData={this.props.stSpecForm.emailData}
+          xlsData={this.props.stSpecForm.xlsData}
           filterInitTC={this.props.filterInitTC}
         />
 {/*           <SpecificationSubmit
@@ -190,7 +191,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   specFormInputStep2TC,
-  specFormInputStep3,
+  //specFormInputStep3,
   setFrequencyBlurTC,
   setstabilityVsTemperatureBlurValueBlurTC,
   updateVoltageBlurTC,

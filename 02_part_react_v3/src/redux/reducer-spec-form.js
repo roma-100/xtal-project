@@ -1,11 +1,12 @@
 // === reducer-spec-form.js ===
 const RESET_SPEC_FORM_DATA = "RESET_SPEC_FORM_DATA";
 const INPUT_SET_STEP2 = "INPUT_SET_STEP2";
-const INPUT_SET_STEP3 = "INPUT_SET_STEP3";
+//const INPUT_SET_STEP3 = "INPUT_SET_STEP3";
 const SET_STEPS_LEVEL_FINISH = "SET_STEPS_LEVEL_FINISH"; //stepsLevel=10
 const INIT_SELECTED_MODEL = "INIT_SELECTED_MODEL";
 const INIT_SELECTED_STABILITY_VS_TEMPERATURE ="INIT_SELECTED_STABILITY_VS_TEMPERATURE";
 const INIT_CONTINUOUS_CURRENT= "INIT_CONTINUOUS_CURRENT";
+const INIT_XLS_DATA = "INIT_XLS_DATA"
 const SET_FREQUENCY_BLUR = "SET_FREQUENCY_BLUR";
 const SET_STABILITY_VS_TEMPERATURE_BLUR = "SET_STABILITY_VS_TEMPERATURE_BLUR";
 const SET_EMAIL_DATA = "SET_EMAIL_DATA";
@@ -21,10 +22,10 @@ const initialState = {
   selectedModel: {},
   blurDataset: {
     temperatureRange: '',
-    frequencyBlur: 0,
+    frequency: 0,
     stabilityVsTemperature: 0,
-    voltageBlur: "3.3", //default value
-    outputTypeBlur: "Sine-wave", //default value
+    voltage: "3.3", //default value
+    outputType: "Sine-wave", //default value
     continuousCurrentResult: 0,
 
     continuousCurrent: 0,
@@ -38,11 +39,8 @@ const initialState = {
     phaseNoise100KHz: 0,  
   },
   stepsLevel: 1,
-  inputValueSteps: {
-    /*       "nominalFrequency": "",
-            "stabilityVsTemperature": "",
-            "voltage": "", */
-  },
+  submitData: {},
+  xlsData: {},
   emailData: {},
 };
 
@@ -57,72 +55,20 @@ const specFormReducer = (state = initialState, action) => {
   }
 
   if (action.type === INPUT_SET_STEP2) {
-    const submitData = action.submitDataArr.inputValueSteps;
+    //consoleconst submitData = action.submitDataArr;
     //Update blurDataset
     const stateCopy = {
       ...state,
-      blurDataset: { ...state.blurDataset, 
-        frequencyBlur: submitData.nominalFrequency,
-        stabilityVsTemperature: submitData.stabilityVsTemperature,
-        voltageBlur: submitData.voltage, //default value
-        outputTypeBlur: submitData.outputType, //default value
-    
-        continuousCurrent: submitData.continuousCurrent,
-        subharmonicsLevel: submitData.subharmonicsLevel,
-        aginPerDay: submitData.aginPerDay,
-        phaseNoise1Hz: submitData.phaseNoise1Hz,
-        phaseNoise10Hz: submitData.phaseNoise10Hz,
-        phaseNoise100Hz: submitData.phaseNoise100Hz,
-        phaseNoise1KHz: submitData.phaseNoise1KHz,
-        phaseNoise10KHz: submitData.phaseNoise10KHz,
-        phaseNoise100KHz: submitData.phaseNoise100KHz, 
-      },
+      submitData: {...action.submitDataArr.submitData},
+      //need for e-mail data{} and for banner2
+      blurDataset: {...state.blurDataset, ...action.submitDataArr.submitData},
       stepsLevel: 3,
     };
     //debugger
     return stateCopy;
   }
 
-  /* if (action.type === INPUT_SET_STEP2) {
-    //console.log("ffooo")
-    const submitData = action.submitDataArr.inputValueSteps;
 
-    const emailData = () => {
-      const part1 = {
-        Model: state.selectedModel.name,
-        Packaging: state.selectedModel.packaging,
-      }
-      const part2 = {
-        Frequency: submitData.nominalFrequency + " MHz",
-        "Temperature Range": state.selectedModel.temperatureRangeSelected,
-        "Stability vs Temperature":
-          submitData.stabilityVsTemperature + " ppb",
-        "Supply Voltage": submitData.voltage + " V",
-        "Output Type": submitData.outputType.toUpperCase(),
-
-      }      
-      if (state.selectedModel.frequencyType === "with multiplication") {
-        return {
-          ...part1,  
-          FrequencyType: "MULTIPLICATION",
-          ...part2
-        };
-      }
-      return { ...part1, ...part2};
-    };
-
-    //debugger
-    const stateCopy = {
-      ...state,
-      inputValueSteps: {...action.submitDataArr.inputValueSteps},
-      emailData: emailData(),
-      stepsLevel: 1,
-      //continuousCurrentData: {}
-    };
-    //debugger
-    return stateCopy;
-  }
- */
 
   if (action.type === INIT_CONTINUOUS_CURRENT) {
     //console.log(action.continuousCurrent)
@@ -154,20 +100,19 @@ if (action.type === UPDATE_EMAIL_DATA) {
   if (a.temperatureRange) 
     {emailData = {...emailData, ...{["Temperature Range"]: a.temperatureRange,}}}
 
-  if (a.frequencyBlur) 
-    {emailData = {...emailData, ...{["Frequency"]: a.frequencyBlur + ' MHz',}}}
+  if (a.frequency) 
+    {emailData = {...emailData, ...{["Frequency"]: a.frequency + ' MHz',}}}
 
   if (state.selectedModel.frequencyType === "with multiplication")
     {emailData = {...emailData, ...{["FrequencyType"]: 'MULTIPLICATION',}}}
 
     if (a.stabilityVsTemperature) 
-    {emailData = {...emailData, ...{["Stability vs Temperature"]: a.stabilityVsTemperature + ' ppb',}}}
+    {emailData = {...emailData, ...{["Stability vs Temperature"]: '±' + a.stabilityVsTemperature + ' ppb',}}}
+    if (a.voltage ) 
+    {emailData = {...emailData, ...{["Supply Voltage"]: a.voltage + ' V',}}}
 
-    if (a.voltageBlur ) 
-    {emailData = {...emailData, ...{["Supply Voltage"]: a.voltageBlur + ' V',}}}
-
-  if (a.outputTypeBlur) 
-  {emailData = {...emailData, ...{["Output Type"]: a.outputTypeBlur.toUpperCase(),}}}
+  if (a.outputType) 
+  {emailData = {...emailData, ...{["Output Type"]: a.outputType.toUpperCase(),}}}
 
   if (state.selectedModel.frequencyType === "with multiplication")
     {emailData = {...emailData, ...{["Subharmonics Level"]: a.subharmonicsLevel + ' dBc',}}}
@@ -176,7 +121,7 @@ if (action.type === UPDATE_EMAIL_DATA) {
     {emailData = {...emailData, ...{["Continuous current max limit"]: a.continuousCurrent + ' mA',}}}
 
     if (a.aginPerDay) 
-    {emailData = {...emailData, ...{["Agin per Day"]: a.aginPerDay + ' ppb',}}}
+    {emailData = {...emailData, ...{["Agin per Day"]: '±' + a.aginPerDay + ' ppb',}}}
 
     if (a.phaseNoise1Hz) 
     {emailData = {...emailData, ...{["Phase noise 1Hz"]: a.phaseNoise1Hz + ' dBc/Hz',}}}
@@ -204,51 +149,6 @@ if (action.type === UPDATE_EMAIL_DATA) {
   //debugger
   return stateCopy;
 }
-
-  if (action.type === INPUT_SET_STEP3) {
-    const submitData = action.submitDataArr.inputValueSteps;
-
-    let emailData = {}
-
-    if (submitData.subharmonicsLevel) 
-    {emailData = {...emailData, ...{["Subharmonics Level"]: submitData.subharmonicsLevel + ' dBc',}}}
-
-    if (submitData.continuousCurrent) 
-    {emailData = {...emailData, ...{["Continuous current max limit"]: submitData.continuousCurrent + ' mA',}}}
-
-    if (submitData.aginPerDay) 
-    {emailData = {...emailData, ...{["Agin per Day"]: submitData.aginPerDay + ' ppb',}}}
-
-    if (submitData.phaseNoise1Hz) 
-    {emailData = {...emailData, ...{["Phase noise 1Hz"]: submitData.phaseNoise1Hz + ' dBc/Hz',}}}
-
-    if (submitData.phaseNoise10Hz) 
-    {emailData = {...emailData, ...{["Phase noise 10Hz"]: submitData.phaseNoise10Hz + ' dBc/Hz',}}}
-
-    if (submitData.phaseNoise100Hz) 
-    {emailData = {...emailData, ...{["Phase noise 100Hz"]: submitData.phaseNoise100Hz + ' dBc/Hz',}}}
-
-    if (submitData.phaseNoise1KHz) 
-    {emailData = {...emailData, ...{["Phase noise 1KHz"]: submitData.phaseNoise1KHz + ' dBc/Hz',}}}
-
-    if (submitData.phaseNoise10KHz) 
-    {emailData = {...emailData, ...{["Phase noise 10KHz"]: submitData.phaseNoise10KHz + ' dBc/Hz',}}}
-
-    if (submitData.phaseNoise100KHz) 
-    {emailData = {...emailData, ...{["Phase noise 100KHz"]: submitData.phaseNoise100KHz + ' dBc/Hz',}}}
-
-
-    //debugger
-    const stateCopy = {
-      ...state,
-      inputValueSteps: { ...state.inputValueSteps,
-        ...action.submitDataArr.inputValueSteps },
-      emailData: {...state.emailData, ...emailData}, 
-      stepsLevel: 3,
-    };
-    //debugger
-    return stateCopy;
-  }
 
   
   if (action.type === INIT_SELECTED_MODEL) {
@@ -285,9 +185,9 @@ if (action.type === UPDATE_EMAIL_DATA) {
   
   if (action.type === UPDATE_CONTINUOUS_CURRENT_DATA_SET) {
     //console.log('Hello')
-    const nominalFrequency = state.blurDataset.frequencyBlur
-    const voltage = state.blurDataset.voltageBlur
-    const outputType = state.blurDataset.outputTypeBlur
+    const nominalFrequency = state.blurDataset.frequency
+    const voltage = state.blurDataset.voltage
+    const outputType = state.blurDataset.outputType
 
     const getContinuousCurrentArray = () => {
 
@@ -365,7 +265,7 @@ if (action.type === UPDATE_EMAIL_DATA) {
   }
 
   if (action.type === UPDATE_STABILITY_VS_TEMPERATURE_DATA_SET) {
-      const frequency = state.blurDataset.frequencyBlur;
+      const frequency = state.blurDataset.frequency;
       let frequencyArr = state.stabilityVsTemperature.frequency;
       let stabilityArr = state.stabilityVsTemperature.stability;
       if (
@@ -412,7 +312,7 @@ if (action.type === UPDATE_EMAIL_DATA) {
     //debugger
     const stateCopy = {
       ...state,
-      blurDataset: { ...state.blurDataset, frequencyBlur: frequencyBlurValue}
+      blurDataset: { ...state.blurDataset, frequency: frequencyBlurValue}
     };
     //debugger
     return stateCopy;
@@ -422,7 +322,7 @@ if (action.type === UPDATE_EMAIL_DATA) {
 
     const stateCopy = {
       ...state,
-      blurDataset: { ...state.blurDataset, voltageBlur: action.value}
+      blurDataset: { ...state.blurDataset, voltage: action.value}
     };
     return stateCopy;
   }
@@ -430,7 +330,7 @@ if (action.type === UPDATE_EMAIL_DATA) {
   if (action.type === SET_OUTPUT_TYPE_BLUR) {
     const stateCopy = {
       ...state,
-      blurDataset: { ...state.blurDataset, outputTypeBlur: action.value}
+      blurDataset: { ...state.blurDataset, outputType: action.value}
     };
     return stateCopy;
   }
@@ -455,6 +355,65 @@ if (action.type === UPDATE_EMAIL_DATA) {
     return stateCopy;
   }
   
+  if (action.type === INIT_XLS_DATA) {
+    const data = state.submitData
+
+    function uid1() {
+      return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
+    };
+    function uid2() {
+      var array = new Uint32Array(1);
+      window.crypto.getRandomValues(array);
+      console.log(array)
+      return array[0];
+  /*     for (var i = 0; i < array.length; i++) {
+        console.log(array[i]);
+      } */
+    }
+    /* uid: 1nm0ixmd1j08ijg
+      random number: 2695751178 */
+    const waveForm = (outputType, voltage) => {
+      if (outputType === "Sine-wave") {return ["Sine-wave"]} 
+      if (outputType === "HCMOS") {
+        if (outputType === "HCMOS") {
+          if (voltage === "5") return ["HCMOS 4.2V", 4.75, 5, 5.25]
+          if (voltage === "3.3") return ["HCMOS 2.8V", 3.15, 3.3, 3.45]/* 3.15	3.3	3.45 */
+      }
+      } 
+    }
+
+    const stateCopy = {
+      ...state,
+      xlsData: {
+        row1modelNameCode: state.selectedModel.name + '-' + uid2() + '      Variant2:  ' + 
+            state.selectedModel.name + '-' + uid1(),
+        cellG5nominalFrequencyValue: state.submitData.nominalFrequency,
+        /* ["Sine-wave"] , ["HCMOS 4.2V", 4.75, 5, 5.25], ["HCMOS 2.8V", 3.15, 3.3, 3.45] */
+        cellG7waveFormValue: waveForm(data.outputType, data.voltage),
+        row8__10_waveFormVisible: data.outputType === "Sine-wave" ? true : false,
+        row11__15_waveFormVisible: data.outputType === "HCMOS" ? true : false,
+        row16subHarmonicsVisible: state.selectedModel.frequencyType === "with multiplication" ? true : false,
+        cellH16subHarmonicsValue: data.subharmonicsLevel ? data.subharmonicsLevel : null, /* Not empty value like "" */
+        row30inputVoltageArray: data.voltage === "3.3" ? [3.15, 3.3, 3.45] : [4.75, 5, 5.25],
+        cellD31warmUpCurrentValue: data.voltage === "3.3" ? "Vcc=3.3V": "Vcc=5.0V",
+        cellD32warmUpCurrentValue: data.voltage === "3.3" ? "Vcc=3.3V": "Vcc=5.0V",
+        cellG32continuousCurrentValue: data.voltage === "3.3" ? "at +25°C, Vcc=3.3V": "at +25°C, Vcc=5.0V",
+        cellH32continuousCurrentValue: data.continuousCurrent,
+        cellH35stabilityVsTemperatureValue: '±' + data.stabilityVsTemperature,
+        cellH39PhazeNoise1HzValue: data.phaseNoise1Hz ? data.phaseNoise1Hz : "-105",
+        cellH39PhazeNoise10HzValue: data.phaseNoise10Hz ? data.phaseNoise10Hz : "-137",
+        cellH40PhazeNoise100HzValue: data.phaseNoise100Hz ? data.phaseNoise100Hz : "-156",
+        cellH41PhazeNoise1KHzValue: data.phaseNoise1KHz ? data.phaseNoise1KHz : "-164",
+        cellH42PhazeNoise10KHzValue: data.phaseNoise10KHz ? data.phaseNoise10KHz : "-170",
+        cellH43PhazeNoise100KHzValue: data.phaseNoise100KHz ? data.phaseNoise100KHz : "-170",
+        cellH45stabilityVsTemperatureValue: '±' + data.aginPerDay,
+
+      }
+    };
+    //debugger
+    return stateCopy;
+  }
+  
   if (action.type === SET_STEPS_LEVEL_FINISH) {
     //action.selectedModel
     const stateCopy = {
@@ -470,7 +429,7 @@ if (action.type === UPDATE_EMAIL_DATA) {
 };
 
 const specFormInputStep2AC = (submitDataArr) => ({ type: INPUT_SET_STEP2, submitDataArr});
-export const specFormInputStep3 = (submitDataArr) => ({ type: INPUT_SET_STEP3, submitDataArr});
+//export const specFormInputStep3 = (submitDataArr) => ({ type: INPUT_SET_STEP3, submitDataArr});
 
 const updateContinuousCurrentDataSetAC = () => ({ type: UPDATE_CONTINUOUS_CURRENT_DATA_SET });
 const updateStabilityVsTemperatureDataSetAC = () => ({ type: UPDATE_STABILITY_VS_TEMPERATURE_DATA_SET });
@@ -494,6 +453,8 @@ export const updateEmailData = () => ({ type: UPDATE_EMAIL_DATA });
 export const setStepsLevelFinish = () => ({ type: SET_STEPS_LEVEL_FINISH });
 export const resetSpecFormDataAC = () => ({ type: RESET_SPEC_FORM_DATA });
 export const phaseNoiseSwitchToggleAC = () => ({ type: PHASE_NOISE_SWITCH_TOGGLE });
+
+const initXlsData = () => ({ type: INIT_XLS_DATA });
 
 /* ========= THUNK PART ================ */
 // FRom GenModelsHello.jsx
@@ -558,6 +519,7 @@ export const specFormInputStep2TC = (submitDataArr) => {
   return (dispatch) => {
     dispatch(specFormInputStep2AC(submitDataArr))
     dispatch(updateEmailData())
+    dispatch(initXlsData())
 /*     dispatch(specFormInputStep2AC(submitDataArr));
     dispatch(updateEmailData()); */
   };

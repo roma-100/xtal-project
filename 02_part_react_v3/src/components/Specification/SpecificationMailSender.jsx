@@ -64,7 +64,9 @@ const SpecificationMailSender = (props) => {
       status = {status}
       filterInitTC = {filterInitTC}
       />
-      <SpecificationLoader />
+      <SpecificationLoader 
+      xlsData = {props.xlsData}
+      />
     </div>
   )
 }

@@ -8,10 +8,11 @@ import html2canvas from 'html2canvas';
 import { useRef } from "react";
 import jsPDF from "jspdf";
 
-const Cofee = (props) => {
+const SpecificationLoader = (props) => {
   const reportTemplateRef = useRef(null);
  
   const handleGeneratePdf = () => {
+    window.html2canvas = html2canvas;
     const doc = new jsPDF({
       format: "a4",
       unit: "pt"
@@ -31,7 +32,7 @@ const Cofee = (props) => {
     });
  
   };
-  console.log(ssStyle())
+  //console.log(ssStyle())
   
   return (
     <>
@@ -40,7 +41,7 @@ const Cofee = (props) => {
           Generate PDF
         </button> */}
         
-        <button className="specification-download-btn" role="button" onClick={handleGeneratePdf} ><span class="text">Download Specification</span></button>
+        <button className="specification-download-btn" role="button" onClick={handleGeneratePdf} ><span className="text">Download Specification</span></button>
         
         {/* <div className="specification-download-btn" onClick={handleGeneratePdf}> Generate PDF </div> */}
         {/* <p>{`screen: ${ssStyle().screenWidth} tableWidth: ${ssStyle().tableWidth.width} pdfOffset: ${ssStyle().pdfOffset}`}</p> */}
@@ -48,6 +49,7 @@ const Cofee = (props) => {
         <div ref={reportTemplateRef} >
           <ReportTemplate 
           decor = {ssStyle().tableWidth}/* {sStyle.tableWidth} */
+          xlsData = {props.xlsData}
           />
   
         </div>
@@ -82,4 +84,4 @@ const ssStyle = () => {
 }
 
 //export default ContactForm
-export default Cofee
+export default SpecificationLoader

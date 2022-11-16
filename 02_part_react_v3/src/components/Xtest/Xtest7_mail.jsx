@@ -16,6 +16,7 @@ const Cofee = (props) => {
   } */
 
   const handleGeneratePdf = () => {
+    window.html2canvas = html2canvas;
     const doc = new jsPDF({
       format: "a4",
       unit: "px"

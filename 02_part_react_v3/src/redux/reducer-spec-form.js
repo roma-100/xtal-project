@@ -396,8 +396,8 @@ if (action.type === UPDATE_EMAIL_DATA) {
         cellH16subHarmonicsValue: data.subharmonicsLevel ? data.subharmonicsLevel : null, /* Not empty value like "" */
         row30inputVoltageArray: data.voltage === "3.3" ? [3.15, 3.3, 3.45] : [4.75, 5, 5.25],
         cellD31warmUpCurrentValue: data.voltage === "3.3" ? "Vcc=3.3V": "Vcc=5.0V",
-        cellD32warmUpCurrentValue: data.voltage === "3.3" ? "Vcc=3.3V": "Vcc=5.0V",
-        cellG32continuousCurrentValue: data.voltage === "3.3" ? "at +25°C, Vcc=3.3V": "at +25°C, Vcc=5.0V",
+        cellD32warmUpCurrentValue: data.voltage === "3.3" ? "at +25°C, Vcc=3.3V": "at +25°C, Vcc=5.0V",
+        cellG32continuousCurrentValue: state.blurDataset.continuousCurrentResult,
         cellH32continuousCurrentValue: data.continuousCurrent,
         cellH35stabilityVsTemperatureValue: '±' + data.stabilityVsTemperature,
         cellH39PhazeNoise1HzValue: data.phaseNoise1Hz ? data.phaseNoise1Hz : "-105",
@@ -501,6 +501,7 @@ export const updateVoltageBlurTC = (event) => {
   //console.log(event.target.value)
   return (dispatch) => {
     dispatch(setVoltageBlurAC(event.target.value));
+    dispatch(updateContinuousCurrentDataSetAC());
     dispatch(updateEmailData());
   };
 };
@@ -510,6 +511,7 @@ export const updateOutputTypeBlurTC = (event) => {
   //console.log(event.target.value)
   return (dispatch) => {
     dispatch(setOutputTypeBlurAC(event.target.value));
+    dispatch(updateContinuousCurrentDataSetAC());
     dispatch(updateEmailData());
   };
 };

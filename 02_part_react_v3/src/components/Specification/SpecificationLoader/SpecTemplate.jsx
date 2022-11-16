@@ -330,10 +330,10 @@ const ReportTemplate = (props) => {
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.3" sdnum="1033;" height={18} align="center">4.3</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Continuous current</td>
-{/* cellG32continuousCurrent */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">{xlsData.cellG32continuousCurrentValue}</td>
+{/* cellD32warmUpCurrentValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">{xlsData.cellD32warmUpCurrentValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-{/* cellH32continuousCurrentValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={30} sdnum="1033;" align="center">{xlsData.cellH32continuousCurrentValue}</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+{/* cellG32continuousCurrentValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={30} sdnum="1033;" align="center">{xlsData.cellG32continuousCurrentValue}</td>
+{/* cellH32continuousCurrentValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">{xlsData.cellH32continuousCurrentValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">mA</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>

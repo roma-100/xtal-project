@@ -39,6 +39,16 @@ const GenModelsHello = (props) => {
         return value.modelId === idModel;
       })[0].continuousCurrent;
 
+      //agingPerDay
+      const agingPerDayArraySet = props.gen_models.temperatureRange
+      .filter((value, index) => {
+        //console.log(JSON.stringify(value.id, null, 2))
+        return value.range === props.gen_models.filterTemperatureRange;
+      })[0]
+      .modelsTemperatureData.filter((value, index) => {
+        return value.modelId === idModel;
+      })[0].agingPerDay;
+
     /* console.log("!!!!" + idModel)
    console.log(selectedModel)
    console.log(selectedModelStabilityVsTemperature)
@@ -48,7 +58,8 @@ const GenModelsHello = (props) => {
     props.specFormInitStep2TC(
       selectedModel,
       selectedModelStabilityVsTemperature,
-      continuousCurrentArraySet
+      continuousCurrentArraySet,
+      agingPerDayArraySet
     );
   };
 

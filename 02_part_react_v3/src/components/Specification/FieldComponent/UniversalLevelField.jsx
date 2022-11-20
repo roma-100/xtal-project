@@ -8,13 +8,16 @@ import {
 } from "@mui/material";
 
 export default function SubharmonicsLevelField(props) {
-  const { decor, label, placeholder, helperText, helperTextDecor, endAdornment, field, error } = props;
+  const { decor, label, placeholder, helperText, helperTextDecor, 
+    disabledStatus, endAdornment, field, error, handleOnBlur } = props;
 
   return (
     <FormControl>
       <TextField
         {...field}
         label={label}
+        handleOnBlur={handleOnBlur}
+        disabled = {disabledStatus}
         /* id="standard-size-small" */
         sx={decor}
         margin="dense"
@@ -27,7 +30,7 @@ export default function SubharmonicsLevelField(props) {
         }}
         /* onChange={handleChange('weight')} */
       />
-      <FormHelperText sx={helperTextDecor} id="standard-weight-helper-text">
+      <FormHelperText sx={helperTextDecor} id="standard-weight-helper-text" disabled = {disabledStatus}>
         {helperText}
         {/* { error ? error.message : helperText} */}
       </FormHelperText>

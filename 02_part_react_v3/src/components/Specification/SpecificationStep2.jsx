@@ -16,7 +16,7 @@ import {
   Switch
 } from "@mui/material/";
 import NominalFrequencyField from "./FieldComponent/NominalFrequencyField"
-import StabilityVsTemperatureField from "./FieldComponent/StabilityVsTemperatureField"
+import StabilityVsTemperatureField from "./FieldComponent/xdStabilityVsTemperatureField"
 import VoltageField from "./FieldComponent/VoltageField"
 import OutputTypeField from "./FieldComponent/OutputTypeField"
 import SubharmonicsLevelField from "./FieldComponent/SubharmonicsLevelField";
@@ -111,7 +111,7 @@ const SpecificationStep1 = (props) => {
         "phaseNoise100KHz": data.phaseNoise100KHz
       },
     });
-    console.log(data);
+    //console.log(data);
   };
   const look = (errors) => console.log(errors.firstName?.message);
 
@@ -176,7 +176,7 @@ const SpecificationStep1 = (props) => {
               {/* END nominalFrequency +++++++++++ */}
 
               {/* Start stabilityVsTemperature +++++++++++ */}
-              <div>
+{/*               <div>
                 <Controller
                   name="stabilityVsTemperature"
                   control={control}
@@ -207,7 +207,46 @@ const SpecificationStep1 = (props) => {
                     );
                   }}
                 />
-              </div>
+              </div> */}
+                            <div>
+              <Controller
+                  name="stabilityVsTemperature"
+                  control={control}
+                  rules={{
+                    required: "This is required",
+                    maxLength: {
+                      value: 8,
+                      message: "Value is too long",
+                    },
+                    min: {
+                      value: dataForm.blurDataset.stabilityVsTemperature,
+                      message:
+                        "Min value is " +
+                        dataForm.blurDataset.stabilityVsTemperature +
+                        " ppb",
+                    },
+                  }}
+                  render={({ field }) => {
+                    return (
+                      <UniversalLevelField 
+                      disabledStatus = {dataForm.blurDataset.frequency ? false : true}
+                      field = {field}
+                      handleOnBlur={props.setstabilityVsTemperatureBlurValueBlurTC}
+                      error = {errors.stabilityVsTemperature}
+                      label = {"Stability vs Temperature"}
+                      placeholder = {dataForm.blurDataset.stabilityVsTemperature}
+                      decor = {{...formElementDecor.textField, width: "98%"}}
+                      endAdornment = {'ppb'}
+                      helperText = {errors.stabilityVsTemperature
+                        ? errors.stabilityVsTemperature.message
+                        : 'to ' + dataForm.blurDataset.stabilityVsTemperature + ' ppb (' + selectedModel.temperatureRangeSelected + ')'
+                        } 
+                      helperTextDecor = {{color: "grey", mt: -1}}
+                      />
+                    );
+                  }}
+                />
+            </div>
               {/* END stabilityVsTemperature +++++++++++ */}
 
               {/* Start voltage +++++++++++ */}
@@ -288,17 +327,40 @@ const SpecificationStep1 = (props) => {
                   control={control}
                   rules={{
                     required: "This is required",
+                    maxLength: {
+                      value: 10,
+                      message: "Value is too long",
+                    },
+                    min: {
+                      value: dataForm.blurDataset.agingPerDayResult,
+                      message:
+                        "Min value is " +
+                        dataForm.blurDataset.agingPerDayResult +
+                        " ppb",
+                    },
+                    max: {
+                      value: 10,
+                      message:
+                        "Max value is 10 ppb",
+                    },
                   }}
                   render={({ field }) => {
                     return (
                       <UniversalLevelField 
+                      disabledStatus = {dataForm.blurDataset.agingPerDayResult ? false : true}
                       field = {field}
+                      handleOnBlur={()=>{}}
                       error = {errors.aginPerDay}
                       label = {'Agin per Day'}
-                      placeholder = {'Max: 10'}
+                      placeholder = {dataForm.blurDataset.agingPerDayResult }
                       decor = {{...formElementDecor.textField, width: "98%"}}
                       endAdornment = {'ppb'}
-                      helperText = {''}
+                      helperText = {errors.aginPerDay
+                        ? errors.aginPerDay.message + ', Min: to ' + dataForm.blurDataset.agingPerDayResult + ' ppb; Max: to 10 ppb'
+                        : dataForm.blurDataset.agingPerDayResult
+                          ? 'Min: to ' + dataForm.blurDataset.agingPerDayResult + ' ppb; Max: to 10 ppb'
+                          : ''} 
+                      helperTextDecor = {{color: "grey", mt: -1}}
                       />
                     );
                   }}
@@ -312,36 +374,44 @@ const SpecificationStep1 = (props) => {
                   name="continuousCurrent"
                   control={control}
                   rules={{
-                    required: "This is required"/* ,
+                    required: "This is required",
+                    maxLength: {
+                      value: 10,
+                      message: "Value is too long",
+                    },
                     min: {
                       value: dataForm.blurDataset.continuousCurrentResult,
                       message:
                         "Min value is " +
                         dataForm.blurDataset.continuousCurrentResult +
                         " mA",
-                    }, */
+                    },
                   }}
                   render={({ field }) => {
                     return (
                       <UniversalLevelField 
+                      disabledStatus = {dataForm.blurDataset.frequency ? false : true}
                       field = {field}
+                      handleOnBlur={()=>{}}
                       error = {errors.continuousCurrent}
                       label = {'Continuous current max limit'}
                       /* decor = {{...formElementDecor.textField, width: "98%"}} */
                       /* decor = {{...formElementDecor.textField, continuousCurrentDispaly}} */
-                      decor = {dataForm.blurDataset.frequency ? {...formElementDecor.textField, width: "100%"} : {display: "none"}}
+                      decor = {{...formElementDecor.textField, width: "100%"}}
                       /*                       formElementDecor= {{...formElementDecor,
                         //display: !dataForm.blurDataset.frequencyBlur ? "none" : null
                         continuousCurrentDispaly
                       }} */
 
-                      placeholder = { errors.continuousCurrent? errors.continuousCurrent.message : null}
+                      placeholder = { errors.continuousCurrent? errors.continuousCurrent.message : dataForm.blurDataset.continuousCurrentResult}
                       endAdornment = {'mA'}
                       //helperText = {errors.continuousCurrent? errors.continuousCurrent.message : 'Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'}
-                      helperText = {errors.continuousCurrent ? 
-                        errors.continuousCurrent.message + '; Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA': 
-                        'Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'}
-                      helperTextDecor = {dataForm.blurDataset.frequency ? formElementDecor.helperText : {display: "none"}}
+                      helperText = {errors.continuousCurrent 
+                         ? errors.continuousCurrent.message +', Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'
+                         : dataForm.blurDataset.frequency
+                          ? 'Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'
+                          : ''}
+                      helperTextDecor = {{color: "grey", mt: -1}}
                       />
                     );
                   }}

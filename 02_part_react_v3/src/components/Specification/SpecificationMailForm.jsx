@@ -13,14 +13,14 @@ import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/mate
     formState: { errors },
   } = useForm({
     defaultValues: {
-      fullName: "",
+      companyName: "",
       email: "",
       phone: "",
-      message: "",
+      specialRequirements: "",
     },
   });
   //const onSubmit = (data) => console.log(data);
-  //const look = (errors) => console.log(errors.fullName?.message);
+  //const look = (errors) => console.log(errors.companyName?.message);
 
   const formElementDecor = {
     textField: {
@@ -56,7 +56,7 @@ import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/mate
     )}
     if (status==='SUCCESS'){
       return (
-        <Alert severity="success" color="info" sx={{width: 300}}>
+        <Alert severity="success" color="info" sx={{width: 380, ml:1, mb: 2}}>
           Information submitted
         </Alert>
       )
@@ -80,10 +80,10 @@ const validForm = () => {
      </div>
 
     <form onSubmit={handleSubmit(onSubmit)}>
-      {/* ++++++++ Start Field fullName ++++++ */}
+      {/* ++++++++ Start Field companyName ++++++ */}
       <div className="specification-mail__field">
         <Controller
-          name="fullName"
+          name="companyName"
           control={control}
           rules={{
             required: "This is required",
@@ -97,25 +97,25 @@ const validForm = () => {
               <FormControl sx={formElementDecor.textField} >
                 <TextField
                   {...field}
-                  label="Full Name"
+                  label="Company Name"
                   id="standard-size-small"
-                  error={errors.fullName ? true : false}
+                  error={errors.companyName ? true : false}
                   size="small"
                   variant="standard"
                 />
                 <FormHelperText
-                  sx={errors.fullName ? { color: "red" } : { color: "grey" }}
+                  sx={errors.companyName ? { color: "red" } : { color: "grey" }}
                   id="standard-weight-helper-text"
                 >
-                  {errors.fullName ? errors.fullName?.message : null}
+                  {errors.companyName ? errors.companyName?.message : null}
                 </FormHelperText>
               </FormControl>
             );
           }}
         />
-        <p>{errors.fullName?.message}</p>
+        <p>{errors.companyName?.message}</p>
       </div>
-      {/* ++++++++ END Field fullName ++++++ */}
+      {/* ++++++++ END Field companyName ++++++ */}
 
       {/* ++++++++ Start Field email ++++++ */}
       <div className="specification-mail__field">
@@ -142,7 +142,7 @@ const validForm = () => {
                   variant="standard"
                 />
                 <FormHelperText
-                  sx={errors.fullName ? { color: "red" } : { color: "grey" }}
+                  sx={errors.companyName ? { color: "red" } : { color: "grey" }}
                   id="standard-weight-helper-text"
                 >
                   {errors.email ? errors.email?.message : null}
@@ -189,7 +189,7 @@ const validForm = () => {
       {/* ++++++++ Start Field message ++++++ */}
       <div className="specification-mail__field">
         <Controller
-          name="message"
+          name="specialRequirements"
           control={control}
           rules={{}}
           render={({ field }) => {
@@ -197,7 +197,7 @@ const validForm = () => {
               <FormControl sx={formElementDecor.textField}>
                 <TextField
                   {...field}
-                  label="Your message"
+                  label="Special requirements"
                   id="outlined-multiline-flexible"
                   //error="true"
                   /* defaultValue="Small" */

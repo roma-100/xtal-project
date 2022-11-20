@@ -20,9 +20,13 @@ class GenModelsHelloContainer extends React.Component {
     //debugger
     return (
       <div>
+        <div className="service__maincontent-wrap">
+        <div className="service__maincontent--width">
         <GenModelsHello {...this.props}
         /* frequencyTypeCreator = {this.propsfrequencyTypeCreator} */
         />
+        </div>
+        </div>
       </div>
     );
   }

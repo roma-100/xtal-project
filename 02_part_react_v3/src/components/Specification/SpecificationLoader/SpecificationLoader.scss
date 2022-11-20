@@ -58,3 +58,16 @@
 .specification-download-btn:not(:disabled):active {
   transform: translateY(.125rem);
 }
+
+.specification-image__wrap {
+/*   width: 200px
+  height 150px; */
+   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .specification-image {
+    width: 150px;
+    height: 225px;
+  }
+}

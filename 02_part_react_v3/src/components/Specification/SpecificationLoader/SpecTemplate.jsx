@@ -11,7 +11,7 @@ const ReportTemplate = (props) => {
       <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.2" sdnum="1033;" height={18} align="center">2.2</td>
           <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Level</td>
           <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-          <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={7} sdnum="1033;" align="center">7</td>
+{/* cellF8waveLevelValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={7} sdnum="1033;" align="center">{xlsData.cellF8waveLevelValue}</td>
           <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
           <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
           <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">dBm</td>
@@ -40,6 +40,7 @@ const ReportTemplate = (props) => {
       </>
       )
     }
+    return null
   }
 
   const row11__15_waveForm = () => {
@@ -50,7 +51,7 @@ const ReportTemplate = (props) => {
 <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.2" sdnum="1033;" height={17} align="center">2.2</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> High -Voltage</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="3.8" sdnum="1033;" align="center">3.8</td>
+{/* cellF11hcmosHighVoltageValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="3.8" sdnum="1033;" align="center">{xlsData.cellF11hcmosHighVoltageValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
@@ -92,13 +93,14 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10, 90 %</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={10} sdnum="1033;" align="center">10</td>
+{/* cellH15HcmosRiseFallTimeMaxValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={10} sdnum="1033;" align="center">{xlsData.cellH15HcmosRiseFallTimeMaxValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ns</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
       </>
       )
     }
+    return null
   }
 
   const row16subHarmonics = () => {
@@ -110,7 +112,7 @@ const ReportTemplate = (props) => {
      <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} height={18} align="center">2.5/2.7</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Sub-harmonics level*</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">fsh=f0±(n*f0/5)  n=1,2,3...</td>
+{/* cellD16subHarmonicsConditions */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">{xlsData.cellD16subHarmonicsConditions}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
 {/* cellH16 */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-40} sdnum="1033;" align="center">{xlsData.cellH16subHarmonicsValue}</td>
@@ -120,8 +122,60 @@ const ReportTemplate = (props) => {
       </>
       )
     }
+    return null
   }
-
+  const row39_44phaseNoise = () => {
+    const dataAllValue =  xlsData.cellH39PhazeNoise1HzValue + xlsData.cellH40PhazeNoise10HzValue + 
+                          xlsData.cellH41PhazeNoise100HzValue + xlsData.cellH42PhazeNoise1KHzValue +
+                          xlsData.cellH43PhazeNoise10KHzValue + xlsData.cellH44PhazeNoise100KHzValue
+    if (dataAllValue.length) {
+    return(
+      <>
+            <tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} rowSpan={6} sdval="6.1" sdnum="1033;" valign="middle" height={103} align="center">6.1</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} rowSpan={6} valign="middle" align="left"><b>SSB Phase noise</b></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">1 Hz</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+{/* cellH39PhazeNoise1HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-105} sdnum="1033;" align="center">{xlsData.cellH39PhazeNoise1HzValue}</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} rowSpan={6} valign="middle" align="center">dBc/Hz</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} rowSpan={6} valign="middle" align="center"><br /></td>
+      </tr>
+      <tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10 Hz</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+{/* cellH40PhazeNoise10HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-137} sdnum="1033;" align="center">{xlsData.cellH40PhazeNoise10HzValue}</td>
+      </tr>
+      <tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">100 Hz</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+{/* cellH41PhazeNoise100HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-156} sdnum="1033;" align="center">{xlsData.cellH41PhazeNoise100HzValue}</td>
+      </tr>
+      <tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">1 kHz</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+{/* cellH42PhazeNoise1KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-164} sdnum="1033;" align="center">{xlsData.cellH42PhazeNoise1KHzValue}</td>
+      </tr>
+      <tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10 kHz</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+{/* cellH43PhazeNoise10KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-170} sdnum="1033;" align="center">{xlsData.cellH43PhazeNoise10KHzValue}</td>
+      </tr>
+      <tr>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">100 kHz</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
+{/* cellH44PhazeNoise100KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-170} sdnum="1033;" align="center">{xlsData.cellH44PhazeNoise100KHzValue}</td>
+      </tr>
+      </>
+    )
+  }
+  return null
+  }
 /* @@@@@@@@@@ MAIN RETURN @@@@@@@@@@@@@@@@@@@@@@ */
 	 return (
 		<div>
@@ -140,10 +194,13 @@ const ReportTemplate = (props) => {
     <colgroup width={42} />
     <colgroup width={69} />
     <colgroup width={85} />
-    <tbody><tr>
-{/* row1modelNameCode */}<td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={4} height={17} align="left">{xlsData.row1modelNameCode}</td>
-        <td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={6} align="right">Rev. 14.11.2022</td>
+    <tbody>
+      <tr>
+{/* row1modelNameCode */}<td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} height={20} align="left">{xlsData.row1modelNameCode}</td>
+{/* row1SpecDate */}<td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000'}} colSpan={3} align="center">{xlsData.row1SpecDate}</td>
+        <td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={5} align="right">Rev. 14.11.2022</td>
       </tr>
+
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} height={34} align="center">#</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">OCXO<br />Specification</td>
@@ -176,7 +233,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">at +25°C, Vc=Vc0</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">±0.1</font></td>
+{/* cellH5InitialToleranceValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">{xlsData.cellH5InitialToleranceValue}</font></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppm</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center">+</td>
       </tr>
@@ -223,7 +280,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={0} sdnum="1033;" align="center">0</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.2" sdnum="1033;" align="center">4.2</td>
+{/* cellH20VoltageRangeValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.2" sdnum="1033;" align="center">{xlsData.cellH20VoltageRangeValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
@@ -231,9 +288,9 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="3.4" sdnum="1033;" height={18} align="center">3.4</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Preset control voltage</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">disconnected Vc pin</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="1.9" sdnum="1033;" align="center">1.9</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.1" sdnum="1033;" align="center">2.1</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.3" sdnum="1033;" align="center">2.3</td>
+{/* row21PresetControlVoltageeArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="1.9" sdnum="1033;" align="center">{xlsData.row21PresetControlVoltageeArray[0]}</td>
+{/* row21PresetControlVoltageeArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.1" sdnum="1033;" align="center">{xlsData.row21PresetControlVoltageeArray[1]}</td>
+{/* row21PresetControlVoltageeArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.3" sdnum="1033;" align="center">{xlsData.row21PresetControlVoltageeArray[3]}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
@@ -288,9 +345,9 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdnum="1033;0;@" height={17} align="center">3.10</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Reference voltage</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={4} sdnum="1033;" align="center">4</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.2" sdnum="1033;" align="center">4.2</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.3" sdnum="1033;" align="center">4.3</td>
+{/* row27ReferenceVoltageArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={4} sdnum="1033;" align="center">{xlsData.row27ReferenceVoltageArray[0]}</td>
+{/* row27ReferenceVoltageArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.2" sdnum="1033;" align="center">{xlsData.row27ReferenceVoltageArray[1]}</td>
+{/* row27ReferenceVoltageArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="4.3" sdnum="1033;" align="center">{xlsData.row27ReferenceVoltageArray[2]}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
@@ -390,46 +447,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppb/G</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} rowSpan={6} sdval="6.1" sdnum="1033;" valign="middle" height={103} align="center">6.1</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} rowSpan={6} valign="middle" align="left"><b>SSB Phase noise</b></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">1 Hz</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-{/* cellH39PhazeNoise1HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-105} sdnum="1033;" align="center">{xlsData.cellH39PhazeNoise1HzValue}</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} rowSpan={6} valign="middle" align="center">dBc/Hz</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} rowSpan={6} valign="middle" align="center"><br /></td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10 Hz</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-{/* cellH39PhazeNoise10HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-137} sdnum="1033;" align="center">{xlsData.cellH39PhazeNoise10HzValue}</td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">100 Hz</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-{/* cellH40PhazeNoise100HzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-156} sdnum="1033;" align="center">{xlsData.cellH40PhazeNoise100HzValue}</td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">1 kHz</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-{/* cellH41PhazeNoise1KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-164} sdnum="1033;" align="center">{xlsData.cellH41PhazeNoise1KHzValue}</td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">10 kHz</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-{/* cellH42PhazeNoise10KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-170} sdnum="1033;" align="center">{xlsData.cellH42PhazeNoise10KHzValue}</td>
-      </tr>
-      <tr>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">100 kHz</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-{/* cellH43PhazeNoise100KHzValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={-170} sdnum="1033;" align="center">{xlsData.cellH43PhazeNoise100KHzValue}</td>
-      </tr>
+{row39_44phaseNoise()}      
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} rowSpan={2} sdval="7.1" sdnum="1033;" valign="middle" height={36} align="center">7.1</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} rowSpan={2} valign="middle" align="left"><b>Aging</b></td>
@@ -437,7 +455,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} rowSpan={2} valign="middle" align="center">after 30 days of operation</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-{/* cellH45stabilityVsTemperatureValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">{xlsData.cellH45stabilityVsTemperatureValue}</font></td>
+{/* cellH45aginPerDayValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">{xlsData.cellH45aginPerDayValue}</font></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppb</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
@@ -445,7 +463,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="left">first year</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="left"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="left"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">±50</font></td>
+{/* cellH46agingFirstYearValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">{xlsData.cellH46agingFirstYearValue}</font></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppb</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="left"><br /></td>
       </tr>
@@ -454,11 +472,11 @@ const ReportTemplate = (props) => {
       </tr>
       <tr>
         <td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={17} align="left">Power voltage</td>
-        <td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left"><font color="#000000">-0.5 to 6V</font></td>
+{/* row48powerVoltage */} <td style={{borderTop: '1px solid #000000', borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left"><font color="#000000">{xlsData.row48powerVoltage}</font></td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={17} align="left">Control voltage</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left"><font color="#000000">-1.0 to 6.0 V</font></td>
+{/* row49controlVoltage */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left"><font color="#000000">{xlsData.row49controlVoltage}</font></td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={17} align="left">Air flow velocity</td>
@@ -466,7 +484,7 @@ const ReportTemplate = (props) => {
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={18} align="left">Operating temperature range</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left"><font color="#000000">-40°C to +85°C</font></td>
+{/* row51operatingTemperatureRange */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left"><font color="#000000">{xlsData.row51operatingTemperatureRange}</font></td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={18} align="left">Storage temperature range</td>
@@ -474,15 +492,15 @@ const ReportTemplate = (props) => {
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={17} align="left">Humidity</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left"><font color="#000000">Non-condensing 95%</font></td>
+{/* row53humidityValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left"><font color="#000000">{xlsData.row53humidityValue}</font></td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={17} align="left">Mechanical Shock</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left">Per MIL-STD-202, 30G, 11ms</td>
+{/* row53mechanicalShock */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left">{xlsData.row53mechanicalShock}</td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={17} align="left">Vibration</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left">Per MIL-STD-202, 10G swept sine 0 to 2000Hz</td>
+{/* row53vibration */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} colSpan={8} valign="middle" align="left">{xlsData.row53vibration}</td>
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} valign="middle" height={18} align="left">Soldering Conditions</td>
@@ -498,7 +516,10 @@ const ReportTemplate = (props) => {
 
 		  {/* ************************************************************************** */}
 		</div>
-		<img className="hero-line__circle-img" src="./pimages/types200/type1_200px.png" alt="xtall" />
+    <div className="specification-image__wrap">
+      <img className="specification-image" src="../pimages/spec_1.png" alt="xtall" />
+      <img className="specification-image" src="../pimages/spec_2.png" alt="xtall" />
+    </div>
 
 		</div>
 	  );

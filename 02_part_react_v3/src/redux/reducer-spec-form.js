@@ -1,11 +1,14 @@
 // === reducer-spec-form.js ===
 const RESET_SPEC_FORM_DATA = "RESET_SPEC_FORM_DATA";
 const INPUT_SET_STEP2 = "INPUT_SET_STEP2";
+const INIT_SPECIFICATION_ID = "INIT_SPECIFICATION_ID"
 //const INPUT_SET_STEP3 = "INPUT_SET_STEP3";
 const SET_STEPS_LEVEL_FINISH = "SET_STEPS_LEVEL_FINISH"; //stepsLevel=10
 const INIT_SELECTED_MODEL = "INIT_SELECTED_MODEL";
 const INIT_SELECTED_STABILITY_VS_TEMPERATURE ="INIT_SELECTED_STABILITY_VS_TEMPERATURE";
 const INIT_CONTINUOUS_CURRENT= "INIT_CONTINUOUS_CURRENT";
+const INIT_AGING_PER_DAY= "INIT_AGING_PER_DAY";
+//agingPerDayArraySet //dispatch(initcontinuousCurrent(continuousCurrent)); INIT_CONTINUOUS_CURRENT
 const INIT_XLS_DATA = "INIT_XLS_DATA"
 const SET_FREQUENCY_BLUR = "SET_FREQUENCY_BLUR";
 const SET_STABILITY_VS_TEMPERATURE_BLUR = "SET_STABILITY_VS_TEMPERATURE_BLUR";
@@ -15,6 +18,7 @@ const PHASE_NOISE_SWITCH_TOGGLE = "PHASE_NOISE_SWITCH_TOGGLE";
 const INIT_BLUR_DATASET = "INIT_BLUR_DATASET"
 const UPDATE_CONTINUOUS_CURRENT_DATA_SET = "UPDATE_CONTINUOUS_CURRENT_DATA_SET"
 const UPDATE_STABILITY_VS_TEMPERATURE_DATA_SET = "UPDATE_STABILITY_VS_TEMPERATURE_DATA_SET"
+const UPDATE_AGING_PER_DAY_DATA_SET= "UPDATE_AGING_PER_DAY_DATA_SET";
 const SET_VOLTAGE_BLUR = "SET_VOLTAGE_BLUR";
 const SET_OUTPUT_TYPE_BLUR = "SET_OUTPUT_TYPE_BLUR";
 
@@ -27,7 +31,7 @@ const initialState = {
     voltage: "3.3", //default value
     outputType: "Sine-wave", //default value
     continuousCurrentResult: 0,
-
+    agingPerDayResult: 0,
     continuousCurrent: 0,
     subharmonicsLevel: -40,
     aginPerDay: 0,
@@ -39,9 +43,19 @@ const initialState = {
     phaseNoise100KHz: 0,  
   },
   stepsLevel: 1,
+  specificationId: 0,
+  agingPerDay: {},
+  stabilityVsTemperature: {},
+  stabilityVsTemperature: {},
   submitData: {},
   xlsData: {},
   emailData: {},
+  dateUtc: '',
+  service: {
+    specifificationsCreated: 'specifificationsCreated.log',
+    specifificationsSubmitted: 'specifificationsSubmitted.log',
+    visitorInfo: 'visitorInfo.log',
+  }
 };
 
 const specFormReducer = (state = initialState, action) => {
@@ -54,14 +68,56 @@ const specFormReducer = (state = initialState, action) => {
     return stateCopy;
   }
 
+  if (action.type === INIT_SPECIFICATION_ID) {
+    function uid1() {
+      return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
+    };
+    function uid2() {
+      var array = new Uint32Array(1);
+      window.crypto.getRandomValues(array);
+      //console.log(array)
+      return array[0];
+  /*     for (var i = 0; i < array.length; i++) {
+        console.log(array[i]);
+      } */
+    }
+        /* uid: 1nm0ixmd1j08ijg
+      random number: 2695751178 */
+
+    const stateCopy = {
+      ...state,
+      specificationId: uid2()
+    };
+    //debugger
+    return stateCopy;
+  }
+
   if (action.type === INPUT_SET_STEP2) {
-    //consoleconst submitData = action.submitDataArr;
-    //Update blurDataset
+    function padTo2Digits(num) {
+      return num.toString().padStart(2, '0');
+    }
+     
+    function formatDate(date) {
+      return (
+        [
+          date.getFullYear(),
+          padTo2Digits(date.getUTCMonth() + 1),
+          padTo2Digits(date.getUTCDate()),
+        ].join('-') +
+        ' ' +
+        [
+          padTo2Digits(date.getUTCHours()),
+          padTo2Digits(date.getUTCMinutes()),
+          padTo2Digits(date.getUTCSeconds()),
+        ].join(':')
+      );
+    }
     const stateCopy = {
       ...state,
       submitData: {...action.submitDataArr.submitData},
       //need for e-mail data{} and for banner2
       blurDataset: {...state.blurDataset, ...action.submitDataArr.submitData},
+      dateUtc: formatDate(new Date()) + ' UTC',
       stepsLevel: 3,
     };
     //debugger
@@ -172,6 +228,49 @@ if (action.type === UPDATE_EMAIL_DATA) {
     return stateCopy;
   }
 
+  if (action.type === INIT_AGING_PER_DAY) {
+    const stateCopy = {
+      ...state,
+      agingPerDay: action.agingPerDayArraySet,
+    };
+    //debugger
+    return stateCopy;
+  }  
+
+  if (action.type === UPDATE_AGING_PER_DAY_DATA_SET) {
+    //state.agingPerDay {apd} {apd40}
+    //console.log('hello' + state.blurDataset.frequency)
+    const apdArray = () => {
+      //console.log(state.selectedModel.frequencyType)
+      //console.log(state.agingPerDay)
+      if (state.selectedModel.frequencyType === "with multiplication") {
+        if (state.blurDataset.frequency >= 40) return state.agingPerDay.apd40;
+        return state.agingPerDay.apd
+      }
+      if (state.selectedModel.frequencyType === "fundamental") return state.agingPerDay.apd
+    }
+
+    const getAgingPerDay = () => {
+      const a = apdArray()
+      const frequency = state.blurDataset.frequency
+      if (frequency === 0) return 0
+      if (frequency <= a[0]) return a[1]
+      if (frequency <= a[2]) return a[3]
+      if (frequency <=a [4]) return a[5]
+      if (frequency <=a [6]) return a[7]
+      if (frequency <=a [8]) return a[9]
+      return a[11]
+      //IF(frequency<=a[0],a[1],  (frequency<=a[2],a[3],IF(frequency<=a[4],a[5],IF(frequency<=a[6],a[7],IF(frequency<=a[8],a[9],a[11])))))
+    }
+    const stateCopy = {
+      ...state,
+      blurDataset: {...state.blurDataset, 
+        agingPerDayResult: getAgingPerDay()}
+    };
+    //debugger
+    return stateCopy;
+  }  
+  
   if (action.type === INIT_BLUR_DATASET) {
     //action.selectedModel
     const stateCopy = {
@@ -358,20 +457,6 @@ if (action.type === UPDATE_EMAIL_DATA) {
   if (action.type === INIT_XLS_DATA) {
     const data = state.submitData
 
-    function uid1() {
-      return (performance.now().toString(36)+Math.random().toString(36)).replace(/\./g,"");
-    };
-    function uid2() {
-      var array = new Uint32Array(1);
-      window.crypto.getRandomValues(array);
-      console.log(array)
-      return array[0];
-  /*     for (var i = 0; i < array.length; i++) {
-        console.log(array[i]);
-      } */
-    }
-    /* uid: 1nm0ixmd1j08ijg
-      random number: 2695751178 */
     const waveForm = (outputType, voltage) => {
       if (outputType === "Sine-wave") {return ["Sine-wave"]} 
       if (outputType === "HCMOS") {
@@ -381,33 +466,89 @@ if (action.type === UPDATE_EMAIL_DATA) {
       }
       } 
     }
+    const getHcmosRiseFallTimeMax = (f) => {
+      const a = [10, 10, 100, 3]
+      if (f < a[0]) return a[1]
+      if (f < a[2]) return (a[3]-a[1])*(f-a[0])/(a[2]-a[0])+a[1]
+      return a[3]
+    }
 
+    const getAgingFirstYear =(AgingPerDay) => {
+      const agingFirstYear = [0.1,0.15,0.2,0.1]
+      const a = agingFirstYear
+      if (AgingPerDay < a[0]) return AgingPerDay*a[1]
+      if (AgingPerDay < a[2]) return AgingPerDay*((AgingPerDay-a[0])*(a[3]-a[1])/(a[2]-a[0])+a[1])
+      return AgingPerDay*a[3]
+    }
+
+    const getInitialTolerance = (f, frequencyType) => {
+
+      const aF = [8, 0.1, 40, 0.15, 80, 0.2, 110, 0.3]
+      const aM = [24, 0.1, 120, 0.15, 240, 0.2, 330, 0.3]
+      const aM40 = [40, 0.1, 200, 0.15, 400, 0.2, 550, 0.3]
+
+      const a = frequencyType !== "with multiplication"
+                ? aF
+                : f >= 40
+                  ? aM40
+                  : aM
+
+      if (f < a[2]) return a[1]
+      if (f < a [4]) return a[3]
+      if (f < a[6]) return a[5]
+      return a[7]
+    }
+
+    const getSubHarmonicsConditions = (f, frequencyType) => {
+      if (frequencyType === "with multiplication") {
+        if (f >= 40 ) return 'fSH=f0±(n*f0/5)  n=1,2,3...'
+        return 'fSH=f0±(n*f0/3)  n=1,2,3...'
+      }
+      return null
+    }
+//specificationId
     const stateCopy = {
       ...state,
       xlsData: {
-        row1modelNameCode: state.selectedModel.name + '-' + uid2() + '      Variant2:  ' + 
-            state.selectedModel.name + '-' + uid1(),
+        row1modelNameCode: state.selectedModel.name + '-' + state.specificationId,
+        row1SpecDate:  'Date: ' + state.dateUtc,
         cellG5nominalFrequencyValue: state.submitData.nominalFrequency,
         /* ["Sine-wave"] , ["HCMOS 4.2V", 4.75, 5, 5.25], ["HCMOS 2.8V", 3.15, 3.3, 3.45] */
+        cellH5InitialToleranceValue: '±' + getInitialTolerance(state.submitData.nominalFrequency, state.selectedModel.frequencyType ),
         cellG7waveFormValue: waveForm(data.outputType, data.voltage),
         row8__10_waveFormVisible: data.outputType === "Sine-wave" ? true : false,
+        cellF8waveLevelValue: data.voltage === "3.3" ? 4 : 7,
+
         row11__15_waveFormVisible: data.outputType === "HCMOS" ? true : false,
+        cellF11hcmosHighVoltageValue: data.voltage === "3.3" ? 2.4 : 3.8,
+        cellH15HcmosRiseFallTimeMaxValue: data.voltage === getHcmosRiseFallTimeMax(state.submitData.nominalFrequency),
+
         row16subHarmonicsVisible: state.selectedModel.frequencyType === "with multiplication" ? true : false,
+        cellD16subHarmonicsConditions: getSubHarmonicsConditions(state.submitData.nominalFrequency, state.selectedModel.frequencyType ),
         cellH16subHarmonicsValue: data.subharmonicsLevel ? data.subharmonicsLevel : null, /* Not empty value like "" */
+        cellH20VoltageRangeValue: data.voltage === "3.3" ? 2.8 : 4.2,
+        row21PresetControlVoltageeArray: data.voltage === "3.3" ? [1.2, 1.4, 1.6] : [1.9, 2.1, 2.3],
+        row27ReferenceVoltageArray: data.voltage === "3.3" ? [2.7, 2.8, 3.1] : [4, 4.2, 4.3],
         row30inputVoltageArray: data.voltage === "3.3" ? [3.15, 3.3, 3.45] : [4.75, 5, 5.25],
         cellD31warmUpCurrentValue: data.voltage === "3.3" ? "Vcc=3.3V": "Vcc=5.0V",
         cellD32warmUpCurrentValue: data.voltage === "3.3" ? "at +25°C, Vcc=3.3V": "at +25°C, Vcc=5.0V",
         cellG32continuousCurrentValue: state.blurDataset.continuousCurrentResult,
         cellH32continuousCurrentValue: data.continuousCurrent,
         cellH35stabilityVsTemperatureValue: '±' + data.stabilityVsTemperature,
-        cellH39PhazeNoise1HzValue: data.phaseNoise1Hz ? data.phaseNoise1Hz : "-105",
-        cellH39PhazeNoise10HzValue: data.phaseNoise10Hz ? data.phaseNoise10Hz : "-137",
-        cellH40PhazeNoise100HzValue: data.phaseNoise100Hz ? data.phaseNoise100Hz : "-156",
-        cellH41PhazeNoise1KHzValue: data.phaseNoise1KHz ? data.phaseNoise1KHz : "-164",
-        cellH42PhazeNoise10KHzValue: data.phaseNoise10KHz ? data.phaseNoise10KHz : "-170",
-        cellH43PhazeNoise100KHzValue: data.phaseNoise100KHz ? data.phaseNoise100KHz : "-170",
-        cellH45stabilityVsTemperatureValue: '±' + data.aginPerDay,
-
+        cellH39PhazeNoise1HzValue: data.phaseNoise1Hz ? data.phaseNoise1Hz : "",
+        cellH40PhazeNoise10HzValue: data.phaseNoise10Hz ? data.phaseNoise10Hz : "",
+        cellH41PhazeNoise100HzValue: data.phaseNoise100Hz ? data.phaseNoise100Hz : "",
+        cellH42PhazeNoise1KHzValue: data.phaseNoise1KHz ? data.phaseNoise1KHz : "",
+        cellH43PhazeNoise10KHzValue: data.phaseNoise10KHz ? data.phaseNoise10KHz : "",
+        cellH44PhazeNoise100KHzValue: data.phaseNoise100KHz ? data.phaseNoise100KHz : "",
+        cellH45aginPerDayValue: '±' + data.aginPerDay,
+        cellH46agingFirstYearValue: '±' + getAgingFirstYear(data.aginPerDay).toFixed(2), //getAgingFirstYear
+        row48powerVoltage: `-0.5 to ${(data.voltage * 1.2).toFixed(2)} V`,
+        row49controlVoltage: `-1.0 to ${(data.voltage * 1.2).toFixed(2)} V`,
+        row51operatingTemperatureRange: state.selectedModel.temperatureRange,
+        row53humidityValue: state.selectedModel.humidity,
+        row53mechanicalShock: state.selectedModel.mechanicalShock,
+        row53vibration: state.selectedModel.vibration,
       }
     };
     //debugger
@@ -430,8 +571,9 @@ if (action.type === UPDATE_EMAIL_DATA) {
 
 const specFormInputStep2AC = (submitDataArr) => ({ type: INPUT_SET_STEP2, submitDataArr});
 //export const specFormInputStep3 = (submitDataArr) => ({ type: INPUT_SET_STEP3, submitDataArr});
-
+const initSpecificationId = () => ({ type: INIT_SPECIFICATION_ID });
 const updateContinuousCurrentDataSetAC = () => ({ type: UPDATE_CONTINUOUS_CURRENT_DATA_SET });
+const updateAgingPerDayDataSetAC = () => ({ type: UPDATE_AGING_PER_DAY_DATA_SET });
 const updateStabilityVsTemperatureDataSetAC = () => ({ type: UPDATE_STABILITY_VS_TEMPERATURE_DATA_SET });
 
 const initBlurDataSetSetAC = () => ({ type: INIT_BLUR_DATASET });
@@ -444,6 +586,9 @@ const setOutputTypeBlurAC = (value) => ({ type: SET_OUTPUT_TYPE_BLUR, value });
 
 export const initSelectedModel = (selectedModel) => ({ type: INIT_SELECTED_MODEL, selectedModel, });
 export const initcontinuousCurrent= (continuousCurrent) => ({ type: INIT_CONTINUOUS_CURRENT, continuousCurrent, });
+const initAgingPerDayArray= (agingPerDayArraySet) => ({ type: INIT_AGING_PER_DAY, agingPerDayArraySet, });
+//const INIT_AGING_PER_DAY= "INIT_AGING_PER_DAY";
+//agingPerDayArraySet //dispatch(initcontinuousCurrent(continuousCurrent)); INIT_CONTINUOUS_CURRENT
 export const initsselectedModelStabilityVsTemperature = ( selectedModelStabilityVsTemperature ) => ({
   type: INIT_SELECTED_STABILITY_VS_TEMPERATURE,
   selectedModelStabilityVsTemperature,
@@ -461,10 +606,12 @@ const initXlsData = () => ({ type: INIT_XLS_DATA });
 export const specFormInitStep2TC = (
   selectedModel,
   selectedModelStabilityVsTemperature,
-  continuousCurrent
+  continuousCurrent,
+  agingPerDayArraySet
 ) => {
   return (dispatch) => {
     dispatch(initSelectedModel(selectedModel));
+    dispatch(initSpecificationId());
     dispatch(
       initsselectedModelStabilityVsTemperature(
         selectedModelStabilityVsTemperature
@@ -472,8 +619,11 @@ export const specFormInitStep2TC = (
     );
     dispatch(initcontinuousCurrent(continuousCurrent));
     dispatch(initBlurDataSetSetAC());
+    dispatch(initAgingPerDayArray(agingPerDayArraySet));
+
     dispatch(updateContinuousCurrentDataSetAC());
     dispatch(updateStabilityVsTemperatureDataSetAC());
+    dispatch(updateAgingPerDayDataSetAC());
     dispatch(updateEmailData());
   };
 };
@@ -484,6 +634,7 @@ export const setFrequencyBlurTC = (event) => {
     dispatch(setFrequencyBlurAC(event.target.value | 0));
     dispatch(updateContinuousCurrentDataSetAC());
     dispatch(updateStabilityVsTemperatureDataSetAC());
+    dispatch(updateAgingPerDayDataSetAC());
     dispatch(updateEmailData());
   };
 };

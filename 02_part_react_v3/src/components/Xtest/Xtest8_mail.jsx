@@ -1,7 +1,8 @@
 //***********  SpecificationStep1.jsx **** */
 import React, { useEffect, useState }  from 'react';
 /* =====End cmponents ======== */
-
+import '../Specification/SpecificationBannerStep1.scss';
+/* import fs from 'fs' */
 
 const Cofee = (props) => {
   function uid() {
@@ -52,6 +53,8 @@ const Cofee = (props) => {
     const a4 = () => {return 1}
     const a = () => {return (1)}
 
+    
+
   return (
     <>
     <h1>Hello!</h1>
@@ -61,10 +64,32 @@ const Cofee = (props) => {
     <p>uid2: {uid2()}</p>
     <p>uid3: {uid3()}</p>
     <p>uid4: {uid4()}</p>
+    <div className="specification-image__wrap">
+      <img className="specification-image" src="./pimages/spec_1.png" alt="xtall" />
+      <img className="specification-image" src="./pimages/spec_2.png" alt="xtall" />
+    </div>
     </>
   )
 }
 
+const Xtest = (props) => {
+  
+  /* const fs = require('fs') */
+/*   const fs = require('fs')
+  module.exports = fs.readFileSync(require.resolve('./greeting.txt'), 'utf8') */
+/*   const fs = require('fs');
+  const jsonData= {"name":"John", "age":30, "car":null};
+  const jsonString = JSON.stringify(jsonData);
+  
+  fs.writeFile("./foo.json", jsonString, 'utf8', function (err) {
+      if (err) {
+          return console.log(err);
+      }
+      console.log("file saved!");
+  });  */
+
+  return (1)
+}
 
 //export default ContactForm
 export default Cofee

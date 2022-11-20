@@ -78,6 +78,14 @@
   height: 200px;
   border-bottom: 1px solid #000;
 }
-.xxx {
-  margin-left: 200px;
+
+.service__maincontent-wrap {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+.service__maincontent--width {
+  max-width: 800px;
+}
 }

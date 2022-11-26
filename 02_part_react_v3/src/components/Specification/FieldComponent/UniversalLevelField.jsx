@@ -12,11 +12,11 @@ export default function SubharmonicsLevelField(props) {
     disabledStatus, endAdornment, field, error, handleOnBlur } = props;
 
   return (
-    <FormControl>
+    <FormControl
+    onBlur={handleOnBlur}>
       <TextField
         {...field}
         label={label}
-        handleOnBlur={handleOnBlur}
         disabled = {disabledStatus}
         /* id="standard-size-small" */
         sx={decor}

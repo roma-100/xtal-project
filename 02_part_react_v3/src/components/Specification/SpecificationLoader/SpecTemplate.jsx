@@ -290,7 +290,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">disconnected Vc pin</td>
 {/* row21PresetControlVoltageeArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="1.9" sdnum="1033;" align="center">{xlsData.row21PresetControlVoltageeArray[0]}</td>
 {/* row21PresetControlVoltageeArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.1" sdnum="1033;" align="center">{xlsData.row21PresetControlVoltageeArray[1]}</td>
-{/* row21PresetControlVoltageeArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.3" sdnum="1033;" align="center">{xlsData.row21PresetControlVoltageeArray[3]}</td>
+{/* row21PresetControlVoltageeArray */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="2.3" sdnum="1033;" align="center">{xlsData.row21PresetControlVoltageeArray[2]}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">V</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
       </tr>
@@ -304,7 +304,7 @@ const ReportTemplate = (props) => {
       </tr>
       <tr>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="3.6" sdnum="1033;" height={17} align="center">3.6</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Linearity </td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left">Linearity</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
@@ -319,7 +319,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">Vc=0 V</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="-0.35" sdnum="1033;" align="center">-0.35</td>
+{/* cellH24FrequencyTurningRange */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="-0.35" sdnum="1033;" align="center">{xlsData.cellH24FrequencyTurningRange}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppm</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center">+</td>
       </tr>
@@ -335,7 +335,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="3.8" sdnum="1033;" height={18} align="center">3.8</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">(fH- f)/f</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">Vc= Vref</td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="0.35" sdnum="1033;" align="center">0.35</td>
+{/* cellF26FrequencyTurningRange */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval="0.35" sdnum="1033;" align="center">{xlsData.cellF26FrequencyTurningRange}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppm</td>
@@ -399,7 +399,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="left"> Frequency warm-up time</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} colSpan={2} align="center">to df/f=1e-7 at +25°C ref at 15 min</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={90} sdnum="1033;" align="center">90</td>
+{/* cellH33WarmUpTimeValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} sdval={90} sdnum="1033;" align="center">{xlsData.cellH33WarmUpTimeValue}</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">s</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="center"><br /></td>
@@ -464,7 +464,7 @@ const ReportTemplate = (props) => {
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="left"><br /></td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="left"><br /></td>
 {/* cellH46agingFirstYearValue */}<td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center"><font face="Times New Roman">{xlsData.cellH46agingFirstYearValue}</font></td>
-        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppb</td>
+        <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000'}} align="center">ppm</td>
         <td style={{borderBottom: '1px solid #000000', borderLeft: '1px solid #000000', borderRight: '1px solid #000000'}} align="left"><br /></td>
       </tr>
       <tr>
@@ -513,12 +513,15 @@ const ReportTemplate = (props) => {
     </tbody></table>
 </div>
 <p>* For a lower value, please consult the factory.</p>
-
+<div className="specification-special-requirements__temlate-xls" style={!xlsData.specialRequirements ? {dispaly: 'none'} : {}} >
+  <h4>Special requirements:</h4>
+  <p>{xlsData.specialRequirements}</p>
+</div>
 		  {/* ************************************************************************** */}
 		</div>
     <div className="specification-image__wrap">
-      <img className="specification-image" src="../pimages/spec_1.png" alt="xtall" />
-      <img className="specification-image" src="../pimages/spec_2.png" alt="xtall" />
+      <img className="specification-image" src={xlsData.bottomImgCase} alt="xtall" />
+      <img className="specification-image" src={xlsData.bottomImgPinout} alt="xtall" />
     </div>
 
 		</div>

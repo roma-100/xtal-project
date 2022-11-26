@@ -88,7 +88,7 @@ class SpecificationLoader extends React.Component {
 
         <button className="specification-download-btn" role="button" onClick={this.handleGeneratePdf} >
           <span className="text">
-          Load full specification to confirm</span></button>
+          Save specification on your device</span></button>
         {/* <p>{`screen: ${this.ssStyle().screenWidth}  tableWidth: ${this.ssStyle().tableWidth.width} pdfOffset: ${this.ssStyle().pdfOffset}`}</p> */}
         <div ref={this.reportTemplateRef} >
           <ReportTemplate 

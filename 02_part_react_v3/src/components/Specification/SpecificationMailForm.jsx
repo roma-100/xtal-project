@@ -16,7 +16,7 @@ import { TextField, FormControl, FormHelperText, Button, Alert } from "@mui/mate
       companyName: "",
       email: "",
       phone: "",
-      specialRequirements: "",
+      enquireNotation: "",
     },
   });
   //const onSubmit = (data) => console.log(data);
@@ -83,7 +83,7 @@ const validForm = () => {
       {/* ++++++++ Start Field companyName ++++++ */}
       <div className="specification-mail__field">
         <Controller
-          name="companyName"
+          name="application"
           control={control}
           rules={{
             required: "This is required",
@@ -97,17 +97,17 @@ const validForm = () => {
               <FormControl sx={formElementDecor.textField} >
                 <TextField
                   {...field}
-                  label="Company Name"
+                  label="Application"
                   id="standard-size-small"
-                  error={errors.companyName ? true : false}
+                  error={errors.application ? true : false}
                   size="small"
                   variant="standard"
                 />
                 <FormHelperText
-                  sx={errors.companyName ? { color: "red" } : { color: "grey" }}
+                  sx={errors.application ? { color: "red" } : { color: "grey" }}
                   id="standard-weight-helper-text"
                 >
-                  {errors.companyName ? errors.companyName?.message : null}
+                  {errors.application ? errors.application?.message : null}
                 </FormHelperText>
               </FormControl>
             );
@@ -189,22 +189,22 @@ const validForm = () => {
       {/* ++++++++ Start Field message ++++++ */}
       <div className="specification-mail__field">
         <Controller
-          name="specialRequirements"
+          name="enquireNotation"
           control={control}
           rules={{}}
           render={({ field }) => {
             return (
-              <FormControl sx={formElementDecor.textField}>
+              <FormControl sx={{...formElementDecor.textField, mt: 2}}>
                 <TextField
                   {...field}
-                  label="Special requirements"
+                  label="Enquire notation"
                   id="outlined-multiline-flexible"
                   //error="true"
                   /* defaultValue="Small" */
                   size="small"
-                  variant="standard"
+                  variant="filled"
                   multiline
-                  maxRows={6}
+                  rows={4}
                 />
                 <FormHelperText
                   sx={{ color: "grey" }}

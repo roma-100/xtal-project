@@ -8,6 +8,10 @@ const INIT_SELECTED_MODEL = "INIT_SELECTED_MODEL";
 const INIT_SELECTED_STABILITY_VS_TEMPERATURE ="INIT_SELECTED_STABILITY_VS_TEMPERATURE";
 const INIT_CONTINUOUS_CURRENT= "INIT_CONTINUOUS_CURRENT";
 const INIT_AGING_PER_DAY= "INIT_AGING_PER_DAY";
+const INIT_AGING_PER_DAY_DEF= "INIT_AGING_PER_DAY_DEF";
+const INIT_AGING_PER_DAY_MIN= "INIT_AGING_PER_DAY_MIN";
+//filterTemperatureRange
+const SET_MODEL_TEMPERATURE_RANGE= "SET_MODEL_TEMPERATURE_RANGE";
 //agingPerDayArraySet //dispatch(initcontinuousCurrent(continuousCurrent)); INIT_CONTINUOUS_CURRENT
 const INIT_XLS_DATA = "INIT_XLS_DATA"
 const SET_FREQUENCY_BLUR = "SET_FREQUENCY_BLUR";
@@ -19,8 +23,14 @@ const INIT_BLUR_DATASET = "INIT_BLUR_DATASET"
 const UPDATE_CONTINUOUS_CURRENT_DATA_SET = "UPDATE_CONTINUOUS_CURRENT_DATA_SET"
 const UPDATE_STABILITY_VS_TEMPERATURE_DATA_SET = "UPDATE_STABILITY_VS_TEMPERATURE_DATA_SET"
 const UPDATE_AGING_PER_DAY_DATA_SET= "UPDATE_AGING_PER_DAY_DATA_SET";
+const UPDATE_AGING_PER_DAY_DEF_DATA_SET= "UPDATE_AGING_PER_DAY_DEF_DATA_SET";
+const UPDATE_AGING_PER_DAY_MIN_DATA_SET= "UPDATE_AGING_PER_DAY_MIN_DATA_SET";
+
+/*     agingPerDayDefResult: 0,
+    agingPerDayMinResult: 0, */
 const SET_VOLTAGE_BLUR = "SET_VOLTAGE_BLUR";
 const SET_OUTPUT_TYPE_BLUR = "SET_OUTPUT_TYPE_BLUR";
+const ADD_SPECIAL_REQUIREMENTS = "ADD_SPECIAL_REQUIREMENTS"
 
 const initialState = {
   selectedModel: {},
@@ -32,9 +42,8 @@ const initialState = {
     outputType: "Sine-wave", //default value
     continuousCurrentResult: 0,
     agingPerDayResult: 0,
-    continuousCurrent: 0,
-    subharmonicsLevel: -40,
-    aginPerDay: 0,
+    agingPerDayDefResult: 0,
+    agingPerDayMinResult: 0,
     phaseNoise1Hz: 0,
     phaseNoise10Hz: 0,
     phaseNoise100Hz: 0,
@@ -45,6 +54,8 @@ const initialState = {
   stepsLevel: 1,
   specificationId: 0,
   agingPerDay: {},
+  agingPerDayDef: {},
+  agingPerDayMin: {},
   stabilityVsTemperature: {},
   stabilityVsTemperature: {},
   submitData: {},
@@ -112,13 +123,29 @@ const specFormReducer = (state = initialState, action) => {
         ].join(':')
       );
     }
+
+    const continuousCurrentDefaultVAlue = !action.submitDataArr.submitData.continuousCurrent
+      ? state.blurDataset.continuousCurrentResult + 5 
+      : action.submitDataArr.submitData.continuousCurrent
+
+      const aginPerDayDefaultVAlue = !action.submitDataArr.submitData.aginPerDay
+      ? state.blurDataset.agingPerDayDefResult 
+      : action.submitDataArr.submitData.aginPerDay
+
     const stateCopy = {
       ...state,
-      submitData: {...action.submitDataArr.submitData},
+      submitData: {...action.submitDataArr.submitData, 
+        continuousCurrent: continuousCurrentDefaultVAlue,
+        aginPerDay: aginPerDayDefaultVAlue,
+      },
       //need for e-mail data{} and for banner2
-      blurDataset: {...state.blurDataset, ...action.submitDataArr.submitData},
+      blurDataset: {...state.blurDataset, 
+        ...action.submitDataArr.submitData, 
+        continuousCurrent: continuousCurrentDefaultVAlue,
+        aginPerDay: aginPerDayDefaultVAlue,
+      },
       dateUtc: formatDate(new Date()) + ' UTC',
-      stepsLevel: 3,
+      stepsLevel: 2,
     };
     //debugger
     return stateCopy;
@@ -237,6 +264,28 @@ if (action.type === UPDATE_EMAIL_DATA) {
     return stateCopy;
   }  
 
+  if (action.type === INIT_AGING_PER_DAY_DEF) {
+    const stateCopy = {
+      ...state,
+      agingPerDayDef: action.agingPerDayDefArraySet,
+    };
+    //debugger
+    return stateCopy;
+  }  
+
+  if (action.type === INIT_AGING_PER_DAY_MIN) {
+    const stateCopy = {
+      ...state,
+      agingPerDayMin: action.agingPerDayMinArraySet,
+    };
+    //debugger
+    return stateCopy;
+  }  
+
+  /* const INIT_AGING_PER_DAY_DEF= "INIT_AGING_PER_DAY_DEF";
+const INIT_AGING_PER_DAY_MIN= "INIT_AGING_PER_DAY_MIN"; */
+//const INIT_AGING_PER_DAY= "INIT_AGING_PER_DAY";
+
   if (action.type === UPDATE_AGING_PER_DAY_DATA_SET) {
     //state.agingPerDay {apd} {apd40}
     //console.log('hello' + state.blurDataset.frequency)
@@ -271,6 +320,73 @@ if (action.type === UPDATE_EMAIL_DATA) {
     return stateCopy;
   }  
   
+  if (action.type === UPDATE_AGING_PER_DAY_DEF_DATA_SET) {
+    //state.agingPerDay {apd} {apd40}
+    //console.log('hello' + state.blurDataset.frequency)
+    const apdDefArray = () => {
+      //console.log(state.selectedModel.frequencyType)
+      //console.log(state.agingPerDay)
+      if (state.selectedModel.frequencyType === "with multiplication") {
+        if (state.blurDataset.frequency >= 40) return state.agingPerDayDef.apdDef40;
+        return state.agingPerDayDef.apdDef
+      }
+      if (state.selectedModel.frequencyType === "fundamental") return state.agingPerDayDef.apdDef
+    }
+
+    const getAgingPerDayDef = () => {
+      const a = apdDefArray()
+      const f = state.blurDataset.frequency
+      if (f === 0) return 0
+      if (f <= a[0]) return a[1]
+      if (f <= a[2]) return a[3]
+      if (f <=a [4]) return a[5]
+      if (f <=a [6]) return a[7]
+      if (f <=a [8]) return a[9]
+      return a[11]
+    }
+    const stateCopy = {
+      ...state,
+      blurDataset: {...state.blurDataset, 
+        agingPerDayDefResult: getAgingPerDayDef()}
+    };
+    //debugger
+    return stateCopy;
+  } 
+
+  if (action.type === UPDATE_AGING_PER_DAY_MIN_DATA_SET) {
+    //state.agingPerDay {apd} {apd40}
+    //console.log('hello' + state.blurDataset.frequency)
+    const apdMinArray = () => {
+      //console.log(state.selectedModel.frequencyType)
+      //console.log(state.agingPerDay)
+      if (state.selectedModel.frequencyType === "with multiplication") {
+        if (state.blurDataset.frequency >= 40) return state.agingPerDayMin.apdMin40;
+        return state.agingPerDayMin.apdMin
+      }
+      if (state.selectedModel.frequencyType === "fundamental") return state.agingPerDayMin.apdMin
+    }
+
+    const getAgingPerDayMin = () => {
+      const a = apdMinArray()
+      const f = state.blurDataset.frequency
+      if (f === 0) return 0
+      if (f <= a[0]) return a[1]
+      if (f <= a[2]) return a[3]
+      if (f <=a [4]) return a[5]
+      if (f <=a [6]) return a[7]
+      if (f <=a [8]) return a[9]
+      return a[11]
+      //IF(frequency<=a[0],a[1],  (frequency<=a[2],a[3],IF(frequency<=a[4],a[5],IF(frequency<=a[6],a[7],IF(frequency<=a[8],a[9],a[11])))))
+    }
+    const stateCopy = {
+      ...state,
+      blurDataset: {...state.blurDataset, 
+        agingPerDayMinResult: getAgingPerDayMin()}
+    };
+    //debugger
+    return stateCopy;
+  } 
+
   if (action.type === INIT_BLUR_DATASET) {
     //action.selectedModel
     const stateCopy = {
@@ -281,7 +397,20 @@ if (action.type === UPDATE_EMAIL_DATA) {
     //debugger
     return stateCopy;
   }
-  
+
+   if (action.type === ADD_SPECIAL_REQUIREMENTS) {
+    console.log(action.txt)
+    
+    let txt = action.txt /*  //.replace(/\r?\n/g, '</p><p>') */
+    const stateCopy = {
+      ...state,
+      xlsData: {...state.xlsData, specialRequirements: txt},
+      stepsLevel: 3,
+    };
+    //debugger
+    return stateCopy;
+  } 
+
   if (action.type === UPDATE_CONTINUOUS_CURRENT_DATA_SET) {
     //console.log('Hello')
     const nominalFrequency = state.blurDataset.frequency
@@ -351,13 +480,13 @@ if (action.type === UPDATE_EMAIL_DATA) {
         if (voltage === "5") { return  31 }
       }
       const cc = ((a[3]-a[1])*(nominalFrequency-a[0])/(a[2]-a[0])+a[1])+a[4]
-      return cc.toFixed(2)
+      return cc.toFixed(0)
     }
     //console.log(continuousCurrentTypical())
 
     const stateCopy = {
       ...state,
-      blurDataset: { ...state.blurDataset, continuousCurrentResult: continuousCurrentTypical()}
+      blurDataset: { ...state.blurDataset, continuousCurrentResult: Number(continuousCurrentTypical())}
     };
     //debugger
     return stateCopy;
@@ -454,6 +583,16 @@ if (action.type === UPDATE_EMAIL_DATA) {
     return stateCopy;
   }
   
+  if (action.type === SET_MODEL_TEMPERATURE_RANGE) {
+
+    const stateCopy = {
+      ...state,
+      selectedModel: {...state.selectedModel, temperatureRange: action.value},
+    };
+    //debugger
+    return stateCopy;
+  }
+
   if (action.type === INIT_XLS_DATA) {
     const data = state.submitData
 
@@ -472,7 +611,7 @@ if (action.type === UPDATE_EMAIL_DATA) {
       if (f < a[2]) return (a[3]-a[1])*(f-a[0])/(a[2]-a[0])+a[1]
       return a[3]
     }
-
+//console.log(getHcmosRiseFallTimeMax(55))
     const getAgingFirstYear =(AgingPerDay) => {
       const agingFirstYear = [0.1,0.15,0.2,0.1]
       const a = agingFirstYear
@@ -506,6 +645,15 @@ if (action.type === UPDATE_EMAIL_DATA) {
       }
       return null
     }
+
+    const frequencyTurningRange = () => {
+      const a = [0.35, 0.5, 0.5, 1.5, 1, 5, 1.3] 
+      const aginPerDay = state.submitData.aginPerDay
+      if (aginPerDay < a[1]) return a[0]
+      if (aginPerDay < a[3]) return a[2]
+      if (aginPerDay < a[5]) return a[4]
+      return a[6]
+    }
 //specificationId
     const stateCopy = {
       ...state,
@@ -521,19 +669,24 @@ if (action.type === UPDATE_EMAIL_DATA) {
 
         row11__15_waveFormVisible: data.outputType === "HCMOS" ? true : false,
         cellF11hcmosHighVoltageValue: data.voltage === "3.3" ? 2.4 : 3.8,
-        cellH15HcmosRiseFallTimeMaxValue: data.voltage === getHcmosRiseFallTimeMax(state.submitData.nominalFrequency),
+
+        row15HcmosRiseFallTimeVisible: data.outputType === "Sine-wave" ? true : false,
+        cellH15HcmosRiseFallTimeMaxValue: getHcmosRiseFallTimeMax(state.submitData.nominalFrequency),
 
         row16subHarmonicsVisible: state.selectedModel.frequencyType === "with multiplication" ? true : false,
         cellD16subHarmonicsConditions: getSubHarmonicsConditions(state.submitData.nominalFrequency, state.selectedModel.frequencyType ),
         cellH16subHarmonicsValue: data.subharmonicsLevel ? data.subharmonicsLevel : null, /* Not empty value like "" */
         cellH20VoltageRangeValue: data.voltage === "3.3" ? 2.8 : 4.2,
         row21PresetControlVoltageeArray: data.voltage === "3.3" ? [1.2, 1.4, 1.6] : [1.9, 2.1, 2.3],
+        cellH24FrequencyTurningRange: frequencyTurningRange() * -1,
+        cellF26FrequencyTurningRange: frequencyTurningRange(),
         row27ReferenceVoltageArray: data.voltage === "3.3" ? [2.7, 2.8, 3.1] : [4, 4.2, 4.3],
         row30inputVoltageArray: data.voltage === "3.3" ? [3.15, 3.3, 3.45] : [4.75, 5, 5.25],
         cellD31warmUpCurrentValue: data.voltage === "3.3" ? "Vcc=3.3V": "Vcc=5.0V",
         cellD32warmUpCurrentValue: data.voltage === "3.3" ? "at +25°C, Vcc=3.3V": "at +25°C, Vcc=5.0V",
         cellG32continuousCurrentValue: state.blurDataset.continuousCurrentResult,
         cellH32continuousCurrentValue: data.continuousCurrent,
+        cellH33WarmUpTimeValue: data.voltage === "3.3" ? 100: 80,
         cellH35stabilityVsTemperatureValue: '±' + data.stabilityVsTemperature,
         cellH39PhazeNoise1HzValue: data.phaseNoise1Hz ? data.phaseNoise1Hz : "",
         cellH40PhazeNoise10HzValue: data.phaseNoise10Hz ? data.phaseNoise10Hz : "",
@@ -542,13 +695,17 @@ if (action.type === UPDATE_EMAIL_DATA) {
         cellH43PhazeNoise10KHzValue: data.phaseNoise10KHz ? data.phaseNoise10KHz : "",
         cellH44PhazeNoise100KHzValue: data.phaseNoise100KHz ? data.phaseNoise100KHz : "",
         cellH45aginPerDayValue: '±' + data.aginPerDay,
-        cellH46agingFirstYearValue: '±' + getAgingFirstYear(data.aginPerDay).toFixed(2), //getAgingFirstYear
-        row48powerVoltage: `-0.5 to ${(data.voltage * 1.2).toFixed(2)} V`,
-        row49controlVoltage: `-1.0 to ${(data.voltage * 1.2).toFixed(2)} V`,
+        cellH46agingFirstYearValue: '±' + getAgingFirstYear(data.aginPerDay).toFixed(3), //getAgingFirstYear
+        row48powerVoltage: `-0.5 to ${(data.voltage * 1.2).toFixed(1)} V`,
+        row49controlVoltage: `-1.0 to ${(data.voltage * 1.2).toFixed(1)} V`,
         row51operatingTemperatureRange: state.selectedModel.temperatureRange,
         row53humidityValue: state.selectedModel.humidity,
         row53mechanicalShock: state.selectedModel.mechanicalShock,
         row53vibration: state.selectedModel.vibration,
+        specialRequirements: '',
+        bottomImgCase: '..' + state.selectedModel.pictureCase,
+        bottomImgPinout: '..' + state.selectedModel.picturePinout,
+
       }
     };
     //debugger
@@ -574,6 +731,8 @@ const specFormInputStep2AC = (submitDataArr) => ({ type: INPUT_SET_STEP2, submit
 const initSpecificationId = () => ({ type: INIT_SPECIFICATION_ID });
 const updateContinuousCurrentDataSetAC = () => ({ type: UPDATE_CONTINUOUS_CURRENT_DATA_SET });
 const updateAgingPerDayDataSetAC = () => ({ type: UPDATE_AGING_PER_DAY_DATA_SET });
+const updateAgingPerDayDefDataSetAC = () => ({ type: UPDATE_AGING_PER_DAY_DEF_DATA_SET });
+const updateAgingPerDayMinDataSetAC = () => ({ type: UPDATE_AGING_PER_DAY_MIN_DATA_SET });
 const updateStabilityVsTemperatureDataSetAC = () => ({ type: UPDATE_STABILITY_VS_TEMPERATURE_DATA_SET });
 
 const initBlurDataSetSetAC = () => ({ type: INIT_BLUR_DATASET });
@@ -583,11 +742,14 @@ const setStabilityVsTemperatureBlurAC = (stabilityVsTemperatureBlurValue) => ({ 
   stabilityVsTemperatureBlurValue, });
 const setVoltageBlurAC = (value) => ({ type: SET_VOLTAGE_BLUR, value });
 const setOutputTypeBlurAC = (value) => ({ type: SET_OUTPUT_TYPE_BLUR, value });
-
+const setModelTemperatureRange = (value) => ({ type: SET_MODEL_TEMPERATURE_RANGE, value });
+const addSpecialRequirements = (txt) => ({ type: ADD_SPECIAL_REQUIREMENTS, txt });
 export const initSelectedModel = (selectedModel) => ({ type: INIT_SELECTED_MODEL, selectedModel, });
 export const initcontinuousCurrent= (continuousCurrent) => ({ type: INIT_CONTINUOUS_CURRENT, continuousCurrent, });
 const initAgingPerDayArray= (agingPerDayArraySet) => ({ type: INIT_AGING_PER_DAY, agingPerDayArraySet, });
-//const INIT_AGING_PER_DAY= "INIT_AGING_PER_DAY";
+const initAgingPerDayDefArray= (agingPerDayDefArraySet) => ({ type: INIT_AGING_PER_DAY_DEF, agingPerDayDefArraySet, });
+const initAgingPerDayMinArray= (agingPerDayMinArraySet) => ({ type: INIT_AGING_PER_DAY_MIN, agingPerDayMinArraySet, });
+
 //agingPerDayArraySet //dispatch(initcontinuousCurrent(continuousCurrent)); INIT_CONTINUOUS_CURRENT
 export const initsselectedModelStabilityVsTemperature = ( selectedModelStabilityVsTemperature ) => ({
   type: INIT_SELECTED_STABILITY_VS_TEMPERATURE,
@@ -607,10 +769,15 @@ export const specFormInitStep2TC = (
   selectedModel,
   selectedModelStabilityVsTemperature,
   continuousCurrent,
-  agingPerDayArraySet
+  agingPerDayArraySet,
+  agingPerDayDefArraySet,
+  agingPerDayMinArraySet,
+  modelTemperatureRange
 ) => {
   return (dispatch) => {
     dispatch(initSelectedModel(selectedModel));
+    dispatch(setModelTemperatureRange(modelTemperatureRange));
+    
     dispatch(initSpecificationId());
     dispatch(
       initsselectedModelStabilityVsTemperature(
@@ -620,10 +787,14 @@ export const specFormInitStep2TC = (
     dispatch(initcontinuousCurrent(continuousCurrent));
     dispatch(initBlurDataSetSetAC());
     dispatch(initAgingPerDayArray(agingPerDayArraySet));
+    dispatch(initAgingPerDayDefArray(agingPerDayDefArraySet));
+    dispatch(initAgingPerDayMinArray(agingPerDayMinArraySet));
 
     dispatch(updateContinuousCurrentDataSetAC());
     dispatch(updateStabilityVsTemperatureDataSetAC());
     dispatch(updateAgingPerDayDataSetAC());
+    dispatch(updateAgingPerDayDefDataSetAC());
+    dispatch(updateAgingPerDayMinDataSetAC());
     dispatch(updateEmailData());
   };
 };
@@ -635,6 +806,8 @@ export const setFrequencyBlurTC = (event) => {
     dispatch(updateContinuousCurrentDataSetAC());
     dispatch(updateStabilityVsTemperatureDataSetAC());
     dispatch(updateAgingPerDayDataSetAC());
+    dispatch(updateAgingPerDayDefDataSetAC());
+    dispatch(updateAgingPerDayMinDataSetAC());
     dispatch(updateEmailData());
   };
 };
@@ -676,6 +849,15 @@ export const specFormInputStep2TC = (submitDataArr) => {
 /*     dispatch(specFormInputStep2AC(submitDataArr));
     dispatch(updateEmailData()); */
   };
+};
+
+export const clickHandlerAddSpecialRequirementsTC = (data) => {
+  //console.log(data.specialRequirements)
+  const txt = data.specialRequirements
+  return (dispatch) => {
+    dispatch(addSpecialRequirements(txt))
+  }
+
 };
 
 export default specFormReducer;

@@ -15,7 +15,8 @@ import {
   setEmailDataAC,
   setStepsLevelFinish,
   resetSpecFormDataAC,
-  phaseNoiseSwitchToggleAC
+  phaseNoiseSwitchToggleAC,
+  clickHandlerAddSpecialRequirementsTC
 
 } from "../../redux/reducer-spec-form";
 import {filterInitTC} from "../../redux/reducer-gen_models"
@@ -40,6 +41,31 @@ import {
 } from "react-router-dom";
 
 class SpecificationContainer extends React.Component {
+
+  flexStyleXlsTbl = () => {
+    const style = {
+      screenWidth: window.innerWidth,
+      tableWidth: {width: 300},
+      pdfOffset: 0,
+      pdfWidth: window.innerWidth,
+      margin: 10
+    }
+    const tableWidthMin = 300
+    const tableWidthMax = 650
+    //console.log('screen width: ' + window.innerWidth)
+  
+    if (style.screenWidth > tableWidthMin) { 
+      style.tableWidth.width = style.screenWidth - style.margin
+      if (style.screenWidth > tableWidthMax) {
+        style.tableWidth.width = tableWidthMax - style.margin
+      }
+    }
+  
+    style.pdfOffset = (style.screenWidth - style.tableWidth.width)/9
+    style.pdfWidth = 0.6 * style.tableWidth.width * (style.screenWidth / style.tableWidth.width)
+  
+    return style
+  }
 
   render() {
     const picturePath = "../../pimages/types200/"+
@@ -66,10 +92,10 @@ class SpecificationContainer extends React.Component {
         <div>
           {specBannerStep1()}
 
-          <SpecificationBannerStep2
+{/*           <SpecificationBannerStep2
             dataForm={this.props.stSpecForm}
-          />    
-
+          />     */}
+          
           <SpecificationStep2
             specFormInputStep2TC={this.props.specFormInputStep2TC}
             picturePath={picturePath}
@@ -89,43 +115,44 @@ class SpecificationContainer extends React.Component {
     // +++ End Form Step 2 Component ++++++
 
     // +++ Start Form Step 3 Component ++++++
+    //SpecificationStep3
     const specStep3 = () => {
       return (
         <div>
           {specBannerStep1()}
+{/* 
+        <SpecificationBannerStep2
+          dataForm={this.props.stSpecForm}
+        />   */} 
 
-          <SpecificationBannerStep2
-            dataForm={this.props.stSpecForm}
-          />          
-
-          <SpecificationStep3
-            dataForm={this.props.stSpecForm}
-            setEmailDataAC = {this.props.setEmailDataAC}
-            filterInitTC = {this.props.filterInitTC}
-            phaseNoiseSwitchToggleAC = {this.props.phaseNoiseSwitchToggleAC}
-            /* specFormInputStep3 = {this.props.specFormInputStep3} */
-          />
+        <SpecificationStep3
+            emailData={this.props.stSpecForm.emailData}
+            xlsData={this.props.stSpecForm.xlsData}
+            flexStyleXlsTbl = {this.flexStyleXlsTbl()}
+            clickHandlerAddSpecialRequirementsTC = {this.props.clickHandlerAddSpecialRequirementsTC}
+        />
         </div>
       );
 
-/* 
-    if (this.props.stSpecForm.selectedModel.frequencyType === 'with multiplication') {
+    };
+
+    const specStep4 = () => {
       return (
-        <div>haseNoiseSwitchToggleAC
+        <div>
           {specBannerStep1()}
+{/* 
+        <SpecificationBannerStep2
+          dataForm={this.props.stSpecForm}
+        />   */} 
 
-          <SpecificationBannerStep2
-            dataForm={this.props.stSpecForm}
-          />          
-
-          <SpecificationStep3mult
-            dataForm={this.props.stSpecForm}
-            setEmailDataAC = {this.props.setEmailDataAC}
-            filterInitTC = {this.props.filterInitTC}
-          />
+        <SpecificationMailSender
+        setStepsLevelFinish={this.props.setStepsLevelFinish}
+        emailData={this.props.stSpecForm.emailData}
+        xlsData={this.props.stSpecForm.xlsData}
+        filterInitTC={this.props.filterInitTC}
+        />
         </div>
-      ); 
-    }*/
+      );
 
     };
     // +++ End Form Step 2 Component ++++++
@@ -139,8 +166,10 @@ class SpecificationContainer extends React.Component {
       if (this.props.stSpecForm.stepsLevel === 2) {
         return specStep3()
       }
-
       if (this.props.stSpecForm.stepsLevel === 3) {
+        return specStep4()
+      }
+ /*      if (this.props.stSpecForm.stepsLevel === 3) {
         return (
           <>
           {specBannerStep1()}
@@ -155,17 +184,10 @@ class SpecificationContainer extends React.Component {
           xlsData={this.props.stSpecForm.xlsData}
           filterInitTC={this.props.filterInitTC}
         />
-{/*           <SpecificationSubmit
-            dataForm={this.props.stSpecForm}
-            picturePath={picturePath}
-            selectedModel={this.props.stSpecForm.selectedModel}
-            setEmailDataAC = {this.props.setEmailDataAC}
-            setStepsLevelFinish= {this.props.setStepsLevelFinish}
-            filterInitTC = {this.props.filterInitTC}
-          /> */}
+
           </>
         );
-      }
+      } */
       if (this.props.stSpecForm.stepsLevel === 10) { //Finish step
         return (
           <Navigate to="/gen_models_hello" />
@@ -201,7 +223,8 @@ const mapDispatchToProps = {
   setStepsLevelFinish,
   resetSpecFormDataAC,
   filterInitTC,
-  phaseNoiseSwitchToggleAC
+  phaseNoiseSwitchToggleAC, 
+  clickHandlerAddSpecialRequirementsTC
   /*     filterFrequencyTypeTC,
     filterInitTC,
     filterTemperatureRangeTC */

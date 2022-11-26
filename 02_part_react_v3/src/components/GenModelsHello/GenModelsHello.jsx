@@ -49,6 +49,27 @@ const GenModelsHello = (props) => {
         return value.modelId === idModel;
       })[0].agingPerDay;
 
+
+      //agingPerDayDef
+      const agingPerDayDefArraySet = props.gen_models.temperatureRange
+      .filter((value, index) => {
+        //console.log(JSON.stringify(value.id, null, 2))
+        return value.range === props.gen_models.filterTemperatureRange;
+      })[0]
+      .modelsTemperatureData.filter((value, index) => {
+        return value.modelId === idModel;
+      })[0].agingPerDayDef;
+
+
+      //agingPerDayMin
+      const agingPerDayMinArraySet = props.gen_models.temperatureRange
+      .filter((value, index) => {
+        //console.log(JSON.stringify(value.id, null, 2))
+        return value.range === props.gen_models.filterTemperatureRange;
+      })[0]
+      .modelsTemperatureData.filter((value, index) => {
+        return value.modelId === idModel;
+      })[0].agingPerDayMin;
     /* console.log("!!!!" + idModel)
    console.log(selectedModel)
    console.log(selectedModelStabilityVsTemperature)
@@ -59,7 +80,10 @@ const GenModelsHello = (props) => {
       selectedModel,
       selectedModelStabilityVsTemperature,
       continuousCurrentArraySet,
-      agingPerDayArraySet
+      agingPerDayArraySet,
+      agingPerDayDefArraySet,
+      agingPerDayMinArraySet,
+      props.gen_models.filterTemperatureRange
     );
   };
 

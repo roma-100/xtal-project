@@ -1,5 +1,6 @@
 //***********  SpecificationStep1.jsx **** */
 import React, { useEffect, useState }  from 'react';
+import axios from 'axios';
 /* =====End cmponents ======== */
 import '../Specification/SpecificationBannerStep1.scss';
 /* import fs from 'fs' */
@@ -53,7 +54,13 @@ const Cofee = (props) => {
     const a4 = () => {return 1}
     const a = () => {return (1)}
 
-    
+    axios.get(`http://localhost/wwwl/test/89/api.php`)
+    .then(res => {
+      const persons = res.data;
+      console.log(res.data)
+
+    })
+
 
   return (
     <>

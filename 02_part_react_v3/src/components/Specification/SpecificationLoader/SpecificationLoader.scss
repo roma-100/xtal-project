@@ -1,3 +1,6 @@
+@import "../../../assets/scss/init.scss";
+
+
 .specification-download-btn {
   background: #fff;
   backface-visibility: hidden;
@@ -70,4 +73,31 @@
     width: 150px;
     height: 225px;
   }
+}
+
+.specification-requirement__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .specification-requirement__form--btn{
+    margin: 1rem;
+    text-align: center;
+  }
+}
+.specification-special-requirements__temlate-xls {
+  border: 1px solid gray;
+  width: 100%;
+  min-height: 2rem;
+}
+
+.specification-special-requirements__temlate-xls--hide {
+  display: none;
+}
+.specification-title__define-main-requirements {
+  text-align: center;
+  font-family: Raleway-SemiBold;
+  font-size: 1.2rem;
+  color: $color-secondary-2-0;
 }

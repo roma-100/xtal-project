@@ -1,4 +1,10 @@
-//***********  SpecificationStep1.jsx **** */
+/* Sender SpecificationContainer.jsx */
+//***********  SpecificationStep2.jsx **** */
+/* 
+1/ Banner Step 1
+2/ Input data Step 2  -> Step 3 (Specification + Special requiremens)
+*/
+
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
@@ -29,7 +35,15 @@ const SpecificationStep1 = (props) => {
   const {selectedModel } = dataForm
 
   const [backBtn, setBackBtn] = useState(false);
+/*   const [continuousCurrentS, setContinuousCurrentS] = useState('')
   
+  const xx = () => {
+    if (dataForm.blurDataset.frequency !== 0 ) return dataForm.blurDataset.continuousCurrentResult + 5
+    if (dataForm.blurDataset.frequency === 0 ) return 44
+    return 11
+  }
+  setContinuousCurrentS(xx()) */
+
   const {
     control,
     handleSubmit,
@@ -53,7 +67,9 @@ const SpecificationStep1 = (props) => {
       phaseNoise100KHz: '',
     },
   });
-
+ // window.bb = control
+  //window.bc = {...field}
+//console.log(dataForm.blurDataset.continuousCurrentResult + 5)
   const formElementDecor = {
     textField: {
       p: 1,
@@ -133,6 +149,9 @@ const SpecificationStep1 = (props) => {
         <div className="speciication__wrap--position">
           {/* Start Form  +++++++++++ */}
           <div className="specification-form__wrap">
+          <div className="specification-title__define-main-requirements" >
+            Define your main requirements
+            </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 {/* Start nominalFrequency +++++++++++ */}
@@ -234,7 +253,7 @@ const SpecificationStep1 = (props) => {
                       handleOnBlur={props.setstabilityVsTemperatureBlurValueBlurTC}
                       error = {errors.stabilityVsTemperature}
                       label = {"Stability vs Temperature"}
-                      placeholder = {dataForm.blurDataset.stabilityVsTemperature}
+                      placeholder = {dataForm.blurDataset.stabilityVsTemperature + ''}
                       decor = {{...formElementDecor.textField, width: "98%"}}
                       endAdornment = {'ppb'}
                       helperText = {errors.stabilityVsTemperature
@@ -326,39 +345,29 @@ const SpecificationStep1 = (props) => {
                   name="aginPerDay"
                   control={control}
                   rules={{
-                    required: "This is required",
-                    maxLength: {
-                      value: 10,
-                      message: "Value is too long",
-                    },
                     min: {
-                      value: dataForm.blurDataset.agingPerDayResult,
+                      value: dataForm.blurDataset.agingPerDayMinResult,
                       message:
                         "Min value is " +
-                        dataForm.blurDataset.agingPerDayResult +
+                        dataForm.blurDataset.agingPerDayMinResult +
                         " ppb",
-                    },
-                    max: {
-                      value: 10,
-                      message:
-                        "Max value is 10 ppb",
                     },
                   }}
                   render={({ field }) => {
                     return (
                       <UniversalLevelField 
-                      disabledStatus = {dataForm.blurDataset.agingPerDayResult ? false : true}
+                      disabledStatus = {dataForm.blurDataset.agingPerDayMinResult ? false : true}
                       field = {field}
                       handleOnBlur={()=>{}}
                       error = {errors.aginPerDay}
-                      label = {'Agin per Day'}
-                      placeholder = {dataForm.blurDataset.agingPerDayResult }
+                      label = {'Aging per Day'}
+                      placeholder = {errors.aginPerDay? errors.aginPerDay.message : dataForm.blurDataset.agingPerDayDefResult + ''}
                       decor = {{...formElementDecor.textField, width: "98%"}}
                       endAdornment = {'ppb'}
                       helperText = {errors.aginPerDay
                         ? errors.aginPerDay.message + ', Min: to ' + dataForm.blurDataset.agingPerDayResult + ' ppb; Max: to 10 ppb'
                         : dataForm.blurDataset.agingPerDayResult
-                          ? 'Min: to ' + dataForm.blurDataset.agingPerDayResult + ' ppb; Max: to 10 ppb'
+                          ? 'can be reduced to: ' + dataForm.blurDataset.agingPerDayMinResult + ' ppb'
                           : ''} 
                       helperTextDecor = {{color: "grey", mt: -1}}
                       />
@@ -374,11 +383,6 @@ const SpecificationStep1 = (props) => {
                   name="continuousCurrent"
                   control={control}
                   rules={{
-                    required: "This is required",
-                    maxLength: {
-                      value: 10,
-                      message: "Value is too long",
-                    },
                     min: {
                       value: dataForm.blurDataset.continuousCurrentResult,
                       message:
@@ -387,14 +391,15 @@ const SpecificationStep1 = (props) => {
                         " mA",
                     },
                   }}
+
                   render={({ field }) => {
                     return (
                       <UniversalLevelField 
-                      disabledStatus = {dataForm.blurDataset.frequency ? false : true}
+                       disabledStatus = {dataForm.blurDataset.frequency ? false : true}
                       field = {field}
                       handleOnBlur={()=>{}}
                       error = {errors.continuousCurrent}
-                      label = {'Continuous current max limit'}
+                      label = {'Continuous current max'}
                       /* decor = {{...formElementDecor.textField, width: "98%"}} */
                       /* decor = {{...formElementDecor.textField, continuousCurrentDispaly}} */
                       decor = {{...formElementDecor.textField, width: "100%"}}
@@ -403,13 +408,13 @@ const SpecificationStep1 = (props) => {
                         continuousCurrentDispaly
                       }} */
 
-                      placeholder = { errors.continuousCurrent? errors.continuousCurrent.message : dataForm.blurDataset.continuousCurrentResult}
+                      placeholder = { errors.continuousCurrent? errors.continuousCurrent.message : (dataForm.blurDataset.continuousCurrentResult + 5) + ''}
                       endAdornment = {'mA'}
                       //helperText = {errors.continuousCurrent? errors.continuousCurrent.message : 'Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'}
                       helperText = {errors.continuousCurrent 
-                         ? errors.continuousCurrent.message +', Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'
+                         ? errors.continuousCurrent.message
                          : dataForm.blurDataset.frequency
-                          ? 'Typical: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'
+                          ? 'can be reduced to: ' + dataForm.blurDataset.continuousCurrentResult + 'mA'
                           : ''}
                       helperTextDecor = {{color: "grey", mt: -1}}
                       />

@@ -26,6 +26,8 @@ const initialState = {
       temperatureStability: "To 3 ppb",
       packaging: "DIP8 15.3x16x10 mm",
       pictureTag: "type1",
+      pictureCase: "/pimages/spec_case_pinout/XBO8_case400x600.png",
+      picturePinout: "/pimages/spec_case_pinout/XBO8_XBO8S_pinout400x600.png",
       features: [
         "3 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
@@ -53,6 +55,8 @@ const initialState = {
       temperatureStability: "To 3 ppb",
       packaging: "SMD 15.3x16x9.5 mm",
       pictureTag: "type2",
+      pictureCase: "/pimages/spec_case_pinout/XBO8S_case400x600.png",
+      picturePinout: "/pimages/spec_case_pinout/XBO8_XBO8S_pinout400x600.png",
       features: [
         "3 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
@@ -80,6 +84,8 @@ const initialState = {
       temperatureStability: "To 2 ppb",
       packaging: "DIP14 15.3x20.5x10 mm",
       pictureTag: "type4",
+      pictureCase: "/pimages/spec_case_pinout/XBO14_XBOH14_case400x600.png",
+      picturePinout: "/pimages/spec_case_pinout/XBO14_XBO14S_XBOH14_XBOH14S_pinout400x600.png",
       features: [
         "2 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
@@ -107,6 +113,8 @@ const initialState = {
       temperatureStability: "To 2 ppb",
       packaging: "SMD 15.3x20.5x9.5 mm",
       pictureTag: "type3",
+      pictureCase: "/pimages/spec_case_pinout/XBO14S_XBOH14S_case400x600.png",
+      picturePinout: "/pimages/spec_case_pinout/XBO14_XBO14S_XBOH14_XBOH14S_pinout400x600.png",
       features: [
         "2 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
@@ -134,6 +142,8 @@ const initialState = {
       temperatureStability: "To 0.5 ppb",
       packaging: "20.2x20.2x12.0 mm",
       pictureTag: "type5",
+      pictureCase: "/pimages/spec_case_pinout/XBO20_XBOH20_case400x600.png",
+      picturePinout: "/pimages/spec_case_pinout/XBO20_XBOH20_pinout400x600.png",
       features: [
         "0.5 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
@@ -161,6 +171,8 @@ const initialState = {
       temperatureStability: "To 0.5 ppb",
       packaging: "20.2x20.2x12.0 mm",
       pictureTag: "type5",
+      pictureCase: "/pimages/spec_case_pinout/XBO20_XBOH20_case400x600.png",
+      picturePinout: "/pimages/spec_case_pinout/XBO20_XBOH20_pinout400x600.png",
       features: [
         "0.5 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
@@ -188,6 +200,8 @@ const initialState = {
       temperatureStability: "To 2 ppb ",
       packaging: "DIP14 15.3x20.5x10 mm",
       pictureTag: "type4",
+      pictureCase: "/pimages/spec_case_pinout/XBO14_XBOH14_case400x600.png",
+      picturePinout: "/pimages/spec_case_pinout/XBO14_XBO14S_XBOH14_XBOH14S_pinout400x600.png",
       features: [
         "10 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
@@ -215,6 +229,8 @@ const initialState = {
       temperatureStability: "To 2 ppb ",
       packaging: "SMD 15.3x20.5x9.5 mm",
       pictureTag: "type3",
+      pictureCase: "/pimages/spec_case_pinout/XBO14S_XBOH14S_case400x600.png",
+      picturePinout: "/pimages/spec_case_pinout/XBO14_XBO14S_XBOH14_XBOH14S_pinout400x600.png",
       features: [
         "10 ppb in -40 +85ºC range",
         "to 0.1 ppb/day, 15 ppb/year",
@@ -255,6 +271,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy050XBO8: 1,
         },
         {
@@ -274,6 +292,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy050XBO8S: 1,
         },
         {
@@ -293,6 +313,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy050XBO14: 1,
         },
         {
@@ -312,6 +334,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy050XBO14S: 1,
         },
         {
@@ -331,6 +355,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy050XBO20: 1,
         },
         {
@@ -358,6 +384,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy050XBOH20: 1,
         },
         {
@@ -385,6 +413,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy050XBOH14: 1,
         },
         {
@@ -412,6 +442,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy050XBOH14S: 1,
         },
       ],
@@ -438,6 +470,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy1060XBO8: 1,
         },
         {
@@ -457,6 +491,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] },
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy1060XBO8S: 1,
         },
         {
@@ -476,6 +512,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy1060XBO14: 1,
         },
         {
@@ -495,6 +533,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy1060XBO14S: 1,
         },
         {
@@ -514,6 +554,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy1060XBO20: 1,
         },
         {
@@ -541,6 +583,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy1060XBOH20: 1,
         },
         {
@@ -568,6 +612,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy1060XBOH14: 1,
         },
         {
@@ -595,6 +641,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy1060XBOH14S: 1,
         },
       ],
@@ -621,6 +669,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy3070XBO8: 1,
         },
         {
@@ -640,6 +690,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy3070XBO8S: 1,
         },
         {
@@ -659,6 +711,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy3070XBO14: 1,
         },
         {
@@ -678,6 +732,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy3070XBO14S:1,
         },
         {
@@ -697,6 +753,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.1,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy3070XBO20: 1,
         },
         {
@@ -724,6 +782,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy3070XBOH20: 1,
         },
         {
@@ -751,6 +811,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy3070XBOH14: 1,
         },
         {
@@ -778,6 +840,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.1,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.1,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy3070XBOH14S: 1,
         },
       ],
@@ -804,6 +868,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy4085XBO8: 1,
         },
         {
@@ -823,6 +889,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy4085XBO8S: 1,
         },
         {
@@ -842,6 +910,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy4085XBO14: 1,
         },
         {
@@ -861,6 +931,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] },  
           yyy4085XBO14S: 1,
         },
         {
@@ -880,6 +952,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy4085XBO20: 1,
         },
         {
@@ -907,6 +981,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy4085XBOH20: 1,
         },
         {
@@ -934,6 +1010,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy4085XBOH14: 1,
         },
         {
@@ -961,6 +1039,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy4085XBOH14S: 1,
         },
       ],
@@ -987,6 +1067,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy6085XBO8: 1,
         },
         {
@@ -1006,6 +1088,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy6085XBO8S: 1,
         },
         {
@@ -1025,6 +1109,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy6085XBO14: 1,
         },
         {
@@ -1044,6 +1130,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] },
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
           yyy6085XBO14S: 1,
         },
         {
@@ -1063,6 +1151,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] }, 
+          agingPerDayDef: { apdDef: [10,0.5,20,1,40,2,50,3,120,3,150,5] }, 
+          agingPerDayMin: { apdMin: [10,0.2,20,0.5,40,1,50,1.5,120,2,150,3] },  
           yyy6085XBO20: 1,
         },
         {
@@ -1090,6 +1180,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy6085XBOH20: 1,
         },
         {
@@ -1117,6 +1209,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy6085XBOH14: 1,
         },
         {
@@ -1144,6 +1238,8 @@ const initialState = {
             },
           },
           agingPerDay: { apd:[30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apd40:[50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
+          agingPerDayDef: { apdDef: [30,0.5,60,1,120,2,150,3,360,3,450,5], apdDef40: [50,0.5,100,1,200,2,250,3,600,3,750,5] }, 
+          agingPerDayMin: { apdMin: [30,0.2,60,0.5,120,1,150,1.5,360,2,450,3], apdMin40: [50,0.2,100,0.5,200,1,250,1.5,600,2,750,3] }, 
           yyy6085XBOH14S: 1,
         },
       ],

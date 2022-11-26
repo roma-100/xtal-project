@@ -15,7 +15,7 @@ const HeaderMenu = (props) => {
           alt=""
           className="top-nav-logo"
         />
-        <div className="top-nav-name">Xtal Ball Enterprise</div>
+        <div className="top-nav-name">Xtal Ball Technologies</div>
       </div>
       <input id="menu-toggle" type="checkbox" 
         checked={isChecked}
@@ -31,6 +31,9 @@ const HeaderMenu = (props) => {
         <li>
           <NavLink to="./gen_models_hello">OCXO Models</NavLink>
         </li>   
+{/*         <li>
+          <NavLink to="./gen_models_hello">Timing Products</NavLink>
+        </li>  */}  
         <li>About Us</li>
         <li>Contacts</li>
       </ul>

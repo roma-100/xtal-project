@@ -1,0 +1,916 @@
+<div class="spec-pdf__doc-wrap"><button class="specification-download-btn" role="button"><span class="text">Load full
+            specification to confirm</span></button>
+    <div>
+        <div>
+            <div class="spec-pdf__doc--size" style="width: 640px;">
+                <h2>Specification</h2>
+                <div>
+                    <style type="text/css">
+                        body,
+                        div,
+                        table,
+                        thead,
+                        tbody,
+                        tfoot,
+                        tr,
+                        th,
+                        td,
+                        p {
+                            font-family: "Arial";
+                            font-size: x-small
+                        }
+
+                        a.comment-indicator:hover+comment {
+                            background: #ffd;
+                            position: absolute;
+                            display: block;
+                            border: 1px solid black;
+                            padding: 0.5em;
+                        }
+
+                        a.comment-indicator {
+                            background: red;
+                            display: inline-block;
+                            border: 1px solid black;
+                            width: 0.5em;
+                            height: 0.5em;
+                        }
+
+                        comment {
+                            display: none;
+                        }
+                    </style>
+                    <table cellspacing="0" border="0">
+                        <colgroup width="53"></colgroup>
+                        <colgroup width="189"></colgroup>
+                        <colgroup width="62"></colgroup>
+                        <colgroup width="85"></colgroup>
+                        <colgroup width="134"></colgroup>
+                        <colgroup width="43" span="2"></colgroup>
+                        <colgroup width="42"></colgroup>
+                        <colgroup width="69"></colgroup>
+                        <colgroup width="85"></colgroup>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" height="20" align="left"
+                                    style="border-top: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    XBO14-3715885331</td>
+                                <td colspan="3" align="center"
+                                    style="border-top: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0);">
+                                    Date: 2022-11-20 11:51:19 UTC</td>
+                                <td colspan="5" align="right"
+                                    style="border-top: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    Rev. 14.11.2022</td>
+                            </tr>
+                            <tr>
+                                <td height="34" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    #</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    OCXO<br>Specification</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br>Conditions</td>
+                                <td colspan="3" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Value</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Unit</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <font color="#000000">Included in <br>the test data </font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="18" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Min.</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Typ.</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Max.</td>
+                                <td align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="1.1" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    1.1</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <b>Nominal Frequency, f0</b></td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td colspan="3" sdval="10" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    55</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    MHz</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="1.2" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    1.2</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Initial tolerance, (f- f0)/f0</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    at +25°C, Vc=Vc0</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <font face="Times New Roman">±0.15</font>
+                                </td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppm</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    +</td>
+                            </tr>
+                            <tr>
+                                <td colspan="10" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <b> RF output</b></td>
+                            </tr>
+                            <tr>
+                                <td sdval="2.1" sdnum="1033;" height="17" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    2.1</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Wave form</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td colspan="3" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Sine-wave</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="2.2" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    2.2</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Level</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="7" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    4</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    dBm</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    +</td>
+                            </tr>
+                            <tr>
+                                <td sdval="2.3" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    2.3</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Harmonics level</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="-25" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    -25</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    dBc</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="2.4" sdnum="1033;" height="17" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    2.4</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Load</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="45" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    45</td>
+                                <td sdval="50" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    50</td>
+                                <td sdval="55" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    55</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Ohm</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <b> Frequency control</b></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.1" sdnum="1033;" valign="middle" height="34" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.1</td>
+                                <td colspan="2" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Input impedance</td>
+                                <td colspan="2" valign="middle" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td valign="middle" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td valign="middle" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    11<br>5</td>
+                                <td valign="middle" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td valign="middle" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    kOhm<br>pF</td>
+                                <td valign="middle" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.2" sdnum="1033;" height="17" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.2</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Input BW</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    -3dB level</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="160" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    160</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Hz</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.3" sdnum="1033;" height="17" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.3</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Voltage range</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="0" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    0</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="4.2" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    2.8</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    V</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.4" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.4</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Preset control voltage</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    disconnected Vc pin</td>
+                                <td sdval="1.9" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    1.2</td>
+                                <td sdval="2.1" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    1.4</td>
+                                <td sdval="2.3" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                </td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    V</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.5" sdnum="1033;" height="17" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.5</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Slope</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td colspan="3" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    positive</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.6" sdnum="1033;" height="17" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.6</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Linearity </td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="10" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    10</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    %</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.7" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.7</td>
+                                <td rowspan="3" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Frequency turning range<br> (According to 10 years aging)</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    (fL- f)/f</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Vc=0 V</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="-0.35" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    -0.35</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppm</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    +</td>
+                            </tr>
+                            <tr>
+                                <td height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    (f-f)/f</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Vc=Vc0</td>
+                                <td colspan="3" sdval="0" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    0</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppm</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.8" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.8</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    (fH- f)/f</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Vc= Vref</td>
+                                <td sdval="0.35" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    0.35</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppm</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    +</td>
+                            </tr>
+                            <tr>
+                                <td sdnum="1033;0;@" height="17" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.10</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Reference voltage</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="4" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    2.7</td>
+                                <td sdval="4.2" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    2.8</td>
+                                <td sdval="4.3" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.1</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    V</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="3.11" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.11</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Output resistance of Vref</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="91" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    91</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Ohm</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <b> Power supply</b></td>
+                            </tr>
+                            <tr>
+                                <td sdval="4.1" sdnum="1033;" height="17" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    4.1</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Input Voltage</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="4.75" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.15</td>
+                                <td sdval="5" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.3</td>
+                                <td sdval="5.25" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    3.45</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    V</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="4.2" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    4.2</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Warm-up current*</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Vcc=3.3V</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    240</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    mA</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="4.3" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    4.3</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Continuous current</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    at +25°C, Vcc=3.3V</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="30" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    39</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    55</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    mA</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="4.4" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    4.4</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Frequency warm-up time</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    to df/f=1e-7 at +25°C ref at 15 min</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td sdval="90" sdnum="1033;" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    90</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    s</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <b> Frequency stability</b></td>
+                            </tr>
+                            <tr>
+                                <td sdval="5.1" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    5.1</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    vs. temperature</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ref 25°C</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <font face="Times New Roman">±8</font>
+                                </td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppb</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    +</td>
+                            </tr>
+                            <tr>
+                                <td sdval="5.2" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    5.2</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    vs. supply voltage</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ref Vcc typ.</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ±2</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppb</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="5.3" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    5.3</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    vs. load</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    5 % change</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ±2</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppb</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td sdval="5.4" sdnum="1033;" height="18" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    5.4</td>
+                                <td colspan="2" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    G-sensitivity*</td>
+                                <td colspan="2" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    worst axis, 0 – 1 kHz vibration freq.</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <font face="Times New Roman">±1</font>
+                                </td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppb/G</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" sdval="7.1" sdnum="1033;" valign="middle" height="36" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    7.1</td>
+                                <td rowspan="2" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <b>Aging</b></td>
+                                <td align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    per day</td>
+                                <td colspan="2" rowspan="2" valign="middle" align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    after 30 days of operation</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <font face="Times New Roman">±3</font>
+                                </td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppb</td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    first year</td>
+                                <td align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    <font face="Times New Roman">±0.30</font>
+                                </td>
+                                <td align="center"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    ppb</td>
+                                <td align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <br></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <b>Maximum ratings, environmental, mechanical conditions.</b></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="17" align="left"
+                                    style="border-top: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Power voltage</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);">
+                                    <font color="#000000">-0.5 to 3.96 V</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Control voltage</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <font color="#000000">-1.0 to 3.96 V</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Air flow velocity</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <font color="#000000">0.5 m/s maximum</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="18" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Operating temperature range</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <font color="#000000">(-40+85)℃</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="18" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Storage temperature range</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <font color="#000000">-60°C to +85°C</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Humidity</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    <font color="#000000">Non-condensing 95%</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Mechanical Shock</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    Per MIL-STD-202, 30G half sine pulse, 11ms</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Vibration</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    Per MIL-STD-202, 10G swept sine 10 to 2000Hz</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="18" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Soldering Conditions</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    Hand solder only – not reflow compatible 260°C 10s (on pins)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="middle" height="17" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0);">
+                                    Washing Conditions</td>
+                                <td colspan="8" valign="middle" align="left"
+                                    style="border-bottom: 1px solid rgb(0, 0, 0); border-left: 1px solid rgb(0, 0, 0); border-right: 1px solid rgb(0, 0, 0);">
+                                    Washing with water or alcohol based detergent allowed only with final enough drying
+                                    stage</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>* For a lower value, please consult the factory.</p>
+            </div>
+            <div class="specification-image__wrap"><img class="specification-image" src="../pimages/spec_1.png"
+                    alt="xtall"><img class="specification-image" src="../pimages/spec_2.png" alt="xtall"></div>
+        </div>
+    </div>
+</div>
